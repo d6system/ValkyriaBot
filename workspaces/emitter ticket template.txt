@@ -1,5 +1,5 @@
 {
-    "id": "7I0ZrnWcsA",
+    "id": "Vv1YmftOgk",
     "active": true,
     "info": {
         "title": "Emitter Ticket template",
@@ -19,7 +19,7 @@
             },
             "outputs": {
                 "action": [
-                    "08Dx5kTuVn"
+                    "U8ljy4DDGT"
                 ],
                 "user": [],
                 "member": [
@@ -34,7 +34,11 @@
                     "2KlEfnyXAP"
                 ],
                 "args": [],
-                "name": [],
+                "name": [
+                    "VQpe6oOi58",
+                    "kbmlXq68IL",
+                    "cIgt0tdIKd"
+                ],
                 "menuvalues": [],
                 "subcommandname": [],
                 "subcommandgroup": []
@@ -71,8 +75,8 @@
                 "action": []
             },
             "info": {
-                "x": 980,
-                "y": 390,
+                "x": 1030,
+                "y": 220,
                 "z": 0,
                 "width": 455,
                 "height": 358,
@@ -80,40 +84,216 @@
             }
         },
         {
-            "name": "text_6x",
-            "inputs": {},
+            "name": "read_file",
+            "inputs": {
+                "action": "xX23PSOkF6",
+                "file_path": "ZmuIwziGz7"
+            },
             "options": {
-                "text1": "ticketemitter",
-                "text2": "",
-                "text3": "",
-                "text4": "",
-                "text5": "",
-                "text6": ""
+                "conversion_type": "text"
             },
             "outputs": {
-                "text1": [
-                    "XinUA68oag"
+                "action": [
+                    "2SDMeSEbG6"
                 ],
-                "text2": [
-                    "SnnOwVctDj"
-                ],
-                "text3": [
+                "action2": [],
+                "content": [
+                    "PE4vU8hV4U",
                     "h4kzwm4xDJ"
-                ],
-                "text4": [
-                    "g6HFHAePUa"
-                ],
-                "text5": [
-                    "iHMcDs6d1B"
-                ],
-                "text6": []
+                ]
             },
             "info": {
-                "x": 180,
-                "y": 610,
+                "x": 170,
+                "y": 1170,
                 "z": 0,
-                "width": 590,
-                "height": 890,
+                "width": 451,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "read_file",
+            "inputs": {
+                "action": "2SDMeSEbG6",
+                "file_path": "2o1YDQrnrS"
+            },
+            "options": {
+                "conversion_type": "text"
+            },
+            "outputs": {
+                "action": [
+                    "8jXnCRIMb6"
+                ],
+                "action2": [],
+                "content": [
+                    "iHMcDs6d1B"
+                ]
+            },
+            "info": {
+                "x": 160,
+                "y": 1320,
+                "z": 0,
+                "width": 451,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "read_file",
+            "inputs": {
+                "action": "8jXnCRIMb6",
+                "file_path": "Bf8oNkVq3v"
+            },
+            "options": {
+                "conversion_type": "text"
+            },
+            "outputs": {
+                "action": [
+                    "jwWThUx6Ju"
+                ],
+                "action2": [],
+                "content": [
+                    "g6HFHAePUa"
+                ]
+            },
+            "info": {
+                "x": 150,
+                "y": 1470,
+                "z": 0,
+                "width": 451,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "merge_texts_advanced",
+            "inputs": {
+                "action": "jwWThUx6Ju",
+                "text1": "PE4vU8hV4U",
+                "text2": "tKgufIpOwG",
+                "text3": "OEIuatT5GA"
+            },
+            "options": {
+                "text": "${text1}.txt"
+            },
+            "outputs": {
+                "action": [
+                    "08Dx5kTuVn"
+                ],
+                "text": [
+                    "SnnOwVctDj"
+                ]
+            },
+            "info": {
+                "x": 650,
+                "y": 930,
+                "z": 0,
+                "width": 364,
+                "height": 164,
+                "color": ""
+            }
+        },
+        {
+            "name": "merge_texts_advanced",
+            "inputs": {
+                "action": "U8ljy4DDGT",
+                "text1": "VQpe6oOi58",
+                "text2": "IWmPruRi1s",
+                "text3": "4V9gbt3Onx"
+            },
+            "options": {
+                "text": "config/${text1}/name.txt"
+            },
+            "outputs": {
+                "action": [
+                    "YOtCnMSP7b"
+                ],
+                "text": [
+                    "ZmuIwziGz7"
+                ]
+            },
+            "info": {
+                "x": 170,
+                "y": 650,
+                "z": 0,
+                "width": 364,
+                "height": 164,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "ticketemitter"
+            },
+            "outputs": {
+                "text": [
+                    "XinUA68oag"
+                ]
+            },
+            "info": {
+                "x": 660,
+                "y": 210,
+                "z": 0,
+                "width": 276,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "merge_texts_advanced",
+            "inputs": {
+                "action": "YOtCnMSP7b",
+                "text1": "kbmlXq68IL",
+                "text2": "ZqlfpOvQOg",
+                "text3": "QH0ndWZlxu"
+            },
+            "options": {
+                "text": "config/${text1}/description.txt"
+            },
+            "outputs": {
+                "action": [
+                    "3kTkBe5tzY"
+                ],
+                "text": [
+                    "2o1YDQrnrS"
+                ]
+            },
+            "info": {
+                "x": 170,
+                "y": 830,
+                "z": 0,
+                "width": 364,
+                "height": 164,
+                "color": ""
+            }
+        },
+        {
+            "name": "merge_texts_advanced",
+            "inputs": {
+                "action": "3kTkBe5tzY",
+                "text1": "cIgt0tdIKd",
+                "text2": "Jock9IZD3e",
+                "text3": "ZlKfSm3g8v"
+            },
+            "options": {
+                "text": "config/${text1}/embedname.txt"
+            },
+            "outputs": {
+                "action": [
+                    "xX23PSOkF6"
+                ],
+                "text": [
+                    "Bf8oNkVq3v"
+                ]
+            },
+            "info": {
+                "x": 170,
+                "y": 990,
+                "z": 0,
+                "width": 364,
+                "height": 164,
                 "color": ""
             }
         }
@@ -121,7 +301,7 @@
     "notes": [
         {
             "title": "How to use",
-            "description": "1. Type of interaction: Button\n2. Name/ID: name of the button you made in another command\n3. Text1: EmitterID (ticketemitter)\n4. Text2: txt file that will check the amount of tickets that you already had\n5. Text3: Name of the ticketchannel in format text-####. Leave out the -####\n6. Text4: Title of the embed\n7. Text5: Description of the embed",
+            "description": "1. Type of interaction: Button\n2. Name/ID: name of the button you made in /ticketpanel",
             "color": "#2be9a9",
             "x": 50,
             "y": 40,

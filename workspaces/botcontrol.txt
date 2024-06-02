@@ -241,7 +241,7 @@
             "name": "register_slash_commands",
             "inputs": {},
             "options": {
-                "text": "{\n  \"name\": \"info\",\n  \"description\": \"Give info about the bot\",\n  \"options\": []\n},\n{\n  \"name\": \"update\",\n  \"description\": \"Write a changelog\",\n  \"options\": []\n},\n{\n  \"name\": \"kick\",\n  \"description\": \"Kick a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to kick\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the kick\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"ban\",\n  \"description\": \"Ban a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to ban\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the ban\",\n      \"required\": true\n    }\n  ]\n}"
+                "text": "{\n  \"name\": \"info\",\n  \"description\": \"Give info about the bot\",\n  \"options\": []\n},\n{\n  \"name\": \"ticketpanel\",\n  \"description\": \"Create a new ticket panel\",\n  \"options\": []\n},\n{\n  \"name\": \"update\",\n  \"description\": \"Write a changelog\",\n  \"options\": []\n},\n{\n  \"name\": \"kick\",\n  \"description\": \"Kick a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to kick\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the kick\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"ban\",\n  \"description\": \"Ban a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to ban\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the ban\",\n      \"required\": true\n    }\n  ]\n}"
             },
             "outputs": {},
             "info": {
@@ -257,7 +257,7 @@
             "name": "text",
             "inputs": {},
             "options": {
-                "text": "ValkyriaBot™ version 7 ALPHA 0.5"
+                "text": "ValkyriaBot™ version 7 ALPHA 0.12"
             },
             "outputs": {
                 "text": [
