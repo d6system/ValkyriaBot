@@ -1,0 +1,710 @@
+{
+    "id": "YNRW6AhSEK",
+    "active": true,
+    "info": {
+        "title": "Botcontrol",
+        "description": "",
+        "thumbnail": ""
+    },
+    "blocks": [
+        {
+            "name": "set_bot_status",
+            "inputs": {
+                "action": "qeMf4iYbNn"
+            },
+            "options": {
+                "status_type": "online"
+            },
+            "outputs": {
+                "action": [
+                    "KxE8m9V2SM"
+                ]
+            },
+            "info": {
+                "x": 700,
+                "y": 20,
+                "z": 6,
+                "width": 365,
+                "height": 120,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "bot_initialization_event",
+            "inputs": {},
+            "options": {},
+            "outputs": {
+                "action": [
+                    "3s3OsonSSi"
+                ]
+            },
+            "info": {
+                "x": 30,
+                "y": 30,
+                "z": 13,
+                "width": 248,
+                "height": 124,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "set_bot_activity",
+            "inputs": {
+                "action": "9bgcu2lJm5",
+                "activity_name": "HEBZyQP4lF",
+                "activity_url": "8ZOAAQqTpj"
+            },
+            "options": {
+                "activity_type": "playing"
+            },
+            "outputs": {
+                "action": [
+                    "QXcsKqraRb"
+                ]
+            },
+            "info": {
+                "x": 1050,
+                "y": 490,
+                "z": 41,
+                "width": 433,
+                "height": 165,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "find_server",
+            "inputs": {
+                "action": "aaIKtt5ut5",
+                "search_value": "ahxqJGU10F"
+            },
+            "options": {
+                "find_server_by": "id",
+                "search_value": ""
+            },
+            "outputs": {
+                "action": [
+                    "ZDEJGEnMRA"
+                ],
+                "server": [
+                    "mG91rqoPyV"
+                ]
+            },
+            "info": {
+                "x": 1830,
+                "y": 50,
+                "z": 44,
+                "width": 456,
+                "height": 171,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "find_channel",
+            "inputs": {
+                "action": "ZDEJGEnMRA",
+                "server": "mG91rqoPyV",
+                "search_value": "SxVlmzQr0a"
+            },
+            "options": {
+                "channel_type": "any",
+                "find_channel_by": "id",
+                "search_value": ""
+            },
+            "outputs": {
+                "action": [
+                    "baYd8D1rAZ"
+                ],
+                "channel": [
+                    "hMCh1kw2Cw"
+                ]
+            },
+            "info": {
+                "x": 2370,
+                "y": 20,
+                "z": 45,
+                "width": 514,
+                "height": 225,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "wait",
+            "inputs": {
+                "action": "KxE8m9V2SM",
+                "time": "kWe6GKUrg9"
+            },
+            "options": {
+                "time_type": "seconds"
+            },
+            "outputs": {
+                "action": [
+                    "v1lunePmBG"
+                ]
+            },
+            "info": {
+                "x": 689,
+                "y": 154,
+                "z": 61,
+                "width": 350,
+                "height": 120,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "number",
+            "inputs": {},
+            "options": {
+                "number": 5
+            },
+            "outputs": {
+                "number": [
+                    "kWe6GKUrg9"
+                ]
+            },
+            "info": {
+                "x": 320,
+                "y": 360,
+                "z": 62,
+                "width": 343,
+                "height": 116,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "interaction_event",
+            "inputs": {},
+            "options": {
+                "type": "slash",
+                "id": "info",
+                "sub": "",
+                "group": "",
+                "value": ""
+            },
+            "outputs": {
+                "action": [
+                    "AJZxBz2LU0"
+                ],
+                "user": [],
+                "member": [],
+                "server": [],
+                "channel": [
+                    "rtgJ61zMzB"
+                ],
+                "message": [],
+                "interaction": [
+                    "P4qvzsPaLm"
+                ],
+                "args": [],
+                "name": [],
+                "menuvalues": [],
+                "subcommandname": [],
+                "subcommandgroup": []
+            },
+            "info": {
+                "x": 0,
+                "y": 950,
+                "z": 79,
+                "width": 579,
+                "height": 465,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "interaction_send_reply_fixed",
+            "inputs": {
+                "action": "nAuLW739Ak",
+                "interactreply": "P4qvzsPaLm",
+                "message": "GpYj3xExd5",
+                "embeds": "sHfkJj5sXW",
+                "menu": "Bp5rNS02u3",
+                "button_row": "8Q89yOeXaA",
+                "button": "38HSLeBkYq",
+                "file": "oRVX2gX08X"
+            },
+            "options": {
+                "private": "true"
+            },
+            "outputs": {
+                "action": [],
+                "message": []
+            },
+            "info": {
+                "x": 1480,
+                "y": 770,
+                "z": 80,
+                "width": 419,
+                "height": 299,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "register_slash_commands",
+            "inputs": {},
+            "options": {
+                "text": "{\n  \"name\": \"info\",\n  \"description\": \"Give info about the bot\",\n  \"options\": []\n},\n{\n  \"name\": \"update\",\n  \"description\": \"Write a changelog\",\n  \"options\": []\n},\n{\n  \"name\": \"kick\",\n  \"description\": \"Kick a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to kick\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the kick\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"ban\",\n  \"description\": \"Ban a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to ban\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the ban\",\n      \"required\": true\n    }\n  ]\n}"
+            },
+            "outputs": {},
+            "info": {
+                "x": 1990,
+                "y": 820,
+                "z": 81,
+                "width": 1461,
+                "height": 730,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "ValkyriaBot™ version 7 ALPHA 0.5"
+            },
+            "outputs": {
+                "text": [
+                    "UG2IhKchCb",
+                    "KWHxJtMfEc",
+                    "IYD0NMN0cV",
+                    "HEBZyQP4lF"
+                ]
+            },
+            "info": {
+                "x": 0,
+                "y": 360,
+                "z": 82,
+                "width": 305,
+                "height": 131,
+                "color": "#5a5a5a"
+            }
+        },
+        {
+            "name": "better_send_message_v14",
+            "inputs": {
+                "action": "baYd8D1rAZ",
+                "channel": "hMCh1kw2Cw",
+                "embed": "3xoL1ggczG",
+                "attachment": "xfnQvkSopA",
+                "text1": "UG2IhKchCb",
+                "text2": "erBgKjhH4c",
+                "text3": "2j9b3Fe1gD",
+                "text4": "teaplOfP1V",
+                "text5": "jrIJH8koNO",
+                "menu": "rJTllA6Rt2",
+                "button": "VFCzEaDStS",
+                "button_row": "Q3OVlJTQ1i"
+            },
+            "options": {
+                "text": "The bot just restarted!\n\nRunning: ${text1}"
+            },
+            "outputs": {
+                "action": [
+                    "eTRb6dr1BA"
+                ],
+                "message": [],
+                "error": []
+            },
+            "info": {
+                "x": 3050,
+                "y": 50,
+                "z": 0,
+                "width": 415,
+                "height": 372,
+                "color": ""
+            }
+        },
+        {
+            "name": "better_send_message_v14",
+            "inputs": {
+                "action": "AJZxBz2LU0",
+                "channel": "rtgJ61zMzB",
+                "embed": "IURVMZBFe9",
+                "attachment": "mG8fieZ9rP",
+                "text1": "KWHxJtMfEc",
+                "text2": "vCc6GDyVwE",
+                "text3": "japVuckArQ",
+                "text4": "gI9MSVvOHw",
+                "text5": "DeEY9aVgl2",
+                "menu": "fK9zeVyXVM",
+                "button": "GQeql99gyA",
+                "button_row": "lIMHvnF6nw"
+            },
+            "options": {
+                "text": "We are currently running ${text1}."
+            },
+            "outputs": {
+                "action": [
+                    "nAuLW739Ak"
+                ],
+                "message": [],
+                "error": []
+            },
+            "info": {
+                "x": 890,
+                "y": 750,
+                "z": 0,
+                "width": 415,
+                "height": 372,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "Done"
+            },
+            "outputs": {
+                "text": [
+                    "GpYj3xExd5"
+                ]
+            },
+            "info": {
+                "x": 970,
+                "y": 1200,
+                "z": 0,
+                "width": 276,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "console_log",
+            "inputs": {
+                "action": "EVNUqQe1sb",
+                "value": "IYD0NMN0cV"
+            },
+            "options": {
+                "value": ""
+            },
+            "outputs": {
+                "action": []
+            },
+            "info": {
+                "x": 3870,
+                "y": 200,
+                "z": 0,
+                "width": 403,
+                "height": 119,
+                "color": ""
+            }
+        },
+        {
+            "name": "console_log",
+            "inputs": {
+                "action": "3s3OsonSSi",
+                "value": "dtszwxpSBw"
+            },
+            "options": {
+                "value": "[Bot] Initializing"
+            },
+            "outputs": {
+                "action": [
+                    "DJuWL1jgA4"
+                ]
+            },
+            "info": {
+                "x": 0,
+                "y": 150,
+                "z": 0,
+                "width": 403,
+                "height": 119,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "Initializing..."
+            },
+            "outputs": {
+                "text": [
+                    "XV1uN4pfzd"
+                ]
+            },
+            "info": {
+                "x": 480,
+                "y": 210,
+                "z": 0,
+                "width": 276,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "set_bot_activity",
+            "inputs": {
+                "action": "DJuWL1jgA4",
+                "activity_name": "XV1uN4pfzd",
+                "activity_url": "61KfGGcj7Q"
+            },
+            "options": {
+                "activity_type": "playing"
+            },
+            "outputs": {
+                "action": [
+                    "qeMf4iYbNn"
+                ]
+            },
+            "info": {
+                "x": 310,
+                "y": 10,
+                "z": 0,
+                "width": 400,
+                "height": 150,
+                "color": ""
+            }
+        },
+        {
+            "name": "read_file",
+            "inputs": {
+                "action": "iaybH1Skoa",
+                "file_path": "Da9u0MUdvM"
+            },
+            "options": {
+                "conversion_type": "text"
+            },
+            "outputs": {
+                "action": [
+                    "aJhDCuKsbZ"
+                ],
+                "action2": [
+                    "wgAVUTGWQD"
+                ],
+                "content": [
+                    "ahxqJGU10F"
+                ]
+            },
+            "info": {
+                "x": 1750,
+                "y": 310,
+                "z": 0,
+                "width": 451,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "read_file",
+            "inputs": {
+                "action": "aJhDCuKsbZ",
+                "file_path": "cmbv6GXLF1"
+            },
+            "options": {
+                "conversion_type": "text"
+            },
+            "outputs": {
+                "action": [
+                    "aaIKtt5ut5"
+                ],
+                "action2": [
+                    "ZapqX9qgFK"
+                ],
+                "content": [
+                    "SxVlmzQr0a"
+                ]
+            },
+            "info": {
+                "x": 2480,
+                "y": 300,
+                "z": 0,
+                "width": 451,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "set_bot_activity",
+            "inputs": {
+                "action": "0lct6Y3BXb",
+                "activity_name": "CWA4C441dS",
+                "activity_url": "N3l1i5tN9I"
+            },
+            "options": {
+                "activity_type": "playing"
+            },
+            "outputs": {
+                "action": [
+                    "OwGc2VNm0z"
+                ]
+            },
+            "info": {
+                "x": 1180,
+                "y": 100,
+                "z": 0,
+                "width": 400,
+                "height": 150,
+                "color": ""
+            }
+        },
+        {
+            "name": "read_file",
+            "inputs": {
+                "action": "v1lunePmBG",
+                "file_path": "cv5ETwkscG"
+            },
+            "options": {
+                "conversion_type": "text"
+            },
+            "outputs": {
+                "action": [
+                    "0lct6Y3BXb"
+                ],
+                "action2": [
+                    "9bgcu2lJm5"
+                ],
+                "content": [
+                    "CWA4C441dS"
+                ]
+            },
+            "info": {
+                "x": 790,
+                "y": 310,
+                "z": 0,
+                "width": 451,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "merge_actions",
+            "inputs": {
+                "action1": "OwGc2VNm0z",
+                "action2": "cczWrtIup6"
+            },
+            "options": {},
+            "outputs": {
+                "action": [
+                    "iaybH1Skoa"
+                ]
+            },
+            "info": {
+                "x": 1540,
+                "y": 520,
+                "z": 0,
+                "width": 209,
+                "height": 112,
+                "color": ""
+            }
+        },
+        {
+            "name": "text_3x",
+            "inputs": {},
+            "options": {
+                "text1": "config/status.txt",
+                "text2": "config/server.txt",
+                "text3": "config/logchannel.txt"
+            },
+            "outputs": {
+                "text1": [
+                    "cv5ETwkscG"
+                ],
+                "text2": [
+                    "Da9u0MUdvM"
+                ],
+                "text3": [
+                    "cmbv6GXLF1"
+                ]
+            },
+            "info": {
+                "x": 50,
+                "y": 520,
+                "z": 0,
+                "width": 350,
+                "height": 247,
+                "color": ""
+            }
+        },
+        {
+            "name": "console_log",
+            "inputs": {
+                "action": "wgAVUTGWQD",
+                "value": "HjeyL3vToA"
+            },
+            "options": {
+                "value": "[Bot] config/server.txt not found\nPlease run v!setupmain"
+            },
+            "outputs": {
+                "action": [
+                    "FAcTfVRWcy"
+                ]
+            },
+            "info": {
+                "x": 2100,
+                "y": 480,
+                "z": 0,
+                "width": 364,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "console_log",
+            "inputs": {
+                "action": "ZapqX9qgFK",
+                "value": "2SUKrTX47W"
+            },
+            "options": {
+                "value": "[Bot] config/logchannel.txt not found\nPlease run v!setupmain"
+            },
+            "outputs": {
+                "action": [
+                    "c1kE0bSRMD"
+                ]
+            },
+            "info": {
+                "x": 2570,
+                "y": 460,
+                "z": 0,
+                "width": 364,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "console_log",
+            "inputs": {
+                "action": "QXcsKqraRb",
+                "value": "aExsNuxAL6"
+            },
+            "options": {
+                "value": "config/status.txt not found\nPlease run v!setupmain"
+            },
+            "outputs": {
+                "action": [
+                    "cczWrtIup6"
+                ]
+            },
+            "info": {
+                "x": 1560,
+                "y": 660,
+                "z": 0,
+                "width": 364,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "merge_actions_3x",
+            "inputs": {
+                "action1": "eTRb6dr1BA",
+                "action2": "c1kE0bSRMD",
+                "action3": "FAcTfVRWcy"
+            },
+            "options": {},
+            "outputs": {
+                "action": [
+                    "EVNUqQe1sb"
+                ]
+            },
+            "info": {
+                "x": 3010,
+                "y": 460,
+                "z": 0,
+                "width": 209,
+                "height": 138,
+                "color": ""
+            }
+        }
+    ],
+    "notes": []
+}

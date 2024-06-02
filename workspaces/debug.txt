@@ -1,0 +1,363 @@
+{
+    "id": "v6hnFwrtcq",
+    "active": true,
+    "info": {
+        "title": "Debug",
+        "description": "",
+        "thumbnail": ""
+    },
+    "blocks": [
+        {
+            "name": "bot_input",
+            "inputs": {},
+            "options": {},
+            "outputs": {
+                "action": [
+                    "Eb8hSQ2N8l"
+                ],
+                "value": [
+                    "j0pABIRFrf",
+                    "Ek7fJlUWPN",
+                    "ID93wCzBuI",
+                    "nc0tEZhq8D"
+                ]
+            },
+            "info": {
+                "x": 90,
+                "y": 30,
+                "z": 0,
+                "width": 228,
+                "height": 112,
+                "color": ""
+            }
+        },
+        {
+            "name": "stop_bot",
+            "inputs": {
+                "action": "4qKyrz2l5t"
+            },
+            "options": {},
+            "outputs": {},
+            "info": {
+                "x": 2550,
+                "y": 200,
+                "z": 0,
+                "width": 122,
+                "height": 86,
+                "color": ""
+            }
+        },
+        {
+            "name": "check_comparison",
+            "inputs": {
+                "action": "Eb8hSQ2N8l",
+                "value1": "j0pABIRFrf",
+                "value2": "ire2crwMLo"
+            },
+            "options": {
+                "comparison_type": "equal",
+                "value2": "reload"
+            },
+            "outputs": {
+                "action1": [
+                    "1r2NyXaVoc"
+                ],
+                "action2": [
+                    "6rMLjjUb3U"
+                ]
+            },
+            "info": {
+                "x": 40,
+                "y": 210,
+                "z": 0,
+                "width": 476,
+                "height": 171,
+                "color": ""
+            }
+        },
+        {
+            "name": "set_bot_activity",
+            "inputs": {
+                "action": "1r2NyXaVoc",
+                "activity_name": "JlMYlnK7j9",
+                "activity_url": "F2AtuC0XVa"
+            },
+            "options": {
+                "activity_type": "playing"
+            },
+            "outputs": {
+                "action": [
+                    "klxCi8zSHU"
+                ]
+            },
+            "info": {
+                "x": 780,
+                "y": 100,
+                "z": 0,
+                "width": 400,
+                "height": 150,
+                "color": ""
+            }
+        },
+        {
+            "name": "wait_with_number",
+            "inputs": {
+                "action": "DUfH0XQbdV"
+            },
+            "options": {
+                "time_type": "seconds",
+                "time": 5
+            },
+            "outputs": {
+                "action": [
+                    "toS6YvcYok"
+                ]
+            },
+            "info": {
+                "x": 1700,
+                "y": 150,
+                "z": 0,
+                "width": 376,
+                "height": 156,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "Restarting, BRB"
+            },
+            "outputs": {
+                "text": [
+                    "JlMYlnK7j9"
+                ]
+            },
+            "info": {
+                "x": 410,
+                "y": 60,
+                "z": 0,
+                "width": 276,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "console_log",
+            "inputs": {
+                "action": "klxCi8zSHU",
+                "value": "yw5GRR1LFr"
+            },
+            "options": {
+                "value": "[bot] Restarting, brb!"
+            },
+            "outputs": {
+                "action": [
+                    "DUfH0XQbdV"
+                ]
+            },
+            "info": {
+                "x": 1270,
+                "y": 150,
+                "z": 0,
+                "width": 364,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "console_log",
+            "inputs": {
+                "action": "toS6YvcYok",
+                "value": "9cm5Bal26M"
+            },
+            "options": {
+                "value": "[system] Server shut down succesfully!"
+            },
+            "outputs": {
+                "action": [
+                    "4qKyrz2l5t"
+                ]
+            },
+            "info": {
+                "x": 2130,
+                "y": 190,
+                "z": 0,
+                "width": 364,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "replace_text",
+            "inputs": {
+                "action": "YdepauUxBG",
+                "source_text": "ID93wCzBuI",
+                "old_text": "dkrxB9BoBt",
+                "new_text": "F8deyUsHDx"
+            },
+            "options": {
+                "replacement_type": "first"
+            },
+            "outputs": {
+                "action": [
+                    "zrNG9xQWEX"
+                ],
+                "text": [
+                    "GRxZAOnXZl"
+                ]
+            },
+            "info": {
+                "x": 1000,
+                "y": 410,
+                "z": 0,
+                "width": 345,
+                "height": 164,
+                "color": ""
+            }
+        },
+        {
+            "name": "check_comparison",
+            "inputs": {
+                "action": "6rMLjjUb3U",
+                "value1": "Ek7fJlUWPN",
+                "value2": "Jg4Q6jnLQX"
+            },
+            "options": {
+                "comparison_type": "start_with",
+                "value2": "setstatus"
+            },
+            "outputs": {
+                "action1": [
+                    "YdepauUxBG"
+                ],
+                "action2": [
+                    "zXGVD7gDzK"
+                ]
+            },
+            "info": {
+                "x": 40,
+                "y": 410,
+                "z": 0,
+                "width": 476,
+                "height": 171,
+                "color": ""
+            }
+        },
+        {
+            "name": "text_2x",
+            "inputs": {},
+            "options": {
+                "text1": "setstatus ",
+                "text2": ""
+            },
+            "outputs": {
+                "text1": [
+                    "dkrxB9BoBt"
+                ],
+                "text2": [
+                    "F8deyUsHDx"
+                ]
+            },
+            "info": {
+                "x": 630,
+                "y": 520,
+                "z": 0,
+                "width": 287,
+                "height": 182,
+                "color": ""
+            }
+        },
+        {
+            "name": "set_bot_activity",
+            "inputs": {
+                "action": "zrNG9xQWEX",
+                "activity_name": "GRxZAOnXZl",
+                "activity_url": "fuHwKyKAHv"
+            },
+            "options": {
+                "activity_type": "playing"
+            },
+            "outputs": {
+                "action": []
+            },
+            "info": {
+                "x": 1400,
+                "y": 470,
+                "z": 0,
+                "width": 400,
+                "height": 150,
+                "color": ""
+            }
+        },
+        {
+            "name": "check_comparison",
+            "inputs": {
+                "action": "zXGVD7gDzK",
+                "value1": "nc0tEZhq8D",
+                "value2": "cG3Hto8Ah7"
+            },
+            "options": {
+                "comparison_type": "equal",
+                "value2": "update"
+            },
+            "outputs": {
+                "action1": [
+                    "UhNs7c23Je"
+                ],
+                "action2": []
+            },
+            "info": {
+                "x": 40,
+                "y": 620,
+                "z": 0,
+                "width": 476,
+                "height": 171,
+                "color": ""
+            }
+        },
+        {
+            "name": "set_bot_activity",
+            "inputs": {
+                "action": "UhNs7c23Je",
+                "activity_name": "00qhS33lIp",
+                "activity_url": "mNiRIrxoiR"
+            },
+            "options": {
+                "activity_type": "playing"
+            },
+            "outputs": {
+                "action": []
+            },
+            "info": {
+                "x": 900,
+                "y": 790,
+                "z": 0,
+                "width": 400,
+                "height": 150,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "[bot] Updating code"
+            },
+            "outputs": {
+                "text": [
+                    "00qhS33lIp"
+                ]
+            },
+            "info": {
+                "x": 510,
+                "y": 970,
+                "z": 0,
+                "width": 276,
+                "height": 117,
+                "color": ""
+            }
+        }
+    ],
+    "notes": []
+}
