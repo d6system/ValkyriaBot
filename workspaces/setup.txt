@@ -2,7 +2,7 @@
     "id": "fGOVRSdcX0",
     "active": true,
     "info": {
-        "title": "/Setup",
+        "title": "Setup",
         "description": "",
         "thumbnail": ""
     },
@@ -334,7 +334,8 @@
                 ],
                 "channel": [
                     "NTeHT6SNMP",
-                    "ULvj4aolbu"
+                    "ULvj4aolbu",
+                    "2bRmtmIY9l"
                 ],
                 "vc": [],
                 "user": [],
@@ -844,11 +845,13 @@
             },
             "options": {},
             "outputs": {
-                "action": []
+                "action": [
+                    "CVmK6EkQcO"
+                ]
             },
             "info": {
-                "x": 3070,
-                "y": 390,
+                "x": 3370,
+                "y": 440,
                 "z": 0,
                 "width": 238,
                 "height": 268,
@@ -2332,6 +2335,336 @@
                 "z": 0,
                 "width": 600,
                 "height": 430,
+                "color": ""
+            }
+        },
+        {
+            "name": "create_button",
+            "inputs": {
+                "action": "CVmK6EkQcO",
+                "styles": "VZCRwLZg4n",
+                "label": "QHeGzM4BcV",
+                "emoji": "IsqddwMZB6",
+                "id": "RoEhCLCnpC",
+                "enable": "pz6vI61xW9"
+            },
+            "options": {
+                "styles": "secondary",
+                "label": "Join/Leave log",
+                "emoji": "",
+                "id": "memberconfig",
+                "enable": "enabled"
+            },
+            "outputs": {
+                "action": [
+                    "AQLjaswDwc"
+                ],
+                "button": [
+                    "AfTLTCrhPl"
+                ]
+            },
+            "info": {
+                "x": 3690,
+                "y": 150,
+                "z": 0,
+                "width": 426,
+                "height": 355,
+                "color": ""
+            }
+        },
+        {
+            "name": "send_button_row",
+            "inputs": {
+                "action": "AQLjaswDwc",
+                "channel": "2bRmtmIY9l",
+                "text": "9Q0XBACFcY",
+                "button1": "AfTLTCrhPl",
+                "button2": "pQknCkkXSX",
+                "button3": "f0vc0cbIar",
+                "button4": "RIuEyK6mF8",
+                "button5": "jDTIndkc6K"
+            },
+            "options": {},
+            "outputs": {
+                "action": []
+            },
+            "info": {
+                "x": 4293,
+                "y": 571,
+                "z": 0,
+                "width": 238,
+                "height": 268,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "-----------"
+            },
+            "outputs": {
+                "text": [
+                    "9Q0XBACFcY"
+                ]
+            },
+            "info": {
+                "x": 3650,
+                "y": 560,
+                "z": 0,
+                "width": 276,
+                "height": 117,
+                "color": ""
+            }
+        },
+        {
+            "name": "interaction_event",
+            "inputs": {},
+            "options": {
+                "type": "button",
+                "id": "memberconfig",
+                "sub": "",
+                "group": "",
+                "value": ""
+            },
+            "outputs": {
+                "action": [
+                    "YB2NTPOsIw"
+                ],
+                "user": [],
+                "member": [],
+                "server": [],
+                "channel": [],
+                "message": [],
+                "interaction": [
+                    "Oo8Latog9c"
+                ],
+                "args": [],
+                "name": [],
+                "menuvalues": [],
+                "subcommandname": [],
+                "subcommandgroup": []
+            },
+            "info": {
+                "x": 220,
+                "y": 7320,
+                "z": 0,
+                "width": 396,
+                "height": 396,
+                "color": ""
+            }
+        },
+        {
+            "name": "create_modal_input",
+            "inputs": {
+                "action": "YB2NTPOsIw",
+                "style": "dt9MFPY9RM",
+                "id": "ENxNTjguqf",
+                "label": "QXkowS9Ytm",
+                "maxlength": "j1UjvENmGD",
+                "minlength": "bX1vecoCW2",
+                "placeholder": "tZJdMlA4Vf",
+                "prefill": "46NWReUUKA",
+                "required": "QhFS3P9YUu"
+            },
+            "options": {
+                "style": "short",
+                "id": "memberid",
+                "label": "Channel ID",
+                "maxlength": "",
+                "minlength": "",
+                "placeholder": "",
+                "prefill": "",
+                "required": "true"
+            },
+            "outputs": {
+                "action": [
+                    "4axjEW0l8v"
+                ],
+                "textfield": [
+                    "DKGzAyzf32"
+                ]
+            },
+            "info": {
+                "x": 720,
+                "y": 7270,
+                "z": 0,
+                "width": 425,
+                "height": 550,
+                "color": ""
+            }
+        },
+        {
+            "name": "create_modal",
+            "inputs": {
+                "action": "4axjEW0l8v",
+                "interaction": "Oo8Latog9c",
+                "customid": "axpmSsRC37",
+                "title": "O1AO56i2km",
+                "textfield1": "DKGzAyzf32",
+                "textfield2": "gWvZwGbLK0",
+                "textfield3": "95eHggwSew",
+                "textfield4": "nSAd3jjSzw",
+                "textfield5": "8zLgonEa4u"
+            },
+            "options": {
+                "customid": "memberconfig1",
+                "title": "Set Join/Leave channel"
+            },
+            "outputs": {
+                "action": []
+            },
+            "info": {
+                "x": 1260,
+                "y": 7410,
+                "z": 0,
+                "width": 402,
+                "height": 294,
+                "color": ""
+            }
+        },
+        {
+            "name": "interaction_event",
+            "inputs": {},
+            "options": {
+                "type": "modal",
+                "id": "memberconfig1",
+                "sub": "",
+                "group": "",
+                "value": ""
+            },
+            "outputs": {
+                "action": [
+                    "6I5K5zBCwv"
+                ],
+                "user": [],
+                "member": [],
+                "server": [],
+                "channel": [],
+                "message": [],
+                "interaction": [
+                    "mm1p3bZoKk",
+                    "YK9m1TPzo5"
+                ],
+                "args": [],
+                "name": [],
+                "menuvalues": [],
+                "subcommandname": [],
+                "subcommandgroup": []
+            },
+            "info": {
+                "x": 2040,
+                "y": 7400,
+                "z": 0,
+                "width": 396,
+                "height": 396,
+                "color": ""
+            }
+        },
+        {
+            "name": "get_modal_argument_by_name",
+            "inputs": {
+                "action": "6I5K5zBCwv",
+                "interaction": "mm1p3bZoKk",
+                "customid": "AL8skBAWtH"
+            },
+            "options": {
+                "customid": "memberid"
+            },
+            "outputs": {
+                "action": [
+                    "w2wA4cUchR"
+                ],
+                "value": [
+                    "Uo3McZpQAz"
+                ]
+            },
+            "info": {
+                "x": 2510,
+                "y": 7500,
+                "z": 0,
+                "width": 390,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "text_2x",
+            "inputs": {},
+            "options": {
+                "text1": "config/memberlog.txt",
+                "text2": "Channel set!"
+            },
+            "outputs": {
+                "text1": [
+                    "EberMuK2Pd"
+                ],
+                "text2": [
+                    "DEGEK17yUz"
+                ]
+            },
+            "info": {
+                "x": 2990,
+                "y": 7290,
+                "z": 0,
+                "width": 287,
+                "height": 182,
+                "color": ""
+            }
+        },
+        {
+            "name": "write_file",
+            "inputs": {
+                "action": "w2wA4cUchR",
+                "file_path": "EberMuK2Pd",
+                "content": "Uo3McZpQAz"
+            },
+            "options": {
+                "conversion_type": "text"
+            },
+            "outputs": {
+                "action": [
+                    "K313DaFib2"
+                ]
+            },
+            "info": {
+                "x": 3297,
+                "y": 7602,
+                "z": 0,
+                "width": 398,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "reply_interaction",
+            "inputs": {
+                "action": "K313DaFib2",
+                "interaction": "YK9m1TPzo5",
+                "message": "DEGEK17yUz",
+                "embeds": "At8rRQutGU",
+                "row1": "2i13Hu9KNm",
+                "row2": "aiefLkg23M",
+                "row3": "l7ZdODlphv",
+                "row4": "CfWO3lci7d",
+                "row5": "XMWyygjiDf",
+                "attachment": "UaDLdu27mN"
+            },
+            "options": {
+                "response": "reply",
+                "private": "true"
+            },
+            "outputs": {
+                "action": [],
+                "interaction": [],
+                "message": []
+            },
+            "info": {
+                "x": 3780,
+                "y": 7510,
+                "z": 0,
+                "width": 444,
+                "height": 320,
                 "color": ""
             }
         }
