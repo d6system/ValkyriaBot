@@ -3705,7 +3705,7 @@
         ]
     },
     {
-        "id": "7I0ZrnWcsA",
+        "id": "Vv1YmftOgk",
         "active": true,
         "info": {
             "title": "Emitter Ticket template",
@@ -3741,7 +3741,9 @@
                     ],
                     "args": [],
                     "name": [
-                        "VQpe6oOi58"
+                        "VQpe6oOi58",
+                        "kbmlXq68IL",
+                        "cIgt0tdIKd"
                     ],
                     "menuvalues": [],
                     "subcommandname": [],
@@ -3912,7 +3914,9 @@
                     "action": [
                         "YOtCnMSP7b"
                     ],
-                    "text": []
+                    "text": [
+                        "ZmuIwziGz7"
+                    ]
                 },
                 "info": {
                     "x": 170,
@@ -3958,7 +3962,9 @@
                     "action": [
                         "3kTkBe5tzY"
                     ],
-                    "text": []
+                    "text": [
+                        "2o1YDQrnrS"
+                    ]
                 },
                 "info": {
                     "x": 170,
@@ -3984,7 +3990,9 @@
                     "action": [
                         "xX23PSOkF6"
                     ],
-                    "text": []
+                    "text": [
+                        "Bf8oNkVq3v"
+                    ]
                 },
                 "info": {
                     "x": 170,
@@ -5337,7 +5345,7 @@
                         "u832VVxiZ2",
                         "yI8zErTo20",
                         "sl6xZG6aac",
-                        "HjmW1OJInW"
+                        "JntOTGFllk"
                     ],
                     "args": [],
                     "name": [],
@@ -5588,7 +5596,7 @@
                 },
                 "outputs": {
                     "action": [
-                        "xmgKOUu0gc"
+                        "C0qK29vg0a"
                     ],
                     "message": [],
                     "error": []
@@ -5781,7 +5789,8 @@
                         "6XoNM5C4eZ"
                     ],
                     "value": [
-                        "ccwgav3epT"
+                        "ccwgav3epT",
+                        "mwbxQtiBTp"
                     ]
                 },
                 "info": {
@@ -6037,7 +6046,9 @@
                     "private": "true"
                 },
                 "outputs": {
-                    "action": [],
+                    "action": [
+                        "VxCixzKuXq"
+                    ],
                     "interaction": [],
                     "message": []
                 },
@@ -6062,11 +6073,204 @@
                     ]
                 },
                 "info": {
-                    "x": 2610,
-                    "y": 4660,
+                    "x": 2590,
+                    "y": 5000,
                     "z": 0,
                     "width": 530,
                     "height": 370,
+                    "color": ""
+                }
+            },
+            {
+                "name": "reply_interaction",
+                "inputs": {
+                    "action": "1x9UzIQOQQ",
+                    "interaction": "JntOTGFllk",
+                    "message": "DzHaNCBHBo",
+                    "embeds": "Y0Hq9ckw7p",
+                    "row1": "kYMRxGtwch",
+                    "row2": "rzgI2CODpE",
+                    "row3": "Lv51DbOTLc",
+                    "row4": "9rkcAdshkp",
+                    "row5": "DNCDdo5xcJ",
+                    "attachment": "kxbGV3bv81"
+                },
+                "options": {
+                    "response": "reply",
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [],
+                    "interaction": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 4060,
+                    "y": 2310,
+                    "z": 0,
+                    "width": 444,
+                    "height": 320,
+                    "color": ""
+                }
+            },
+            {
+                "name": "create_button",
+                "inputs": {
+                    "action": "C0qK29vg0a",
+                    "styles": "UbbfwTdBcW",
+                    "label": "P6IfUIoela",
+                    "emoji": "xWukqQwhmX",
+                    "id": "rXi4HwnvBD",
+                    "enable": "pxryD1tfiX"
+                },
+                "options": {
+                    "styles": "primary",
+                    "label": "Step 2",
+                    "emoji": "",
+                    "id": "step2",
+                    "enable": "enabled"
+                },
+                "outputs": {
+                    "action": [
+                        "1x9UzIQOQQ"
+                    ],
+                    "button": [
+                        "kYMRxGtwch"
+                    ]
+                },
+                "info": {
+                    "x": 3510,
+                    "y": 2480,
+                    "z": 0,
+                    "width": 426,
+                    "height": 355,
+                    "color": ""
+                }
+            },
+            {
+                "name": "interaction_event",
+                "inputs": {},
+                "options": {
+                    "type": "button",
+                    "id": "step2",
+                    "sub": "",
+                    "group": "",
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "xmgKOUu0gc"
+                    ],
+                    "user": [],
+                    "member": [],
+                    "server": [],
+                    "channel": [],
+                    "message": [],
+                    "interaction": [
+                        "HjmW1OJInW"
+                    ],
+                    "args": [],
+                    "name": [],
+                    "menuvalues": [],
+                    "subcommandname": [],
+                    "subcommandgroup": []
+                },
+                "info": {
+                    "x": 670,
+                    "y": 2940,
+                    "z": 0,
+                    "width": 396,
+                    "height": 396,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "Continue down below"
+                },
+                "outputs": {
+                    "text": [
+                        "DzHaNCBHBo"
+                    ]
+                },
+                "info": {
+                    "x": 3620,
+                    "y": 2230,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "write_file",
+                "inputs": {
+                    "action": "OVlUiNaln7",
+                    "file_path": "cE6jonXEUy",
+                    "content": "HImRpDi0O4"
+                },
+                "options": {
+                    "conversion_type": "text"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 2710,
+                    "y": 4763,
+                    "z": 0,
+                    "width": 398,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "text",
+                "inputs": {},
+                "options": {
+                    "text": "0"
+                },
+                "outputs": {
+                    "text": [
+                        "HImRpDi0O4"
+                    ]
+                },
+                "info": {
+                    "x": 1720,
+                    "y": 5200,
+                    "z": 0,
+                    "width": 276,
+                    "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "VxCixzKuXq",
+                    "text1": "mwbxQtiBTp",
+                    "text2": "15tXukG41W",
+                    "text3": "T4R9IEQ5UI"
+                },
+                "options": {
+                    "text": "${text1}.txt"
+                },
+                "outputs": {
+                    "action": [
+                        "OVlUiNaln7"
+                    ],
+                    "text": [
+                        "cE6jonXEUy"
+                    ]
+                },
+                "info": {
+                    "x": 1690,
+                    "y": 5000,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
                     "color": ""
                 }
             }
@@ -7575,7 +7779,7 @@
                 "name": "register_slash_commands",
                 "inputs": {},
                 "options": {
-                    "text": "{\n  \"name\": \"info\",\n  \"description\": \"Give info about the bot\",\n  \"options\": []\n},\n{\n  \"name\": \"update\",\n  \"description\": \"Write a changelog\",\n  \"options\": []\n},\n{\n  \"name\": \"kick\",\n  \"description\": \"Kick a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to kick\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the kick\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"ban\",\n  \"description\": \"Ban a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to ban\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the ban\",\n      \"required\": true\n    }\n  ]\n}"
+                    "text": "{\n  \"name\": \"info\",\n  \"description\": \"Give info about the bot\",\n  \"options\": []\n},\n{\n  \"name\": \"ticketpanel\",\n  \"description\": \"Create a new ticket panel\",\n  \"options\": []\n},\n{\n  \"name\": \"update\",\n  \"description\": \"Write a changelog\",\n  \"options\": []\n},\n{\n  \"name\": \"kick\",\n  \"description\": \"Kick a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to kick\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the kick\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"ban\",\n  \"description\": \"Ban a user\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"The account you wish to ban\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"The reason for the ban\",\n      \"required\": true\n    }\n  ]\n}"
                 },
                 "outputs": {},
                 "info": {
@@ -7591,7 +7795,7 @@
                 "name": "text",
                 "inputs": {},
                 "options": {
-                    "text": "ValkyriaBot™ version 7 ALPHA 0.6"
+                    "text": "ValkyriaBot™ version 7 ALPHA 0.12"
                 },
                 "outputs": {
                     "text": [
