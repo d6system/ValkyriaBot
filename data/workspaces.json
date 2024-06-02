@@ -210,7 +210,9 @@
                     ],
                     "user": [],
                     "member": [],
-                    "server": [],
+                    "server": [
+                        "F4gzYyDtbt"
+                    ],
                     "channel": [
                         "HGFA0KM7F5"
                     ],
@@ -573,10 +575,11 @@
                 },
                 "outputs": {
                     "action": [
-                        "wV7dcDKPLh"
+                        "rCd7agt5jv"
                     ],
                     "result": [
-                        "M7sMuYyqfO"
+                        "M7sMuYyqfO",
+                        "o9bRQCdsn7"
                     ]
                 },
                 "info": {
@@ -589,13 +592,38 @@
                 }
             },
             {
-                "name": "get_user_info",
+                "name": "get_user_as_member",
                 "inputs": {
-                    "action": "wV7dcDKPLh",
-                    "user": "M7sMuYyqfO"
+                    "action": "rCd7agt5jv",
+                    "server": "F4gzYyDtbt",
+                    "user": "o9bRQCdsn7"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "rZA6S2OYBy"
+                    ],
+                    "member": [
+                        "JiUJjnN2sx"
+                    ]
+                },
+                "info": {
+                    "x": 1520,
+                    "y": 2180,
+                    "z": 0,
+                    "width": 212,
+                    "height": 138,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_member_info",
+                "inputs": {
+                    "action": "rZA6S2OYBy",
+                    "member": "JiUJjnN2sx"
                 },
                 "options": {
-                    "user_info": "25"
+                    "member_info": "7"
                 },
                 "outputs": {
                     "action": [
@@ -606,10 +634,10 @@
                     ]
                 },
                 "info": {
-                    "x": 1540,
-                    "y": 1990,
+                    "x": 1320,
+                    "y": 2360,
                     "z": 0,
-                    "width": 556,
+                    "width": 575,
                     "height": 160,
                     "color": ""
                 }
@@ -8413,7 +8441,7 @@
                 "name": "text",
                 "inputs": {},
                 "options": {
-                    "text": "ValkyriaBot™ version 7 ALPHA 0.13"
+                    "text": "ValkyriaBot™ version 7 ALPHA 0.14"
                 },
                 "outputs": {
                     "text": [
