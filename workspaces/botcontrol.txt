@@ -257,7 +257,7 @@
             "name": "text",
             "inputs": {},
             "options": {
-                "text": "ValkyriaBot™ version 7 ALPHA 0.12"
+                "text": "ValkyriaBot™ version 7 ALPHA 0.15"
             },
             "outputs": {
                 "text": [

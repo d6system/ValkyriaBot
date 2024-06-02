@@ -419,7 +419,6 @@
                     "kZ36g3emtM"
                 ],
                 "message_embed": [
-                    "ZkYPTnOWSu",
                     "cSzOfUMn9l"
                 ]
             },
@@ -455,7 +454,6 @@
                     "zNNIfZeuZk"
                 ],
                 "message_embed": [
-                    "1VYAH6ydRF",
                     "6lh201y4Rw"
                 ]
             },
@@ -701,7 +699,6 @@
                     "1gZmpK8Sn9"
                 ],
                 "message_embed": [
-                    "uqS1uYuUIP",
                     "m0R6erqEiu"
                 ]
             },
@@ -870,7 +867,6 @@
                     "vsp3ZkcKWI"
                 ],
                 "message_embed": [
-                    "V2Rv9s38nV",
                     "WsnM7xQrZx"
                 ]
             },
@@ -906,7 +902,6 @@
                     "O2O4yZc4AS"
                 ],
                 "message_embed": [
-                    "Ub1Y5nvyrL",
                     "GdQumCCTC8"
                 ]
             },
@@ -1192,7 +1187,6 @@
                     "DFmXsoSkAO"
                 ],
                 "message_embed": [
-                    "HaEoCoKz97",
                     "A0sPn9WUVW"
                 ]
             },
@@ -1228,7 +1222,6 @@
                     "YLrf8PM4wb"
                 ],
                 "message_embed": [
-                    "Obq3MnXT4O",
                     "SYb3wQUrtu"
                 ]
             },
@@ -1462,7 +1455,6 @@
                     "RBwfqlsFaU"
                 ],
                 "message_embed": [
-                    "WxM7ReKpXj",
                     "nu7NLsqGa5"
                 ]
             },
@@ -1498,7 +1490,6 @@
                     "iech5rGVpf"
                 ],
                 "message_embed": [
-                    "2HrxGC7HuA",
                     "J8LDmoz14y"
                 ]
             },
@@ -2030,52 +2021,6 @@
         {
             "name": "emitter",
             "inputs": {
-                "action": "58ppEpf8Hc",
-                "id": "34Ipqx7i6y",
-                "search_value": "FKhAvnAWxi",
-                "value1": "2gZrn2U259",
-                "value2": "K3qsfPjaTe",
-                "value3": "hhLPJpxGe5"
-            },
-            "options": {
-                "restriction_type": "all",
-                "search_type": "number"
-            },
-            "outputs": {
-                "action": []
-            },
-            "info": {
-                "x": 5470,
-                "y": 2350,
-                "z": 0,
-                "width": 455,
-                "height": 228,
-                "color": ""
-            }
-        },
-        {
-            "name": "text",
-            "inputs": {},
-            "options": {
-                "text": "channelsync"
-            },
-            "outputs": {
-                "text": [
-                    "34Ipqx7i6y"
-                ]
-            },
-            "info": {
-                "x": 5090,
-                "y": 2390,
-                "z": 0,
-                "width": 276,
-                "height": 117,
-                "color": ""
-            }
-        },
-        {
-            "name": "emitter",
-            "inputs": {
                 "action": "O2O4yZc4AS",
                 "id": "SOvd67QRI2",
                 "search_value": "SycZgQtrB7",
@@ -2088,7 +2033,9 @@
                 "search_type": "number"
             },
             "outputs": {
-                "action": []
+                "action": [
+                    "TjYK8bp7z3"
+                ]
             },
             "info": {
                 "x": 3570,
@@ -2114,7 +2061,9 @@
                 "search_type": "number"
             },
             "outputs": {
-                "action": []
+                "action": [
+                    "lgrrzxvlXY"
+                ]
             },
             "info": {
                 "x": 3570,
@@ -2592,6 +2541,118 @@
                 "z": 0,
                 "width": 209,
                 "height": 112,
+                "color": ""
+            }
+        },
+        {
+            "name": "merge_actions",
+            "inputs": {
+                "action1": "lgrrzxvlXY",
+                "action2": "TjYK8bp7z3"
+            },
+            "options": {},
+            "outputs": {
+                "action": [
+                    "Ux0XGvVgAx"
+                ]
+            },
+            "info": {
+                "x": 4090,
+                "y": 1990,
+                "z": 0,
+                "width": 209,
+                "height": 112,
+                "color": ""
+            }
+        },
+        {
+            "name": "emitter",
+            "inputs": {
+                "action": "NGICDWCltd",
+                "id": "wsA8zUckOf",
+                "search_value": "W4o6njcyck",
+                "value1": "5yG2O9R1qv",
+                "value2": "Rpnvht55r8",
+                "value3": "1793ypvJZ5"
+            },
+            "options": {
+                "restriction_type": "all",
+                "search_type": "number"
+            },
+            "outputs": {
+                "action": []
+            },
+            "info": {
+                "x": 5180,
+                "y": 2130,
+                "z": 0,
+                "width": 451,
+                "height": 228,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "channelsync"
+            },
+            "outputs": {
+                "text": [
+                    "wsA8zUckOf"
+                ]
+            },
+            "info": {
+                "x": 4480,
+                "y": 1878,
+                "z": 0,
+                "width": 272,
+                "height": 113,
+                "color": ""
+            }
+        },
+        {
+            "name": "read_file",
+            "inputs": {
+                "action": "Ux0XGvVgAx",
+                "file_path": "BlBIBvAWat"
+            },
+            "options": {
+                "conversion_type": "text"
+            },
+            "outputs": {
+                "action": [
+                    "NGICDWCltd"
+                ],
+                "action2": [],
+                "content": []
+            },
+            "info": {
+                "x": 4420,
+                "y": 2140,
+                "z": 0,
+                "width": 447,
+                "height": 138,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "config/members.txt"
+            },
+            "outputs": {
+                "text": [
+                    "BlBIBvAWat"
+                ]
+            },
+            "info": {
+                "x": 4020,
+                "y": 2160,
+                "z": 0,
+                "width": 272,
+                "height": 113,
                 "color": ""
             }
         }
