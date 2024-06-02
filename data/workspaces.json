@@ -1,5 +1,623 @@
 [
     {
+        "id": "w65XGh32mp",
+        "active": true,
+        "info": {
+            "title": "changelog command",
+            "description": "",
+            "thumbnail": ""
+        },
+        "blocks": [
+            {
+                "name": "interaction_event",
+                "inputs": {},
+                "options": {
+                    "type": "slash",
+                    "id": "update",
+                    "sub": "",
+                    "group": "",
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "iNkkoDozM1"
+                    ],
+                    "user": [],
+                    "member": [],
+                    "server": [],
+                    "channel": [],
+                    "message": [],
+                    "interaction": [
+                        "zZU661CPKQ"
+                    ],
+                    "args": [],
+                    "name": [],
+                    "menuvalues": [],
+                    "subcommandname": [],
+                    "subcommandgroup": []
+                },
+                "info": {
+                    "x": 79,
+                    "y": 64,
+                    "z": 1,
+                    "width": 579,
+                    "height": 465,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "create_modal",
+                "inputs": {
+                    "action": "FH1yxed8Pg",
+                    "interaction": "zZU661CPKQ",
+                    "customid": "oiUabFPWt6",
+                    "title": "1CAxp2LnsX",
+                    "textfield1": "VcoafdtSiT",
+                    "textfield2": "qY1AWHIIwJ",
+                    "textfield3": "t8UO3ZFEq0",
+                    "textfield4": "SRii762FEc",
+                    "textfield5": "ygPhCLuBR9"
+                },
+                "options": {
+                    "customid": "changelog",
+                    "title": "Changelog"
+                },
+                "outputs": {
+                    "action": []
+                },
+                "info": {
+                    "x": 3799,
+                    "y": 580,
+                    "z": 4,
+                    "width": 449,
+                    "height": 294,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "create_modal_input",
+                "inputs": {
+                    "action": "pAhIJFXcYd",
+                    "style": "FPmhO9OobH",
+                    "id": "Sjq2pvOUms",
+                    "label": "8IUYwlV2Xu",
+                    "maxlength": "zckbnkNxCT",
+                    "minlength": "hJJgUqxiMI",
+                    "placeholder": "raLsZKxgSt",
+                    "prefill": "GChPI0EXOZ",
+                    "required": "cNLiDaNFxD"
+                },
+                "options": {
+                    "style": "paragraph",
+                    "id": "added",
+                    "label": "Added Features",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "prefill": "",
+                    "required": "true"
+                },
+                "outputs": {
+                    "action": [
+                        "7gpLXi5EGW"
+                    ],
+                    "textfield": [
+                        "qY1AWHIIwJ"
+                    ]
+                },
+                "info": {
+                    "x": 1359,
+                    "y": 99,
+                    "z": 5,
+                    "width": 486,
+                    "height": 561,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "create_modal_input",
+                "inputs": {
+                    "action": "7gpLXi5EGW",
+                    "style": "9ePt6Juvir",
+                    "id": "eJ3W1MxVKG",
+                    "label": "BmEoQdJU9M",
+                    "maxlength": "UAshMZuYyV",
+                    "minlength": "XCHxvdMAQO",
+                    "placeholder": "5D50uKRhBX",
+                    "prefill": "55rdKzMiUb",
+                    "required": "TqouP0YzMX"
+                },
+                "options": {
+                    "style": "paragraph",
+                    "id": "fixed",
+                    "label": "Fixed Bugs",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "prefill": "",
+                    "required": "true"
+                },
+                "outputs": {
+                    "action": [
+                        "xweGGFsUjz"
+                    ],
+                    "textfield": [
+                        "t8UO3ZFEq0"
+                    ]
+                },
+                "info": {
+                    "x": 1934,
+                    "y": 103,
+                    "z": 6,
+                    "width": 486,
+                    "height": 561,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "create_modal_input",
+                "inputs": {
+                    "action": "xweGGFsUjz",
+                    "style": "YurmSjVPCP",
+                    "id": "5lqFsns2vZ",
+                    "label": "Fufnj0gD4J",
+                    "maxlength": "8BT57dSfyi",
+                    "minlength": "8PASzhZDeL",
+                    "placeholder": "3KmqIIDBKE",
+                    "prefill": "hxBZp2Txyw",
+                    "required": "YHlHLOWt3T"
+                },
+                "options": {
+                    "style": "paragraph",
+                    "id": "removed",
+                    "label": "Removed Features",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "prefill": "",
+                    "required": "true"
+                },
+                "outputs": {
+                    "action": [
+                        "FH1yxed8Pg"
+                    ],
+                    "textfield": [
+                        "SRii762FEc"
+                    ]
+                },
+                "info": {
+                    "x": 2514,
+                    "y": 105,
+                    "z": 7,
+                    "width": 486,
+                    "height": 561,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "interaction_event",
+                "inputs": {},
+                "options": {
+                    "type": "modal",
+                    "id": "changelog",
+                    "sub": "",
+                    "group": "",
+                    "value": ""
+                },
+                "outputs": {
+                    "action": [
+                        "0acigeCgN7"
+                    ],
+                    "user": [],
+                    "member": [],
+                    "server": [],
+                    "channel": [
+                        "HGFA0KM7F5"
+                    ],
+                    "message": [],
+                    "interaction": [
+                        "xn37XNAab1",
+                        "O5gx5kEQGz",
+                        "EXMwmir0Dq",
+                        "W8saPGSyNL",
+                        "Qbc9bUWQKA"
+                    ],
+                    "args": [],
+                    "name": [],
+                    "menuvalues": [],
+                    "subcommandname": [],
+                    "subcommandgroup": []
+                },
+                "info": {
+                    "x": 499,
+                    "y": 1133,
+                    "z": 13,
+                    "width": 579,
+                    "height": 465,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "get_modal_argument_by_name",
+                "inputs": {
+                    "action": "0acigeCgN7",
+                    "interaction": "xn37XNAab1",
+                    "customid": "biDMONrhYU"
+                },
+                "options": {
+                    "customid": "version"
+                },
+                "outputs": {
+                    "action": [
+                        "lP7LCYFbHN"
+                    ],
+                    "value": [
+                        "36lwLQhAjK"
+                    ]
+                },
+                "info": {
+                    "x": 1424,
+                    "y": 1119,
+                    "z": 14,
+                    "width": 449,
+                    "height": 144,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "get_modal_argument_by_name",
+                "inputs": {
+                    "action": "lP7LCYFbHN",
+                    "interaction": "O5gx5kEQGz",
+                    "customid": "ue8hi8k4BH"
+                },
+                "options": {
+                    "customid": "added"
+                },
+                "outputs": {
+                    "action": [
+                        "Bc285YJUmb"
+                    ],
+                    "value": [
+                        "0qA7TgfKK3"
+                    ]
+                },
+                "info": {
+                    "x": 1428,
+                    "y": 1273,
+                    "z": 15,
+                    "width": 449,
+                    "height": 144,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "get_modal_argument_by_name",
+                "inputs": {
+                    "action": "Bc285YJUmb",
+                    "interaction": "EXMwmir0Dq",
+                    "customid": "sT5MwyKuxY"
+                },
+                "options": {
+                    "customid": "fixed"
+                },
+                "outputs": {
+                    "action": [
+                        "Q37Ca39sgl"
+                    ],
+                    "value": [
+                        "uw8ao3Xvz1"
+                    ]
+                },
+                "info": {
+                    "x": 1427,
+                    "y": 1428,
+                    "z": 16,
+                    "width": 449,
+                    "height": 144,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "create_modal_input",
+                "inputs": {
+                    "action": "iNkkoDozM1",
+                    "style": "WRUnN3YaX7",
+                    "id": "osFMdeoU2Y",
+                    "label": "wgU9dpfs1v",
+                    "maxlength": "8GyO6kZvEb",
+                    "minlength": "ohFRic0sVu",
+                    "placeholder": "7YLlWzodkZ",
+                    "prefill": "kU9RgBPRCk",
+                    "required": "ZRaBnNKTaG"
+                },
+                "options": {
+                    "style": "short",
+                    "id": "version",
+                    "label": "Version",
+                    "maxlength": "",
+                    "minlength": "",
+                    "placeholder": "",
+                    "prefill": "",
+                    "required": "true"
+                },
+                "outputs": {
+                    "action": [
+                        "pAhIJFXcYd"
+                    ],
+                    "textfield": [
+                        "VcoafdtSiT"
+                    ]
+                },
+                "info": {
+                    "x": 844,
+                    "y": 100,
+                    "z": 17,
+                    "width": 486,
+                    "height": 561,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "get_modal_argument_by_name",
+                "inputs": {
+                    "action": "Q37Ca39sgl",
+                    "interaction": "W8saPGSyNL",
+                    "customid": "0vBWhUMPUI"
+                },
+                "options": {
+                    "customid": "removed"
+                },
+                "outputs": {
+                    "action": [
+                        "7EnaLBTN9U"
+                    ],
+                    "value": [
+                        "RyZWEZ6Oi6"
+                    ]
+                },
+                "info": {
+                    "x": 1430,
+                    "y": 1576,
+                    "z": 20,
+                    "width": 449,
+                    "height": 144,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "bHIAmNlt1e",
+                    "text1": "36lwLQhAjK",
+                    "text2": "gUSzi2Vhr2",
+                    "text3": "hEsBDXLdAw"
+                },
+                "options": {
+                    "text": "**Changelog ${text2}** version ${text1}"
+                },
+                "outputs": {
+                    "action": [
+                        "ihmTz4RHA3"
+                    ],
+                    "text": [
+                        "2U1oAJYY3J"
+                    ]
+                },
+                "info": {
+                    "x": 2163,
+                    "y": 1123,
+                    "z": 21,
+                    "width": 418,
+                    "height": 175,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "create_embed_message",
+                "inputs": {
+                    "action": "1QZFadWPCn",
+                    "color": "bs436tY3kQ",
+                    "thumbnail": "YblVbulgdk",
+                    "author_icon": "8NDjxtIrDC",
+                    "author_name": "k7IwkHw7Wl",
+                    "author_url": "lGF0Va0ncH",
+                    "title": "2U1oAJYY3J",
+                    "url": "aQZmgd1jv8",
+                    "description": "RGeZr6iMbO",
+                    "image": "Y6jz2D0Tdw",
+                    "footer_icon": "Uimvd2qKHo",
+                    "footer_text": "hd0gR70wNq",
+                    "timestamp": "60V1GYhsE1"
+                },
+                "options": {},
+                "outputs": {
+                    "action": [
+                        "1PNlr8ONRG"
+                    ],
+                    "message_embed": [
+                        "HpOa7Jaacf"
+                    ]
+                },
+                "info": {
+                    "x": 3144,
+                    "y": 1232,
+                    "z": 22,
+                    "width": 340,
+                    "height": 517,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "ihmTz4RHA3",
+                    "text1": "0qA7TgfKK3",
+                    "text2": "uw8ao3Xvz1",
+                    "text3": "RyZWEZ6Oi6"
+                },
+                "options": {
+                    "text": "Added features:\n${text1}\n\nBugfixes:\n${text2}\n\nRemoved features:\n${text3}"
+                },
+                "outputs": {
+                    "action": [
+                        "1QZFadWPCn"
+                    ],
+                    "text": [
+                        "RGeZr6iMbO"
+                    ]
+                },
+                "info": {
+                    "x": 2165,
+                    "y": 1334,
+                    "z": 23,
+                    "width": 418,
+                    "height": 175,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "text_4x",
+                "inputs": {},
+                "options": {
+                    "text1": "",
+                    "text2": "",
+                    "text3": "",
+                    "text4": "#f2a7ec"
+                },
+                "outputs": {
+                    "text1": [
+                        "k7IwkHw7Wl"
+                    ],
+                    "text2": [
+                        "lGF0Va0ncH"
+                    ],
+                    "text3": [
+                        "YblVbulgdk"
+                    ],
+                    "text4": [
+                        "bs436tY3kQ"
+                    ]
+                },
+                "info": {
+                    "x": 2684,
+                    "y": 993,
+                    "z": 24,
+                    "width": 318,
+                    "height": 319,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "send_message",
+                "inputs": {
+                    "action": "1PNlr8ONRG",
+                    "channel": "HGFA0KM7F5",
+                    "text": "SFysN8yVpY",
+                    "embed": "HpOa7Jaacf",
+                    "attachment": "mFxOycxIhK"
+                },
+                "options": {
+                    "silent": "undefined"
+                },
+                "outputs": {
+                    "action": [
+                        "8F1NMtJqgK"
+                    ],
+                    "message": []
+                },
+                "info": {
+                    "x": 3840,
+                    "y": 1540,
+                    "z": 25,
+                    "width": 347,
+                    "height": 206,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "interaction_send_reply_fixed",
+                "inputs": {
+                    "action": "8F1NMtJqgK",
+                    "interactreply": "Qbc9bUWQKA",
+                    "message": "WXWvtEii2h",
+                    "embeds": "DJnuelIQIp",
+                    "menu": "rHKgS5ObMn",
+                    "button_row": "VZOvZLVV4N",
+                    "button": "lxFwKZy1Eh",
+                    "file": "vrbdqUKgvL"
+                },
+                "options": {
+                    "private": "true"
+                },
+                "outputs": {
+                    "action": [],
+                    "message": []
+                },
+                "info": {
+                    "x": 4458,
+                    "y": 1945,
+                    "z": 28,
+                    "width": 400,
+                    "height": 299,
+                    "color": "#5a5a5a"
+                }
+            },
+            {
+                "name": "get_bot_info",
+                "inputs": {
+                    "action": "7EnaLBTN9U"
+                },
+                "options": {
+                    "bot_info": "15"
+                },
+                "outputs": {
+                    "action": [
+                        "wV7dcDKPLh"
+                    ],
+                    "result": [
+                        "M7sMuYyqfO"
+                    ]
+                },
+                "info": {
+                    "x": 1390,
+                    "y": 1770,
+                    "z": 0,
+                    "width": 551,
+                    "height": 160,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_user_info",
+                "inputs": {
+                    "action": "wV7dcDKPLh",
+                    "user": "M7sMuYyqfO"
+                },
+                "options": {
+                    "user_info": "25"
+                },
+                "outputs": {
+                    "action": [
+                        "bHIAmNlt1e"
+                    ],
+                    "result": [
+                        "gUSzi2Vhr2"
+                    ]
+                },
+                "info": {
+                    "x": 1540,
+                    "y": 1990,
+                    "z": 0,
+                    "width": 556,
+                    "height": 160,
+                    "color": ""
+                }
+            }
+        ],
+        "notes": []
+    },
+    {
         "id": "v6hnFwrtcq",
         "active": true,
         "info": {
@@ -7795,7 +8413,7 @@
                 "name": "text",
                 "inputs": {},
                 "options": {
-                    "text": "ValkyriaBot™ version 7 ALPHA 0.12"
+                    "text": "ValkyriaBot™ version 7 ALPHA 0.13"
                 },
                 "outputs": {
                     "text": [
