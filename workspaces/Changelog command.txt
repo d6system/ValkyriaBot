@@ -577,7 +577,6 @@
                     "rCd7agt5jv"
                 ],
                 "result": [
-                    "M7sMuYyqfO",
                     "o9bRQCdsn7"
                 ]
             },
@@ -638,6 +637,26 @@
                 "z": 0,
                 "width": 575,
                 "height": 160,
+                "color": ""
+            }
+        },
+        {
+            "name": "text",
+            "inputs": {},
+            "options": {
+                "text": "Changelog complete!"
+            },
+            "outputs": {
+                "text": [
+                    "WXWvtEii2h"
+                ]
+            },
+            "info": {
+                "x": 4102,
+                "y": 2217,
+                "z": 0,
+                "width": 276,
+                "height": 117,
                 "color": ""
             }
         }

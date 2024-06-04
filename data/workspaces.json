@@ -1598,7 +1598,6 @@
                 },
                 "outputs": {
                     "text": [
-                        "gcuEEMrrHQ",
                         "9DRNVWLjWC"
                     ]
                 },
@@ -2446,7 +2445,6 @@
                         "rCd7agt5jv"
                     ],
                     "result": [
-                        "M7sMuYyqfO",
                         "o9bRQCdsn7"
                     ]
                 },
@@ -13334,7 +13332,7 @@
                     "button_row": "5kJ0oqtGet"
                 },
                 "options": {
-                    "text": "Welcome ${text1}!\nPlease make a confirmation ticket. One of our staffmembers will be right with you."
+                    "text": "Welcome ${text1}!"
                 },
                 "outputs": {
                     "action": [
@@ -13369,7 +13367,7 @@
                     "button_row": "L1hVrjqp5h"
                 },
                 "options": {
-                    "text": "${text1} left the server.\nThey shall be missed."
+                    "text": "${text1} left the server."
                 },
                 "outputs": {
                     "action": [
