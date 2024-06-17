@@ -663,7 +663,8 @@
                     "1nR8a73DzU"
                 ],
                 "result": [
-                    "Qlzz784s4v"
+                    "Qlzz784s4v",
+                    "Jzm7LUmCAO"
                 ]
             },
             "info": {
@@ -744,7 +745,7 @@
                 "button_row": "PCMJHXDQmR"
             },
             "options": {
-                "text": ""
+                "text": "<@${text1}>"
             },
             "outputs": {
                 "action": [
