@@ -5737,7 +5737,8 @@
                         "bUxHN9qsx0",
                         "piVtQ3VVds",
                         "jon2bndTBA",
-                        "vLpwFjRIIw"
+                        "vLpwFjRIIw",
+                        "lAl9CFEOY1"
                     ]
                 },
                 "info": {
@@ -6055,38 +6056,18 @@
                 },
                 "outputs": {
                     "action": [
-                        "MLeWsZXhKF"
+                        "waMZ2OokB2"
                     ],
                     "button": [
                         "eu7LhPIyjI"
                     ]
                 },
                 "info": {
-                    "x": 3475,
-                    "y": 2110,
+                    "x": 3150,
+                    "y": 2130,
                     "z": 52,
                     "width": 485,
                     "height": 360,
-                    "color": "#5a5a5a"
-                }
-            },
-            {
-                "name": "text",
-                "inputs": {},
-                "options": {
-                    "text": "Ticket created!"
-                },
-                "outputs": {
-                    "text": [
-                        "xINd8g25Et"
-                    ]
-                },
-                "info": {
-                    "x": 5020,
-                    "y": 2100,
-                    "z": 54,
-                    "width": 305,
-                    "height": 118,
                     "color": "#5a5a5a"
                 }
             },
@@ -6110,8 +6091,8 @@
                     "message": []
                 },
                 "info": {
-                    "x": 4976,
-                    "y": 2229,
+                    "x": 5440,
+                    "y": 2270,
                     "z": 67,
                     "width": 400,
                     "height": 299,
@@ -6318,7 +6299,7 @@
                 },
                 "outputs": {
                     "action": [
-                        "qQAHYwOUXf"
+                        "MC9N7OQ0HM"
                     ],
                     "message": [],
                     "error": []
@@ -6527,6 +6508,83 @@
                     "z": 0,
                     "width": 276,
                     "height": 117,
+                    "color": ""
+                }
+            },
+            {
+                "name": "wait_with_number",
+                "inputs": {
+                    "action": "waMZ2OokB2"
+                },
+                "options": {
+                    "time_type": "milliseconds",
+                    "time": 750
+                },
+                "outputs": {
+                    "action": [
+                        "MLeWsZXhKF"
+                    ]
+                },
+                "info": {
+                    "x": 3687,
+                    "y": 2739,
+                    "z": 0,
+                    "width": 376,
+                    "height": 156,
+                    "color": ""
+                }
+            },
+            {
+                "name": "merge_texts_advanced",
+                "inputs": {
+                    "action": "afl2L3huQa",
+                    "text1": "WxXAeIFUbK",
+                    "text2": "zz0a5Z6ABc",
+                    "text3": "AZlYFXNdUT"
+                },
+                "options": {
+                    "text": "Ticket created! ${text1}"
+                },
+                "outputs": {
+                    "action": [
+                        "qQAHYwOUXf"
+                    ],
+                    "text": [
+                        "xINd8g25Et"
+                    ]
+                },
+                "info": {
+                    "x": 4890,
+                    "y": 2350,
+                    "z": 0,
+                    "width": 364,
+                    "height": 164,
+                    "color": ""
+                }
+            },
+            {
+                "name": "get_text_channel_info",
+                "inputs": {
+                    "action": "MC9N7OQ0HM",
+                    "text_channel": "lAl9CFEOY1"
+                },
+                "options": {
+                    "text_channel_info": "28"
+                },
+                "outputs": {
+                    "action": [
+                        "afl2L3huQa"
+                    ],
+                    "result": [
+                        "WxXAeIFUbK"
+                    ]
+                },
+                "info": {
+                    "x": 4760,
+                    "y": 2120,
+                    "z": 0,
+                    "width": 719,
+                    "height": 160,
                     "color": ""
                 }
             }
@@ -6973,7 +7031,7 @@
                 "name": "text",
                 "inputs": {},
                 "options": {
-                    "text": "Delete started"
+                    "text": "Delete started.\nPlease wait 5 seconds before closing another ticket."
                 },
                 "outputs": {
                     "text": [

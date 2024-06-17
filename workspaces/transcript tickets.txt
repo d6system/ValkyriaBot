@@ -89,7 +89,7 @@
             "name": "text",
             "inputs": {},
             "options": {
-                "text": "Delete started"
+                "text": "Delete started.\nPlease wait 5 seconds before closing another ticket."
             },
             "outputs": {
                 "text": [
