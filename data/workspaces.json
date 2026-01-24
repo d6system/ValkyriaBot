@@ -1,0 +1,604 @@
+[
+    {
+        "id": "i2Gd7m31So",
+        "info": {
+            "title": "Basic Configuration",
+            "collapsed": false
+        },
+        "workspaces": [
+            {
+                "id": "n0nDWuXOv4",
+                "active": true,
+                "info": {
+                    "title": "Bot Control",
+                    "description": "",
+                    "thumbnail": ""
+                },
+                "blocks": [
+                    {
+                        "color": "",
+                        "x": 40,
+                        "y": 50,
+                        "z": 0,
+                        "width": 210,
+                        "height": 90,
+                        "lock": false,
+                        "name": "bot_initialization_event",
+                        "inputs": {},
+                        "options": {},
+                        "outputs": {
+                            "action": [
+                                "XxsdQaqHII"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 70,
+                        "y": 640,
+                        "z": 0,
+                        "width": 270,
+                        "height": 450,
+                        "lock": false,
+                        "name": "database_sql_file_option",
+                        "inputs": {},
+                        "options": {
+                            "host": "config/db/host.txt",
+                            "port": "config/db/port.txt",
+                            "user": "config/db/user.txt",
+                            "password": "config/db/pass.txt",
+                            "database": "config/db/db.txt"
+                        },
+                        "outputs": {
+                            "action": [
+                                "1LY5Rr9sCT"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 450,
+                        "y": 770,
+                        "z": 0,
+                        "width": 390,
+                        "height": 140,
+                        "lock": false,
+                        "name": "console_log",
+                        "inputs": {
+                            "action": "1LY5Rr9sCT",
+                            "value": [
+                                "7FsRIXQD19"
+                            ]
+                        },
+                        "options": {
+                            "value": "ValkyriaBot#> Database Connected"
+                        },
+                        "outputs": {
+                            "action": []
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 690,
+                        "y": 30,
+                        "z": 0,
+                        "width": 420,
+                        "height": 140,
+                        "lock": false,
+                        "name": "read_file",
+                        "inputs": {
+                            "action": "sAManbegP2",
+                            "file_path": "wbIkdxHVp4"
+                        },
+                        "options": {
+                            "conversion_type": "text"
+                        },
+                        "outputs": {
+                            "action": [
+                                "9eIS1ON3zE"
+                            ],
+                            "action2": [
+                                "HCO2gKcpWW"
+                            ],
+                            "content": []
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 730,
+                        "y": 190,
+                        "z": 0,
+                        "width": 300,
+                        "height": 350,
+                        "lock": false,
+                        "name": "text",
+                        "inputs": {},
+                        "options": {
+                            "text1": "config/db/db.txt",
+                            "text2": "initializing...",
+                            "text3": "Startup error, please check console",
+                            "text4": "ValkyriaBot#> Database configuration not present.\nPlease run v!setupmain"
+                        },
+                        "outputs": {
+                            "text": [
+                                [
+                                    "wbIkdxHVp4"
+                                ],
+                                [
+                                    "QnsgsDOdxK",
+                                    "Xad0Wjz1zA"
+                                ],
+                                [
+                                    "rmp85oHSxV",
+                                    "bC1sEOT7Cd"
+                                ],
+                                [
+                                    "46yrUloslI"
+                                ]
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 30,
+                        "y": 300,
+                        "z": 0,
+                        "width": 300,
+                        "height": 270,
+                        "lock": false,
+                        "name": "text",
+                        "inputs": {},
+                        "options": {
+                            "text1": "0.0.1dev",
+                            "text2": "ValkyriaBot NG Version ",
+                            "text3": "0001",
+                            "text4": "build.txt"
+                        },
+                        "outputs": {
+                            "text": [
+                                [
+                                    "XV0eZ4LOFj"
+                                ],
+                                [
+                                    "qxzLEmjTvP"
+                                ],
+                                [
+                                    "gt96HUxaDN"
+                                ],
+                                [
+                                    "LUv45ywhAe"
+                                ]
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 340,
+                        "y": 270,
+                        "z": 0,
+                        "width": 350,
+                        "height": 140,
+                        "lock": false,
+                        "name": "set_bot_status",
+                        "inputs": {
+                            "action": "nmXrsf1YX5"
+                        },
+                        "options": {
+                            "status_type": "online"
+                        },
+                        "outputs": {
+                            "action": [
+                                "sAManbegP2"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 1160,
+                        "y": 30,
+                        "z": 0,
+                        "width": 410,
+                        "height": 150,
+                        "lock": false,
+                        "name": "set_bot_activity",
+                        "inputs": {
+                            "action": "9eIS1ON3zE",
+                            "activity_name": "QnsgsDOdxK",
+                            "activity_url": "U9RsutOfvc"
+                        },
+                        "options": {
+                            "activity_type": "playing"
+                        },
+                        "outputs": {
+                            "action": [
+                                "2Z6BNZQ9GX"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 1160,
+                        "y": 210,
+                        "z": 0,
+                        "width": 410,
+                        "height": 150,
+                        "lock": false,
+                        "name": "set_bot_activity",
+                        "inputs": {
+                            "action": "HCO2gKcpWW",
+                            "activity_name": "rmp85oHSxV",
+                            "activity_url": "rUFrmvWZfU"
+                        },
+                        "options": {
+                            "activity_type": "playing"
+                        },
+                        "outputs": {
+                            "action": [
+                                "I2TZGQDcWp"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 1170,
+                        "y": 380,
+                        "z": 0,
+                        "width": 390,
+                        "height": 140,
+                        "lock": false,
+                        "name": "console_log",
+                        "inputs": {
+                            "action": "I2TZGQDcWp",
+                            "value": [
+                                "46yrUloslI"
+                            ]
+                        },
+                        "options": {
+                            "value": ""
+                        },
+                        "outputs": {
+                            "action": [
+                                "Gf9MSGKgFn"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 1170,
+                        "y": 540,
+                        "z": 0,
+                        "width": 570,
+                        "height": 210,
+                        "lock": false,
+                        "name": "merge_texts_advanced",
+                        "inputs": {
+                            "action": "Gf9MSGKgFn",
+                            "input_text": [
+                                "qxzLEmjTvP",
+                                "XV0eZ4LOFj"
+                            ]
+                        },
+                        "options": {
+                            "text1": "${text1}${text2}",
+                            "utilize_escape": false
+                        },
+                        "outputs": {
+                            "action": [
+                                "NyQGSR83Gf"
+                            ],
+                            "text": [
+                                [
+                                    "DkvwkslMCu"
+                                ]
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 1200,
+                        "y": 780,
+                        "z": 0,
+                        "width": 390,
+                        "height": 140,
+                        "lock": false,
+                        "name": "console_log",
+                        "inputs": {
+                            "action": "NyQGSR83Gf",
+                            "value": [
+                                "DkvwkslMCu"
+                            ]
+                        },
+                        "options": {
+                            "value": ""
+                        },
+                        "outputs": {
+                            "action": []
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 1620,
+                        "y": 30,
+                        "z": 0,
+                        "width": 390,
+                        "height": 140,
+                        "lock": false,
+                        "name": "console_log",
+                        "inputs": {
+                            "action": "2Z6BNZQ9GX",
+                            "value": [
+                                "Xad0Wjz1zA"
+                            ]
+                        },
+                        "options": {
+                            "value": ""
+                        },
+                        "outputs": {
+                            "action": [
+                                "nxtyx8bIaE"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 2070,
+                        "y": 20,
+                        "z": 0,
+                        "width": 350,
+                        "height": 190,
+                        "lock": false,
+                        "name": "wait_with_number",
+                        "inputs": {
+                            "action": "nxtyx8bIaE"
+                        },
+                        "options": {
+                            "time_type": "seconds",
+                            "time": "5"
+                        },
+                        "outputs": {
+                            "action": [
+                                "FAATGxtZEn"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 2100,
+                        "y": 740,
+                        "z": 0,
+                        "width": 410,
+                        "height": 150,
+                        "lock": false,
+                        "name": "set_bot_activity",
+                        "inputs": {
+                            "action": "gUYzsEuXV8",
+                            "activity_name": "XXp1calMIT",
+                            "activity_url": "ZE5UtMJPUc"
+                        },
+                        "options": {
+                            "activity_type": "playing"
+                        },
+                        "outputs": {
+                            "action": []
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 2110,
+                        "y": 370,
+                        "z": 0,
+                        "width": 290,
+                        "height": 180,
+                        "lock": false,
+                        "name": "database_query",
+                        "inputs": {
+                            "action": "FAATGxtZEn",
+                            "query": "rHDqRyZfK2"
+                        },
+                        "options": {},
+                        "outputs": {
+                            "action": [
+                                "tzZs7sKZAS"
+                            ],
+                            "erroraction": [
+                                "AGepzAY5Qd"
+                            ],
+                            "response": [
+                                "cs5Q7hEH9y"
+                            ],
+                            "errormsg": []
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 1700,
+                        "y": 220,
+                        "z": 0,
+                        "width": 650,
+                        "height": 140,
+                        "lock": false,
+                        "name": "text",
+                        "inputs": {},
+                        "options": {
+                            "text1": "SELECT * FROM `config` WHERE `name` LIKE \"status\";"
+                        },
+                        "outputs": {
+                            "text": [
+                                [
+                                    "rHDqRyZfK2"
+                                ]
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 2430,
+                        "y": 400,
+                        "z": 0,
+                        "width": 410,
+                        "height": 150,
+                        "lock": false,
+                        "name": "get_item_from_list",
+                        "inputs": {
+                            "action": "tzZs7sKZAS",
+                            "list": "cs5Q7hEH9y",
+                            "custom_position": "2omhHpBXGr"
+                        },
+                        "options": {
+                            "position_type": "first"
+                        },
+                        "outputs": {
+                            "action": [
+                                "1qe1RJg3Gg"
+                            ],
+                            "value": [
+                                "aRmQ5MVYgY"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 2110,
+                        "y": 570,
+                        "z": 0,
+                        "width": 350,
+                        "height": 140,
+                        "lock": false,
+                        "name": "get_property_from_object_option",
+                        "inputs": {
+                            "action": "1qe1RJg3Gg",
+                            "object": "aRmQ5MVYgY"
+                        },
+                        "options": {
+                            "key": "value"
+                        },
+                        "outputs": {
+                            "action": [
+                                "gUYzsEuXV8"
+                            ],
+                            "value": [
+                                "XXp1calMIT"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 2890,
+                        "y": 250,
+                        "z": 0,
+                        "width": 410,
+                        "height": 150,
+                        "lock": false,
+                        "name": "set_bot_activity",
+                        "inputs": {
+                            "action": "AGepzAY5Qd",
+                            "activity_name": "bC1sEOT7Cd",
+                            "activity_url": "8aDM9plAns"
+                        },
+                        "options": {
+                            "activity_type": "playing"
+                        },
+                        "outputs": {
+                            "action": [
+                                "190PFaW4fI"
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 2510,
+                        "y": 30,
+                        "z": 0,
+                        "width": 300,
+                        "height": 280,
+                        "lock": false,
+                        "name": "text",
+                        "inputs": {},
+                        "options": {
+                            "text1": "ValkyriaBot#> Database configuration not present.\nPlease run v!setupmain",
+                            "text2": ""
+                        },
+                        "outputs": {
+                            "text": [
+                                [
+                                    "avAS9V9WIz"
+                                ],
+                                []
+                            ]
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 2930,
+                        "y": 420,
+                        "z": 0,
+                        "width": 390,
+                        "height": 140,
+                        "lock": false,
+                        "name": "console_log",
+                        "inputs": {
+                            "action": "190PFaW4fI",
+                            "value": [
+                                "avAS9V9WIz"
+                            ]
+                        },
+                        "options": {
+                            "value": ""
+                        },
+                        "outputs": {
+                            "action": []
+                        },
+                        "active": true
+                    },
+                    {
+                        "color": "",
+                        "x": 280,
+                        "y": 60,
+                        "z": 0,
+                        "width": 360,
+                        "height": 190,
+                        "lock": false,
+                        "name": "write_file",
+                        "inputs": {
+                            "action": "XxsdQaqHII",
+                            "file_path": "LUv45ywhAe",
+                            "content": "gt96HUxaDN"
+                        },
+                        "options": {
+                            "conversion_type": "text",
+                            "write_type": "ow"
+                        },
+                        "outputs": {
+                            "action": [
+                                "nmXrsf1YX5"
+                            ]
+                        },
+                        "active": true
+                    }
+                ],
+                "notes": []
+            }
+        ]
+    }
+]
