@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Create an Input Field that will be used for creating a Modal (by @XCraftTM)",
 
-    category: "Interaction Stuff",
+    category: ".MOD",
 
     inputs: [
         {

@@ -3,7 +3,7 @@ module.exports = {
 
   description: "Compares if the channel input is equal to selected option and runs next block if true, otherwise will stop\n\nHover mouse to description node for more info",
 
-  category: "Channel Stuff",
+  category: ".MOD",
 
   inputs: [
     {

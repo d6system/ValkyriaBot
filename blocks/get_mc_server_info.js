@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Gets server's MOTD, online players, etc.",
 
-    category: "Extras",
+    category: ".artemsnite",
 
     inputs: [
         {

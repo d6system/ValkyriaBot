@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Gets the Queue Tracks",
 
-    category: "Music V2",
+    category: ".Audio V2",
 
     inputs: [
         {
@@ -42,11 +42,6 @@ module.exports = {
         const guild = this.GetInputValue("guild", cache);
         const { useQueue } = require("discord-player");
         const queue = useQueue(guild.id);
-        if(!queue) {
-            console.error("Queue not found! Please make sure you have initialized the Queue! Get Queued Tracks Block!");
-            this.RunNextBlock("action", cache);
-            return;
-        }
         
         const tracks = queue.tracks.toArray();
 

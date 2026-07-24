@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Flips a coin!",
 
-    category: "Utilities",
+    category: ".MOD",
 
     inputs: [
         {

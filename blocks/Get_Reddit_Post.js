@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Get Reddit post.",
 
-    category: "Internet Stuff",
+    category: ".MOD",
 
     inputs: [
         {

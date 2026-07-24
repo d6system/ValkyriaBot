@@ -1,7 +1,7 @@
 module.exports = {
     name: "Check if item exist",
     description: "Check if an item exists in a list.",
-    category: "List Stuff",
+    category: "Daily's",
     inputs: [
         {
             id: "action",
@@ -13,13 +13,13 @@ module.exports = {
             id: "inputvalue",
             name: "Input Value",
             description: "The value to check for in the list.",
-            types: ["text", "object", "unspecified"]
+            types: ["text", "unspecified"]
         },
         {
             id: "list",
             name: "List",
             description: "The list to search for the input value.",
-            types: ["list", "unspecified"]
+            type: "list"
         }
     ],
     options: [
@@ -42,18 +42,6 @@ module.exports = {
             name: "Action if false",
             description: "You must be stupid if you don't know this already",
             types: ["action"]
-        },
-        {
-            id: "item",
-            name: "Item/value",
-            description: "The item or value you checked for. ONLY WORKS IF ITEM EXIST!",
-            type: ["unspecified"]
-        },
-        {
-            id: "pos",
-            name: "Position Number",
-            description: "The position of the item in the list.",
-            types: ["number"]
         }
     ],
     code(cache) {
@@ -76,17 +64,11 @@ module.exports = {
             return list.includes(inputValue);
         }
 
-        // Check if the item exists in the list and get its position
+        // Check if the item exists in the list
         const exists = itemExists(inputValue, list);
-        const pos = list.indexOf(inputValue);
-
-        // Store the position in the "pos" output
-        this.StoreOutputValue(pos, "pos", cache);
 
         // Determine which action to trigger based on existence
         if (exists) {
-            const item = list[pos];
-            this.StoreOutputValue(item, "item", cache)
             this.RunNextBlock("action", cache);
         } else {
             this.RunNextBlock("action2", cache);

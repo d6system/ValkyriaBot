@@ -78,18 +78,6 @@ module.exports = {
             "name": "Action",
             "description": "Type: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
             "types": ["action"]
-        },
-        {
-            "id": "actionerror",
-            "name": "Action Error",
-            "description": "Type: Action\n\nDescription: Executes the following blocks when this block fails.",
-            "types": ["action"]
-        },
-        {
-            "id": "error",
-            "name": "Error",
-            "description": "Type: Text\n\nDescription: The error message if an error occurs.",
-            "types": ["text"]
         }
     ],
 
@@ -106,34 +94,26 @@ module.exports = {
 
         time = typeof time == "object" ? Date.now() - time.getTime() : parseInt(time);
 
-        try {
-            server.bans.create(user, {
-                deleteMessageSeconds: deleteMessageSeconds,
-                reason: reason1
-            }).then(() => {
-                if(time) {
-                    let times = this.getData("time", cache.name, "block");
-                    if(!times || DBB.Core.typeof(times) != "object") times = {}
-    
-                    const reason2 = this.GetInputValue("reason2", cache) + "";
-    
-                    times[typeof user == "object" ? user.id : user + ""] = [parseInt(time), server.id + "", reason2 + ""];
-    
-                    this.setData("time", times, cache.name, "block");
-    
-                    setTimeout(() => {
-                        unban(this.client, this, cache.name, DBB);
-                    }, time);
-                }
-    
-                this.RunNextBlock("action", cache);
-            }).catch((err => {
-                this.RunNextBlock("actionerror", cache);
-                this.StoreOutputValue(err.message, "error", cache);
-            }));
-        } catch(err) {
-            this.RunNextBlock("actionerror", cache);
-            this.StoreOutputValue(err.message, "error", cache);
-        }
+        server.bans.create(user, {
+            deleteMessageSeconds,
+            reason: reason1
+        }).then(() => {
+            if(time) {
+                let times = this.getData("time", cache.name, "block");
+                if(!times || DBB.Core.typeof(times) != "object") times = {}
+
+                const reason2 = this.GetInputValue("reason2", cache) + "";
+
+                times[typeof user == "object" ? user.id : user + ""] = [parseInt(time), server.id + "", reason2 + ""];
+
+                this.setData("time", times, cache.name, "block");
+
+                setTimeout(() => {
+                    unban(this.client, this, cache.name, DBB);
+                }, time);
+            }
+
+            this.RunNextBlock("action", cache);
+        });
     }
 }

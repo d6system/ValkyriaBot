@@ -3,7 +3,7 @@ module.exports = {
 
     description: "This allows you to search for an item in a list by a Object Property",
 
-    category: "List Stuff",
+    category: ".MOD",
 
     inputs: [
         {

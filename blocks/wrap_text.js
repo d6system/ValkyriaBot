@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Wrap words to a specified length.",
 
-    category: "Extras",
+    category: ".MOD",
 
     inputs: [
         {

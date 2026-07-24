@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Unhash the text",
 
-    category: "Extras",
+    category: ".artemsnite",
 
     inputs: [
         {

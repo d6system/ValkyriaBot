@@ -1,9 +1,9 @@
 module.exports = {
     name: "DALL-E 2 Image Generator",
 
-    description: "Generates an image based on the given description.",
+    description: "Generates an image based on the given description. By Domin0221#0001",
 
-    category: "Extras",
+    category: ".MOD",
 
     inputs: [
         {

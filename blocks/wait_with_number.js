@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Waits for the set amount of time to execute the following blocks.",
 
-    category: "Utilities",
+    category: ".MOD",
 
     inputs: [
         {

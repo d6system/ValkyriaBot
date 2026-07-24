@@ -35,18 +35,6 @@ module.exports = {
             "name": "Action",
             "description": "Type: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
             "types": ["action"]
-        },
-        {
-            "id": "actionerror",
-            "name": "Action Error",
-            "description": "Type: Action\n\nDescription: Executes the following blocks when this block fails.",
-            "types": ["action"]
-        },
-        {
-            "id": "error",
-            "name": "Error",
-            "description": "Type: Text\n\nDescription: The error message if an error occurs.",
-            "types": ["text"]
         }
     ],
 
@@ -54,16 +42,8 @@ module.exports = {
         const member = this.GetInputValue("member", cache);
         const reason = this.GetInputValue("reason", cache);
 
-        try {
-            member.kick(reason).then(() => {
-                this.RunNextBlock("action", cache);
-            }).catch((err => {
-                this.RunNextBlock("actionerror", cache);
-                this.StoreOutputValue(err.message, "error", cache);
-            }));
-        } catch(err) {
-            this.RunNextBlock("actionerror", cache);
-            this.StoreOutputValue(err, "error", cache);
-        }
+        member.kick(reason).then(() => {
+            this.RunNextBlock("action", cache);
+        });
     }
 }

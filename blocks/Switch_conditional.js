@@ -14,17 +14,46 @@ module.exports = {
             "required": true
         },
         {
-            "id": "input",
+            "id": "value1",
             "name": "Input",
             "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text\n\nDescription: the input for the switch.",
             "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text"]
         },
         {
-            "id": "values",
-            "name": "Value",
+            "id": "sw0",
+            "name": "Value 1",
             "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text\n\nDescription: The 1st value to compare the 'Input' to.",
-            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text"],
-            "multiInput": true
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text"]
+        },
+        {
+            "id": "sw1",
+            "name": "Value 2",
+            "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text\n\nDescription: The 2nd value to compare the 'Input' to.",
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text"]
+        },
+        {
+            "id": "sw2",
+            "name": "Value 3",
+            "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text\n\nDescription: The 3rd value to compare the 'Input' to.",
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text"]
+        },
+        {
+            "id": "sw3",
+            "name": "Value 4",
+            "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text\n\nDescription: The 4th value to compare the 'Input' to.",
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text"]
+        },
+        {
+            "id": "sw4",
+            "name": "Value 5",
+            "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text\n\nDescription: The 5th value to compare the 'Input' to.",
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text"]
+        },
+        {
+            "id": "sw5",
+            "name": "Value 6",
+            "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text\n\nDescription: The 6th value to compare the 'Input' to.",
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text"]
         }
     ],
 
@@ -36,69 +65,120 @@ module.exports = {
             "type": "SELECT",
             "options": {
                 "equal": "Equal To",
-                "includes": "Includes"
+                "includes": "Includes",
             }
-        },
-        {
-            "id": "match_all",
-            "name": "Run All Matching Outputs",
-            "description": "Description: Wether it should only run the output for the first match or outputs of all matching statements.",
-            "type": "CHECKBOX",
-            "defaultValue": false
         }
     ],
 
     outputs: [
         {
-            "id": "outputs",
-            "name": "Action",
+            "id": "swo0",
+            "name": "Value 1 Action",
             "description": "Type: Action\n\nDescription: Runs this action if the 'input' matches 'Value 1.",
-            "types": ["action"],
-            "multiOutput": true
+            "types": ["action"]
+        },
+        {
+            "id": "swo1",
+            "name": "Value 2 Action",
+            "description": "Type: Action\n\nDescription: Runs this action if the 'input' matches 'Value 2'.",
+            "types": ["action"]
+        },
+        {
+            "id": "swo2",
+            "name": "Value 3 Action",
+            "description": "Type: Action\n\nDescription: Runs this action if the 'input' matches 'Value 3'.",
+            "types": ["action"]
+        },
+        {
+            "id": "swo3",
+            "name": "Value 4 Action",
+            "description": "Type: Action\n\nDescription: Runs this action if the 'input' matches 'Value 4'.",
+            "types": ["action"]
+        },
+        {
+            "id": "swo4",
+            "name": "Value 5 Action",
+            "description": "Type: Action\n\nDescription: Runs this action if the 'input' matches 'Value 5'.",
+            "types": ["action"]
+        },
+        {
+            "id": "swo5",
+            "name": "Value 6 Action",
+            "description": "Type: Action\n\nDescription: Runs this action if the 'input' matches 'Value 6'.",
+            "types": ["action"]
+        },
+        {
+            "id": "swo6",
+            "name": "Failure Action",
+            "description": "Type: Action\n\nDescription: Runs this action if none of the 'Values' match the 'input'.",
+            "types": ["action"]
         }
     ],
 
     code(cache) {
-        const input = this.GetInputValue("input", cache);
-        var values = this.GetInputValue("values", cache);
-        var operation = this.GetOptionValue("operation", cache);
-        const match_all = this.GetOptionValue("match_all", cache);
+        var input = this.GetInputValue("value1", cache);
+        let case0 = this.GetInputValue("sw0", cache);
+        let case1 = this.GetInputValue("sw1", cache);
+        let case2 = this.GetInputValue("sw2", cache);
+        let case3 = this.GetInputValue("sw3", cache);
+        let case4 = this.GetInputValue("sw4", cache);
+        let case5 = this.GetInputValue("sw5", cache);
+        const operation = this.GetOptionValue("operation", cache);
 
-        if (!input) operation = "equal"
-
-        var outputs = cache.outputs.outputs;
-
-        if (values.length < outputs.length) {
-            outputs = outputs.splice(0, values.length);
-            this.console("WARN", `The 'Switch Conditional' block (#${cache.index - 1}) has more outputs than inputs. This means that those extra outputs will never get triggered.`);
+        let result;
+        if (operation == "equal") {
+        switch(input) {
+            case case0:
+                input = case0;
+        this.RunNextBlock("swo0", cache);
+                break;
+            case case1:
+                input = case1;
+        this.RunNextBlock("swo1", cache);
+                break;
+            case case2:
+                input = case2;
+        this.RunNextBlock("swo2", cache);
+                break;
+            case case3:
+                input = case3;
+        this.RunNextBlock("swo3", cache);
+                break;
+            case case4:
+                input = case4;
+        this.RunNextBlock("swo4", cache);
+                break;
+            case case5:
+                input = case5;
+        this.RunNextBlock("swo5", cache);
+                break;    
+            default:
+        this.RunNextBlock("swo6", cache);
+                break;  
+            }  
         };
-
-        if (values.length > outputs.length) {
-            this.console("WARN", `The 'Switch Conditional' block (#${cache.index - 1}) has more inputs than outputs. This means that those extra inputs will never get triggered.`);
-        };
-
-        var array = []
-
-        if (operation === "equal") {
-            for (const [index, value] of values.entries()) {
-                if (value === input) {
-                    array.push(outputs[index]);
-                };
-            };  
-        } else if (operation === "includes") {
-            for (const [index, value] of values.entries()) {
-                if (input.includes(value)) {
-                    array.push(outputs[index]);
-                };
+        if (operation == "includes") {
+        if (input.includes(case0)) {
+            this.RunNextBlock("swo0", cache);
+            }
+        else if (input.includes(case1)) {
+            this.RunNextBlock("swo1", cache);
+            }
+        else if (input.includes(case2)) {
+            this.RunNextBlock("swo2", cache);
+            }
+        else if (input.includes(case3)) {
+            this.RunNextBlock("swo3", cache);
+            }
+        else if (input.includes(case4)) {
+            this.RunNextBlock("swo4", cache);
+            }
+        else if (input.includes(case5)) {
+            this.RunNextBlock("swo5", cache);
+            }
+        else {
+            this.RunNextBlock("swo6", cache);
             };
         };
-
-        cache.outputs = {outputs: array}
-
-        if (!match_all) {
-            cache.outputs = {outputs: [array[0]]}
-        }
-        
-        this.RunNextBlock('outputs', cache);
     }
 }

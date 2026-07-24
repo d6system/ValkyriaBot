@@ -9,129 +9,112 @@ module.exports = {
         {
             "id": "action",
             "name": "Action",
-            "description": "Executes this block.",
+            "description": "Acceptable Types: Action\n\nDescription: Executes this block.",
             "types": ["action"]
         },
         {
             "id": "input",
             "name": "URL/Buffer/HTML",
-            "description": "The URL of the Website or the HTML Code(as Buffer)/File you want to capture.",
+            "description": "Acceptable Types: Text, Object, Unspecified\n\nDescription: The URL of the Website or the HTML Code(as Buffer)/File you want to capture.",
             "types": ["text", "object", "unspecified"],
             "required": true
         },
         {
             "id": "filename",
             "name": "Filename",
-            "description": "A Filename if you want a custom one... WITHOUT .png",
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: A Filename if you want a custom one... WITHOUT .png",
             "types": ["text", "unspecified"],
-        },
-        {
-            "id": "delay",
-            "name": "Delay",
-            "description": "The delay before the screenshot is taken in Seconds",
-            "types": ["number", "unspecified"]
         }
     ],
 
-    options(data) {
-        const options = [
-            {
-                "id": "filename",
-                "name": "Filename",
-                "description": "Description: A Filename if you want a custom one... WITHOUT .png",
-                "type": "TEXT",
-            },
-            {
-                "id": "delay",
-                "name": "Delay",
-                "description": "Description: The delay before the screenshot is taken in Seconds. Default: 1",
-                "type": "NUMBER",
-                "defaultValue": 1
-            },
-            {
-                "id": "fullpage",
-                "name": "Full Page?",
-                "description": "Description: Do you want to screenshot the Entire Page? WILL DISABLE HEIGHT AND WIDTH!",
-                "type": "CHECKBOX",
-                "defaultValue": false
-            },
-            {
-                "id": "blockads",
-                "name": "Block Ads?",
-                "description": "Description: Do you want to Block Ads?",
-                "type": "CHECKBOX",
-                "type": "CHECKBOX",
-                "defaultValue": true
-            },
-            {
-                "id": "darkmode",
-                "name": "Dark Mode?",
-                "description": "Description: Should the Website use DarkMode if possible?",
-                "type": "CHECKBOX",
-                "defaultValue": true
-            },
-            {
-                "id": "removeElements",
-                "name": "Remove HTML Elements",
-                "description": "Description: You have the choice of hiding specific HTML Elements. (OPTIONAL)\n\nIf you have multiple things to hide use a ',' to split(NO SPACE)\n\nExample: #onetrust-consent-sdk,.header.wrap",
-                "type": "TEXT"
-            },
-        ]
+    options: [
+        {
+            "id": "filename",
+            "name": "Filename",
+            "description": "Description: A Filename if you want a custom one... WITHOUT .png",
+            "type": "TEXT",
+        },
+        {
+            "id": "fullpage",
+            "name": "Full Page?",
+            "description": "Description: Do you want to screenshot the Entire Page? WILL DISABLE HEIGHT AND WIDTH!",
+            "type": "SELECT",
+            "options": {
+                "": "False/No",
+                "true": "True/Yes"
 
-        if(data?.options?.fullpage === false) {
-            options.push({
-                "id": "height",
-                "name": "Image Height",
-                "description": "Description: The Image Height. Default: 1080",
-                "type": "NUMBER",
-            },
-            {
-                "id": "width",
-                "name": "Image Width",
-                "description": "Description: The Image Width. Default: 1920",
-                "type": "NUMBER",
-            })
-        }
-
-        options.push({
+            }
+        },
+        {
+            "id": "blockads",
+            "name": "Block Ads?",
+            "description": "Description: Do you want to Block Ads?",
+            "type": "SELECT",
+            "options": {
+                "true": "True/Yes",
+                "": "False/No"
+            }
+        },
+        {
+            "id": "darkmode",
+            "name": "Dark Mode?",
+            "description": "Description: Should the Website use DarkMode if possible?",
+            "type": "SELECT",
+            "options": {
+                "true": "True/Yes",
+                "": "False/No"
+            }
+        },
+        {
+            "id": "removeElements",
+            "name": "Remove HTML Elements",
+            "description": "Description: You have the choice of hiding specific HTML Elements. (OPTIONAL)\n\nIf you have multiple things to hide use a ',' to split(NO SPACE)\n\nExample: #onetrust-consent-sdk,.header.wrap",
+            "type": "TEXT"
+        },
+        {
+            "id": "height",
+            "name": "Image Height",
+            "description": "Description: The Image Height. Default: 1080",
+            "type": "NUMBER",
+        },
+        {
+            "id": "width",
+            "name": "Image Width",
+            "description": "Description: The Image Width. Default: 1920",
+            "type": "NUMBER",
+        },
+        {
             "id": "havingerrors",
             "name": "Did you get an Error?",
             "description": "Description: If you have an error, please Toggle this to True!",
-            "type": "CHECKBOX",
-            "defaultValue": false
-        })
+            "type": "SELECT",
+            "options": {
+                "": "False/No",
+                "true": "True/Yes"
 
-        return options;
-    },
+            }
+        }
+    ],
 
     outputs: [
         {
             "id": "action",
             "name": "Action",
-            "description": "Executes the following blocks when this block finishes its task.",
+            "description": "Type: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
             "types": ["action"]
         },
         {
             "id": "result",
             "name": "Attachment",
-            "description": "The Image Attachment of the Website.",
+            "description": "Type: Object, Unspecified\n\nDescription: The Image Attachment of the Website.",
             "types": ["object", "unspecified"]
         }
     ],
 
-    async code(cache, DBB) {
-        try {
-            const success = await require('./!auto_package_manager').getPackageManager().requires(
-                { name: "capture-website", version: "latest", dnr: true }
-            );
-            if (!success) console.trace("Failed to install dependencies! (Capture-Website)");
-        } catch (e) {
-            console.log(e);
-        }
+    async code(cache) {
         const captureWebsite = await import("capture-website");
         let input = this.GetInputValue("input", cache);
         const filename = this.GetInputValue("filename", cache) || this.GetOptionValue("filename", cache) === "" ? "website" : this.GetOptionValue("filename", cache);
-        const delay = this.GetInputValue("delay", cache) || parseInt(this.GetOptionValue("delay", cache)) || 100;
 
         const darkMode = Boolean(this.GetOptionValue("darkmode", cache))
         const blockAds = Boolean(this.GetOptionValue("blockads", cache))
@@ -144,7 +127,6 @@ module.exports = {
 
         const options = {
             inputType: Buffer.isBuffer(input) ? "html" : input.startsWith("<") ? "html" : "url",
-            delay: delay,
             darkMode: darkMode,
             blockAds: blockAds,
             fullPage: fullPage,

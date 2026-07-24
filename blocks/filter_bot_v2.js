@@ -3,7 +3,7 @@ module.exports = {
 
   description: "Won't run next block if user is a bot/user",
 
-  category: "Extras",
+  category: ".MOD",
 
   inputs: [
     {

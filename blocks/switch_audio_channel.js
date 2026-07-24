@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Switch To a Different Audio Channel",
 
-    category: "Music V2",
+    category: ".Audio V2",
 
     inputs: [
         {

@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Gets the Buttons from an Interaction Message Object by @XCraftTM",
 
-    category: "Interaction Stuff",
+    category: ".MOD",
 
     inputs: [
         {

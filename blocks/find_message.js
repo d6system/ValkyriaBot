@@ -66,49 +66,29 @@ module.exports = {
         const find_message_by = this.GetOptionValue("find_message_by", cache);
 
         let result;
-
-        if (find_message_by === "url") {
-            const regex = /https:\/\/discord\.com\/channels\/(\d+)\/(\d+)\/(\d+)/;
-            const match = search_value.match(regex);
-
-            if (match) {
-                const [, guildId, channelId, messageId] = match;
-
-                try {
-                    // Channel thingy
-                    const fetchedChannel = await this.client.channels.fetch(channelId);
-
-                    // Message thingy
-                    result = await fetchedChannel.messages.fetch(messageId);
-                } catch (error) {
-                    console.error("Error fetching message by URL:", error);
-                }
-            } else {
-                console.error("Invalid URL");
-            }
-        } else if (find_message_by === "id" && channel) {
+        if(find_message_by == "id" && channel) {
             try {
                 result = await channel.messages.fetch(search_value);
             } catch (e) {
-                console.error("Error fetching message by ID:", e);
+                // ignore
             }
         } else {
-            const messages = channel ? await channel.messages.fetch({ force: true }) : this.client.channels.cache.reduce((accumulator, channel) => {
-                if (channel.messages) {
-                    return accumulator.concat(Array.from(channel.messages.cache.values()));
-                }
-                return accumulator;
+            const messages = channel ? channel.messages.cache : this.client.channels.cache.reduce((accumulator, channel) => {
+                if (channel.messages)
+                    accumulator.concat(Array.from(channel.messages.cache.values()))
+
+                return accumulator
             }, []);
 
-            switch (find_message_by) {
+            switch(find_message_by) {
                 case "id":
                     result = messages.find(c => c.id == search_value);
                     break;
                 case "author_user":
-                    result = messages.find(c => c.author.id == search_value);
+                    result = messages.find(c => c.author == search_value);
                     break;
                 case "author_member":
-                    result = messages.find(c => c.member.id == search_value);
+                    result = messages.find(c => c.member == search_value);
                     break;
                 case "content":
                     result = messages.find(c => c.content == search_value);
@@ -117,7 +97,10 @@ module.exports = {
                     result = messages.find(c => c.cleanContent == search_value);
                     break;
                 case "server":
-                    result = messages.find(c => c.guild.id == search_value);
+                    result = messages.find(c => c.guild == search_value);
+                    break;
+                case "url":
+                    result = messages.find(c => c.url == search_value);
                     break;
             }
         }

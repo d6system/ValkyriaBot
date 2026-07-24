@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Creates and Shows a Modal on an Interaction(by @XCraftTM)",
 
-    category: "Interaction Stuff",
+    category: ".MOD",
 
     inputs: [
         {
@@ -16,8 +16,7 @@ module.exports = {
             "id": "interaction",
             "name": "Interaction",
             "description": "Type: Object\n\nDescription: The Title of Your Application",
-            "types": ["object"],
-            "required": true
+            "types": ["object"]
         },
         {
             "id": "customid",
@@ -32,34 +31,34 @@ module.exports = {
             "types": ["text", "unspecified"]
         },
         {
-            "id": "label_textDisplay_1",
-            "name": "Label/Text 1",
-            "description": "Use Either a Label Component or a Text Display Component (REQUIRED)",
+            "id": "textfield1",
+            "name": "Input Field 1",
+            "description": "The Text Input Field created",
             "types": ["object", "unspecified"],
             "required": true
         },
         {
-            "id": "label_textDisplay_2",
-            "name": "Label/Text 2",
-            "description": "Use Either a Label Component or a Text Display Component (OPTIONAL)",
+            "id": "textfield2",
+            "name": "Input Field 2",
+            "description": "The Text Input Field created",
             "types": ["object", "unspecified"]
         },
         {
-            "id": "label_textDisplay_3",
-            "name": "Label/Text 3",
-            "description": "Use Either a Label Component or a Text Display Component (OPTIONAL)",
+            "id": "textfield3",
+            "name": "Input Field 3",
+            "description": "The Text Input Field created",
             "types": ["object", "unspecified"]
         },
         {
-            "id": "label_textDisplay_4",
-            "name": "Label/Text 4",
-            "description": "Use Either a Label Component or a Text Display Component (OPTIONAL)",
+            "id": "textfield4",
+            "name": "Input Field 4",
+            "description": "The Text Input Field created",
             "types": ["object", "unspecified"]
         },
         {
-            "id": "label_textDisplay_5",
-            "name": "Label/Text 5",
-            "description": "Use Either a Label Component or a Text Display Component (OPTIONAL)",
+            "id": "textfield5",
+            "name": "Input Field 5",
+            "description": "The Text Input Field created",
             "types": ["object", "unspecified"]
         }
     ],
@@ -89,16 +88,16 @@ module.exports = {
     ],
 
     code(cache) {
-        const { ModalBuilder } = require("discord.js");
+        const {ModalBuilder, ActionRowBuilder} = require("discord.js");
         var custom_id = this.GetInputValue("customid", cache) || this.GetOptionValue("customid", cache);
         var title = this.GetInputValue("title", cache) || this.GetOptionValue("title", cache);
         const interaction = this.GetInputValue("interaction", cache);
-        const textfield1 = this.GetInputValue("label_textDisplay_1", cache, { fetch: true });
-        const textfield2 = this.GetInputValue("label_textDisplay_2", cache, { fetch: true });
-        const textfield3 = this.GetInputValue("label_textDisplay_3", cache, { fetch: true });
-        const textfield4 = this.GetInputValue("label_textDisplay_4", cache, { fetch: true });
-        const textfield5 = this.GetInputValue("label_textDisplay_5", cache, { fetch: true });
-        const options = [textfield1, textfield2, textfield3, textfield4, textfield5].filter(a => a != undefined);
+        const textfield1 = this.GetInputValue("textfield1", cache);
+        const textfield2 = this.GetInputValue("textfield2", cache);
+        const textfield3 = this.GetInputValue("textfield3", cache);
+        const textfield4 = this.GetInputValue("textfield4", cache);
+        const textfield5 = this.GetInputValue("textfield5", cache);
+        const options = [textfield1, textfield2, textfield3, textfield4, textfield5];
 
         const modal = new ModalBuilder()
             .setCustomId(custom_id)
@@ -106,12 +105,10 @@ module.exports = {
 
         options.forEach(option => {
             if (option) {
-                if(option?.type == 18 || option?.data?.type == 18) modal.addLabelComponents(option)
-                    else if(option?.type == 10 || option?.data?.type == 10) modal.addTextDisplayComponents(option)
+                const row = new ActionRowBuilder().addComponents(option);
+                modal.addComponents(row);
             }
         });
-
-        if(modal.components.length === 0) return this.end(new Error("You must provide at least one Label or Text Display Component!"), true, false);
 
         interaction.showModal(modal);
 

@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Applies the autocomplete song search to a slash command.",
 
-    category: "Music V2",
+    category: ".Audio V2",
 
     auto_execute: true,
 
@@ -28,7 +28,7 @@ module.exports = {
             description: "Description: The Search Engine to use.",
             type: "SELECT",
             options: {
-                none: "None/Auto",
+                auto: "Auto",
                 youtube: "YouTube",
                 soundcloud: "SoundCloud",
                 spotify: "Spotify",
@@ -39,30 +39,15 @@ module.exports = {
 
     outputs: [],
 
-    async init(DBB, blockName) {
-        const { readFileSync } = require("fs");
-        const values = JSON.parse(readFileSync(DBB.File.paths.workspaces)).map((workspace) => {
-                if (workspace.workspaces) {
-                    return workspace.workspaces.map((wpc) => wpc.blocks.filter((x) => x.name == blockName)).flat();
-                } else {
-                    return workspace.blocks.filter((x) => x.name == blockName);
-                }
-            }).filter((x) => x[0])
-            .map((x) => x.map((x) => x.options).flat())
-            .flat()[0];
-        const id = values?.id;
-        const option = values?.option;
-        try {
-            require("discord-player")
-        } catch(e) {
-            return;
-        }
+    async code(cache) {
+        const id = this.GetOptionValue("id", cache);
+        const option = this.GetOptionValue("option", cache);
         const { useMainPlayer, QueryType } = require("discord-player");
-        const raw_engine = values?.search_engine;
+        const raw_engine = this.GetOptionValue("search_engine", cache);
 
         switch (raw_engine) {
-            case "none":
-                engine = undefined;
+            case "auto":
+                engine = QueryType.AUTO;
                 break;
             case "youtube":
                 engine = QueryType.YOUTUBE_SEARCH;
@@ -78,26 +63,21 @@ module.exports = {
                 break;
         }
 
-        DBB.DiscordJS.client.on("interactionCreate", async (interaction) => {
+        this.client.on("interactionCreate", async (interaction) => {
             if (interaction.commandName == id) {
                 if (interaction.isAutocomplete()) {
-                    try {
-                        const player = useMainPlayer();
-                        const query = interaction.options.getString(option) || " ";
-                        const results = await player.search(query, {
-                            searchEngine: engine
-                        });
+                    const player = useMainPlayer();
+                    const query = interaction.options.getString(option) || " ";
+                    const results = await player.search(query, {
+                        searchEngine: engine
+                    });
 
-                        await interaction.respond(
-                            results.tracks.slice(0, 10).map((t) => ({
-                                name: (t.author.split(",")[0] + " - " + t.title).substring(0, 99),
-                                value: t.url
-                            }))
-                        );
-                    } catch (e) {
-                        // Ignore
-                    }
-
+                    interaction.respond(
+                        results.tracks.slice(0, 10).map((t) => ({
+                            name: (t.author.split(",")[0] + " - " + t.title).substring(0, 99),
+                            value: t.url
+                        }))
+                    );
                 }
             }
         });
