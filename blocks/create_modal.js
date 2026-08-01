@@ -16,13 +16,13 @@ module.exports = {
             "id": "interaction",
             "name": "Interaction",
             "description": "Type: Object\n\nDescription: The Title of Your Application",
-            "types": ["object"]
+            "types": ["object", "unspecified"]
         },
         {
             "id": "customid",
             "name": "CustomID",
             "description": "Type: Text\n\nDescription: The ID of the Application.",
-            "types": ["text", "unspecified"],
+            "types": ["text", "unspecified"]
         },
         {
             "id": "title",
@@ -101,12 +101,18 @@ module.exports = {
 
         const modal = new ModalBuilder()
             .setCustomId(custom_id)
-            .setTitle(title)
+            .setTitle(title);
 
         options.forEach(option => {
             if (option) {
-                const row = new ActionRowBuilder().addComponents(option);
-                modal.addComponents(row);
+                const optionData = typeof option.toJSON === "function" ? option.toJSON() : option.data;
+
+                if (optionData && optionData.type === 18 && typeof modal.addLabelComponents === "function") {
+                    modal.addLabelComponents(option);
+                } else {
+                    const row = new ActionRowBuilder().addComponents(option);
+                    modal.addComponents(row);
+                }
             }
         });
 
