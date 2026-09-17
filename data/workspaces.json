@@ -505,7 +505,7 @@
             "name": "text",
             "inputs": {},
             "options": {
-              "text": "ValkyriaBot v10.2.4"
+              "text": "ValkyriaBot v10.3.1"
             },
             "outputs": {
               "text": [
@@ -1382,7 +1382,7 @@
             "name": "register_slash_commands",
             "inputs": {},
             "options": {
-              "text": "{\n  \"name\": \"info\",\n  \"description\": \"Geef de informatie van de bot weer\",\n  \"options\": []\n},\n{\n  \"name\": \"berichtmaken\",\n  \"description\": \"Stuur een bericht vanuit ValkyriaBot\",\n  \"options\": []\n},\n{\n  \"name\": \"stats\",\n  \"description\": \"Geef de stats van de server weer\",\n  \"options\": []\n},\n{\n  \"name\": \"help\",\n  \"description\": \"Geef de link voor de help pagina\",\n  \"options\": []\n},\n{\n  \"name\": \"transcript\",\n  \"description\": \"Transcript het huidige ticket\",\n  \"options\": []\n},\n{\n  \"name\": \"close\",\n  \"description\": \"Sluit een ticket\",\n  \"options\": []\n},\n{\n  \"name\": \"beroepgoedkeuren\",\n  \"description\": \"Keur het beroep van dit ticket goed.\",\n  \"options\": []\n},\n{\n  \"name\": \"beroepafkeuren\",\n  \"description\": \"Keur het beroep van dit ticket af\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"reden\",\n      \"description\": \"De reden van afwijzing. Wordt naar gebruiker gestuurd door de bot\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"confirmations\",\n  \"description\": \"Geef de stats van de confirmatie weer\",\n  \"options\": []\n},\n{\n  \"name\": \"hoeveel\",\n  \"description\": \"Checkt hoeveel berichten iemand gestuurd heeft.\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"userid\",\n      \"description\": \"De UserID van de gebruiker\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"confirm\",\n  \"description\": \"Laat nieuw persoon toe in de server\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je wil toelaten\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"verify\",\n  \"description\": \"Verifieer een persoon\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je wil verifieren\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"remove\",\n  \"description\": \"Verwijder persoon uit ticket\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je uit ticket wil verwijderen.\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"bdayrole\",\n  \"description\": \"Geef een persoon tijdelijk de gefelicitaart role\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"user\",\n      \"description\": \"De persoon die je de role wil geven\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"setbday\",\n  \"description\": \"Stel je verjaardag in voor de gefelicitaart rol!\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"datum\",\n      \"description\": \"Datum in dd-mm format\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"fixticket\",\n  \"description\": \"Fix een ticket die stuk was\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"user\",\n      \"description\": \"UserID van de gebruiker.\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"new\",\n  \"description\": \"Maak een nieuw Overig ticket voor een persoon\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon voor wie je een ticket wil maken\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"jail\",\n  \"description\": \"Geef een timeout\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je een timeout wil geven\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"unjail\",\n  \"description\": \"Haal iemand uit timeout\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je uit timeout wil halen\",\n      \"required\": true\n    }\n  ]\n},\n{\n    \"name\": \"update\",\n    \"description\": \"Send a message showing added & removed features of your software\",\n    \"options\": []\n},\n{\n    \"name\": \"ticketpanel\",\n    \"description\": \"Stuur een nieuw ticket bericht\",\n    \"options\": []\n},\n{\n    \"name\": \"setconfig\",\n    \"description\": \"Value invoeren in de configs\",\n    \"options\": [\n        {\n            \"name\": \"config\",\n            \"description\": \"De configfile die je wil aanmaken in de map config\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"value\",\n            \"description\": \"De value die in de configfile moet komen\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"checkrolecounter\",\n    \"description\": \"Check hoeveel mensen een bepaalde role hebben\",\n    \"options\": [\n        {\n            \"name\": \"role\",\n            \"description\": \"De role die je wil checken\",\n            \"required\": true,\n            \"type\": 8\n        }\n    ]\n},\n{\n    \"name\": \"maaknotitie\",\n    \"description\": \"Notite maken voor een gebruiker\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"De gebruiker voor wie je een notitie wil maken\",\n            \"required\": true,\n            \"type\": 6\n        },\n        {\n            \"name\": \"notitie\",\n            \"description\": \"De notitie die je wil invoeren\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"maakidnotitie\",\n    \"description\": \"Notite maken voor een gebruiker op basis van ID\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"De UserID van de gebruiker voor wie je een notitie wil maken\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"notitie\",\n            \"description\": \"De notitie die je wil invoeren\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"editnotitie\",\n    \"description\": \"Een notitie aanpassen\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"id\",\n            \"description\": \"ID van de notitie\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"notitie\",\n            \"description\": \"De notitie die je wil invoeren (dit overschrijft de oude)\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"notities\",\n    \"description\": \"Haal notities op van een gebruiker\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"Gebruiker van wie je de notities wil zien\",\n            \"required\": true,\n            \"type\": 6\n        }\n        ]\n},\n{\n    \"name\": \"verwijdernotitie\",\n    \"description\": \"Verwijder een notitie\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"id\",\n            \"description\": \"ID van de notitie die je wil verwijderen\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"idnotities\",\n    \"description\": \"Krijg notities van een gebruiker te zien op basis van UserID\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"userid\",\n            \"description\": \"De UserID van de gebruiker\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n  \"name\": \"kick\",\n  \"description\": \"Kick een persoon\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"De persoon om te kicken\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"Kickreden\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"ban\",\n  \"description\": \"Ban een pesoon\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"De persoon om te bannen\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"Banreden\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"idban\",\n  \"description\": \"Ban een persoon op basis van id\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"account\",\n      \"description\": \"Het ID van de persoon om te bannen\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"Banreden\",\n      \"required\": true\n    }\n  ]\n},\n{\n    \"name\": \"maakwaarschuwing\",\n    \"description\": \"Waarschuwing maken voor een gebruiker\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"De gebruiker voor wie je een waarschuwing wil maken\",\n            \"required\": true,\n            \"type\": 6\n        },\n        {\n            \"name\": \"waarschuwing\",\n            \"description\": \"De waarschuwing die je wil invoeren\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"maakidwaarschuwing\",\n    \"description\": \"Waarschuwing maken voor een gebruiker op basis van ID\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"De UserID van de gebruiker voor wie je een waarschuwing wil maken\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"waarschuwing\",\n            \"description\": \"De waarschuwing die je wil invoeren\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"editwaarschuwing\",\n    \"description\": \"Een waarschuwing aanpassen\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"id\",\n            \"description\": \"ID van de waarschuwing\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"waarschuwing\",\n            \"description\": \"De waarschuwing die je wil invoeren (dit overschrijft de oude)\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"waarschuwingen\",\n    \"description\": \"Haal waarschuwingen op van een gebruiker\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"Gebruiker van wie je de waarschuwingen wil zien\",\n            \"required\": true,\n            \"type\": 6\n        }\n        ]\n},\n{\n    \"name\": \"verwijderwaarschuwing\",\n    \"description\": \"Verwijder een waarschuwing\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"id\",\n            \"description\": \"ID van de waarschuwing die je wil verwijderen\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"idwaarschuwingen\",\n    \"description\": \"Krijg waarschuwingen van een gebruiker te zien op basis van UserID\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"userid\",\n            \"description\": \"De UserID van de gebruiker\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"herinnering\",\n    \"description\": \"Een herinnering aanmaken\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"minuten\",\n            \"description\": \"Over hoeveel minuten wil je herinnerd worden? Alleen cijfers invullen!!!\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"reden\",\n            \"description\": \"Waar wil je aan herinnerd worden? Max 255 tekens\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n}"
+              "text": "{\n  \"name\": \"info\",\n  \"description\": \"Geef de informatie van de bot weer\",\n  \"options\": []\n},\n{\n  \"name\": \"berichtmaken\",\n  \"description\": \"Stuur een bericht vanuit ValkyriaBot\",\n  \"options\": []\n},\n{\n  \"name\": \"stats\",\n  \"description\": \"Geef de stats van de server weer\",\n  \"options\": []\n},\n{\n  \"name\": \"help\",\n  \"description\": \"Geef de link voor de help pagina\",\n  \"options\": []\n},\n{\n  \"name\": \"transcript\",\n  \"description\": \"Transcript het huidige ticket\",\n  \"options\": []\n},\n{\n  \"name\": \"close\",\n  \"description\": \"Sluit een ticket\",\n  \"options\": []\n},\n{\n  \"name\": \"beroepgoedkeuren\",\n  \"description\": \"Keur het beroep van dit ticket goed.\",\n  \"options\": []\n},\n{\n  \"name\": \"beroepafkeuren\",\n  \"description\": \"Keur het beroep van dit ticket af\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"reden\",\n      \"description\": \"De reden van afwijzing. Wordt naar gebruiker gestuurd door de bot\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"tiktok\",\n  \"description\": \"Post een TikTok bericht\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"url\",\n      \"description\": \"De link naar de TikTok\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"confirmations\",\n  \"description\": \"Geef de stats van de confirmatie weer\",\n  \"options\": []\n},\n{\n  \"name\": \"hoeveel\",\n  \"description\": \"Checkt hoeveel berichten iemand gestuurd heeft.\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"userid\",\n      \"description\": \"De UserID van de gebruiker\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"confirm\",\n  \"description\": \"Laat nieuw persoon toe in de server\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je wil toelaten\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"verify\",\n  \"description\": \"Verifieer een persoon\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je wil verifieren\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"remove\",\n  \"description\": \"Verwijder persoon uit ticket\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je uit ticket wil verwijderen.\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"bdayrole\",\n  \"description\": \"Geef een persoon tijdelijk de gefelicitaart role\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"user\",\n      \"description\": \"De persoon die je de role wil geven\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"setbday\",\n  \"description\": \"Stel je verjaardag in voor de gefelicitaart rol!\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"datum\",\n      \"description\": \"Datum in dd-mm format\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"fixticket\",\n  \"description\": \"Fix een ticket die stuk was\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"user\",\n      \"description\": \"UserID van de gebruiker.\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"new\",\n  \"description\": \"Maak een nieuw Overig ticket voor een persoon\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon voor wie je een ticket wil maken\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"jail\",\n  \"description\": \"Geef een timeout\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je een timeout wil geven\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"unjail\",\n  \"description\": \"Haal iemand uit timeout\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"persoon\",\n      \"description\": \"De persoon die je uit timeout wil halen\",\n      \"required\": true\n    }\n  ]\n},\n{\n    \"name\": \"update\",\n    \"description\": \"Send a message showing added & removed features of your software\",\n    \"options\": []\n},\n{\n    \"name\": \"ticketpanel\",\n    \"description\": \"Stuur een nieuw ticket bericht\",\n    \"options\": []\n},\n{\n    \"name\": \"setconfig\",\n    \"description\": \"Value invoeren in de configs\",\n    \"options\": [\n        {\n            \"name\": \"config\",\n            \"description\": \"De configfile die je wil aanmaken in de map config\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"value\",\n            \"description\": \"De value die in de configfile moet komen\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"checkrolecounter\",\n    \"description\": \"Check hoeveel mensen een bepaalde role hebben\",\n    \"options\": [\n        {\n            \"name\": \"role\",\n            \"description\": \"De role die je wil checken\",\n            \"required\": true,\n            \"type\": 8\n        }\n    ]\n},\n{\n    \"name\": \"maaknotitie\",\n    \"description\": \"Notite maken voor een gebruiker\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"De gebruiker voor wie je een notitie wil maken\",\n            \"required\": true,\n            \"type\": 6\n        },\n        {\n            \"name\": \"notitie\",\n            \"description\": \"De notitie die je wil invoeren\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"maakidnotitie\",\n    \"description\": \"Notite maken voor een gebruiker op basis van ID\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"De UserID van de gebruiker voor wie je een notitie wil maken\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"notitie\",\n            \"description\": \"De notitie die je wil invoeren\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"editnotitie\",\n    \"description\": \"Een notitie aanpassen\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"id\",\n            \"description\": \"ID van de notitie\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"notitie\",\n            \"description\": \"De notitie die je wil invoeren (dit overschrijft de oude)\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"notities\",\n    \"description\": \"Haal notities op van een gebruiker\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"Gebruiker van wie je de notities wil zien\",\n            \"required\": true,\n            \"type\": 6\n        }\n        ]\n},\n{\n    \"name\": \"verwijdernotitie\",\n    \"description\": \"Verwijder een notitie\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"id\",\n            \"description\": \"ID van de notitie die je wil verwijderen\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"idnotities\",\n    \"description\": \"Krijg notities van een gebruiker te zien op basis van UserID\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"userid\",\n            \"description\": \"De UserID van de gebruiker\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n  \"name\": \"kick\",\n  \"description\": \"Kick een persoon\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"De persoon om te kicken\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"Kickreden\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"ban\",\n  \"description\": \"Ban een pesoon\",\n  \"options\": [\n    {\n      \"type\": 6,\n      \"name\": \"account\",\n      \"description\": \"De persoon om te bannen\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"Banreden\",\n      \"required\": true\n    }\n  ]\n},\n{\n  \"name\": \"idban\",\n  \"description\": \"Ban een persoon op basis van id\",\n  \"options\": [\n    {\n      \"type\": 3,\n      \"name\": \"account\",\n      \"description\": \"Het ID van de persoon om te bannen\",\n      \"required\": true\n    },\n{\n      \"type\": 3,\n      \"name\": \"reason\",\n      \"description\": \"Banreden\",\n      \"required\": true\n    }\n  ]\n},\n{\n    \"name\": \"maakwaarschuwing\",\n    \"description\": \"Waarschuwing maken voor een gebruiker\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"De gebruiker voor wie je een waarschuwing wil maken\",\n            \"required\": true,\n            \"type\": 6\n        },\n        {\n            \"name\": \"waarschuwing\",\n            \"description\": \"De waarschuwing die je wil invoeren\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"maakidwaarschuwing\",\n    \"description\": \"Waarschuwing maken voor een gebruiker op basis van ID\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"De UserID van de gebruiker voor wie je een waarschuwing wil maken\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"waarschuwing\",\n            \"description\": \"De waarschuwing die je wil invoeren\",\n            \"required\": true,\n            \"type\": 3\n        }\n    ]\n},\n{\n    \"name\": \"editwaarschuwing\",\n    \"description\": \"Een waarschuwing aanpassen\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"id\",\n            \"description\": \"ID van de waarschuwing\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"waarschuwing\",\n            \"description\": \"De waarschuwing die je wil invoeren (dit overschrijft de oude)\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"waarschuwingen\",\n    \"description\": \"Haal waarschuwingen op van een gebruiker\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"gebruiker\",\n            \"description\": \"Gebruiker van wie je de waarschuwingen wil zien\",\n            \"required\": true,\n            \"type\": 6\n        }\n        ]\n},\n{\n    \"name\": \"verwijderwaarschuwing\",\n    \"description\": \"Verwijder een waarschuwing\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"id\",\n            \"description\": \"ID van de waarschuwing die je wil verwijderen\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"idwaarschuwingen\",\n    \"description\": \"Krijg waarschuwingen van een gebruiker te zien op basis van UserID\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"userid\",\n            \"description\": \"De UserID van de gebruiker\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n},\n{\n    \"name\": \"herinnering\",\n    \"description\": \"Een herinnering aanmaken\",\n    \"dm_permission\": false,\n    \"options\": [\n        {\n            \"name\": \"minuten\",\n            \"description\": \"Over hoeveel minuten wil je herinnerd worden? Alleen cijfers invullen!!!\",\n            \"required\": true,\n            \"type\": 3\n        },\n        {\n            \"name\": \"reden\",\n            \"description\": \"Waar wil je aan herinnerd worden? Max 255 tekens\",\n            \"required\": true,\n            \"type\": 3\n        }\n        ]\n}"
             },
             "outputs": {},
             "active": true
@@ -6338,8 +6338,8 @@
           {
             "block_id": "ZhGDZVkYEr:6",
             "color": "",
-            "x": 550,
-            "y": 1220,
+            "x": 853.8793693482786,
+            "y": 1198.294330760837,
             "z": 0,
             "width": 480,
             "height": 146,
@@ -15852,7 +15852,7 @@
             "y": 3550,
             "z": 0,
             "width": 480,
-            "height": 190,
+            "height": 223,
             "lock": false,
             "name": "write_file_MOD",
             "inputs": {
@@ -17257,11 +17257,11 @@
             },
             "outputs": {
               "action": [],
+              "reason": [],
               "role": [
                 "ul8yCmPwqq"
               ],
-              "user": [],
-              "reason": []
+              "user": []
             },
             "active": true
           },
@@ -17281,11 +17281,11 @@
             },
             "outputs": {
               "action": [],
+              "reason": [],
               "role": [
                 "YrG4HSfkFZ"
               ],
-              "user": [],
-              "reason": []
+              "user": []
             },
             "active": true
           },
@@ -43723,7 +43723,7 @@
             "y": 831.953125,
             "z": 0,
             "width": 480,
-            "height": 302,
+            "height": 377,
             "lock": false,
             "name": "send_message_multi",
             "inputs": {
@@ -43751,10 +43751,10 @@
               "action": [
                 "OnNBgkLhwQ"
               ],
-              "interaction": [],
-              "message": [],
               "action_error": [],
-              "error": []
+              "error": [],
+              "interaction": [],
+              "message": []
             },
             "active": true
           },
@@ -45869,6 +45869,358 @@
               "text": [
                 "FCqDnjgzeM"
               ]
+            },
+            "active": true
+          }
+        ],
+        "notes": []
+      },
+      {
+        "id": "CgAPi0NwEy",
+        "active": true,
+        "info": {
+          "title": "Tiktok",
+          "description": "",
+          "thumbnail": ""
+        },
+        "blocks": [
+          {
+            "block_id": "CgAPi0NwEy:0",
+            "color": "",
+            "x": 725.2477904145203,
+            "y": 1162.9976979203807,
+            "z": 0,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "interaction_event",
+            "inputs": {},
+            "options": {
+              "type": "slash",
+              "id": "tiktok",
+              "sub": "",
+              "group": "",
+              "value": ""
+            },
+            "outputs": {
+              "action": [
+                "y53h9As6se"
+              ],
+              "user": [],
+              "member": [
+                "Kfgaarj7b3"
+              ],
+              "server": [],
+              "channel": [
+                "7rWGEW74l2"
+              ],
+              "message": [],
+              "interaction": [
+                "6pis3cdJCn",
+                "H9pwrs0p5h",
+                "ivGUMFMAmh"
+              ],
+              "args": [],
+              "name": [],
+              "menuvalues": [],
+              "subcommandname": [],
+              "subcommandgroup": []
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:1",
+            "color": "",
+            "x": 1342.216246548082,
+            "y": 1346.1367561556135,
+            "z": 1,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "check_permissions",
+            "inputs": {
+              "action": "7xKt1VzQMF",
+              "permissions": "66y0PbRybU"
+            },
+            "options": {
+              "permission": "administrator"
+            },
+            "outputs": {
+              "action1": [
+                "IuHyd7cID7"
+              ],
+              "action2": [
+                "0B94qHudFi"
+              ]
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:2",
+            "color": "",
+            "x": 1316.8138871772062,
+            "y": 1131.910192127894,
+            "z": 2,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "get_member_info",
+            "inputs": {
+              "action": "y53h9As6se",
+              "member": "Kfgaarj7b3"
+            },
+            "options": {
+              "member_info": "19"
+            },
+            "outputs": {
+              "action": [
+                "7xKt1VzQMF"
+              ],
+              "result": [
+                "66y0PbRybU"
+              ]
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:3",
+            "color": "",
+            "x": 697.8430638401978,
+            "y": 1644.1911061072237,
+            "z": 3,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "reply_interaction",
+            "inputs": {
+              "action": "0B94qHudFi",
+              "interaction": "6pis3cdJCn",
+              "message": "Lwilasq4NP",
+              "embeds": "qNGRGQdOGb",
+              "row1": "JT6fxrwrdl",
+              "row2": "j3d2Y2UN78",
+              "row3": "VMwVBBlNi5",
+              "row4": "NB24JoyF74",
+              "row5": "ZipKQaGvOd",
+              "attachment": "DeOqSphJgg"
+            },
+            "options": {
+              "response": "reply",
+              "private": "false"
+            },
+            "outputs": {
+              "action": [],
+              "interaction": [],
+              "message": []
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:4",
+            "color": "",
+            "x": 1.8184170781995839,
+            "y": 1456.2136467627422,
+            "z": 4,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "text_2x",
+            "inputs": {},
+            "options": {
+              "text1": "Posted",
+              "text2": "Dit command mag je niet gebruiken"
+            },
+            "outputs": {
+              "text1": [
+                "KApiCMvCOE"
+              ],
+              "text2": [
+                "Lwilasq4NP"
+              ]
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:5",
+            "color": "",
+            "x": 1342.216246548082,
+            "y": 1634.8769076712358,
+            "z": 5,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "reply_interaction",
+            "inputs": {
+              "action": "IuHyd7cID7",
+              "interaction": "H9pwrs0p5h",
+              "message": "KApiCMvCOE",
+              "embeds": "e6Ji0Tjyx1",
+              "row1": "2MNfwRLhBs",
+              "row2": "U5ZzG64JPa",
+              "row3": "FkCqInxHTS",
+              "row4": "sY6bJ96nKG",
+              "row5": "0oM46XzQ3U",
+              "attachment": "NxV8k5fWqH"
+            },
+            "options": {
+              "response": "reply",
+              "private": "true"
+            },
+            "outputs": {
+              "action": [
+                "bI1kPMWMND"
+              ],
+              "interaction": [],
+              "message": []
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:6",
+            "color": "",
+            "x": 1909.260949102094,
+            "y": 1127.0433901846177,
+            "z": 6,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "get_interaction_argument_by_name",
+            "inputs": {
+              "action": "bI1kPMWMND",
+              "interaction": "ivGUMFMAmh",
+              "name": "ge5boMH3Z9"
+            },
+            "options": {
+              "name": "url",
+              "get": "string"
+            },
+            "outputs": {
+              "action": [
+                "Gt9KjQJ6n8"
+              ],
+              "output": [
+                "Mwkpe3VQ0x",
+                "HvHAjJZr98"
+              ]
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:7",
+            "color": "",
+            "x": 2449.840443355502,
+            "y": 1130.4325118105423,
+            "z": 7,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "better_create_embed_message",
+            "inputs": {
+              "action": "Gt9KjQJ6n8",
+              "color": "KNah0C34I9",
+              "thumbnail": "jXrpOv3QKS",
+              "author_icon": "m7ObmZmirT",
+              "author_name": "AZ73Rx2HrI",
+              "author_url": "jiGhSgk5Ff",
+              "title": "VhdQFgLqJW",
+              "url": "Mwkpe3VQ0x",
+              "description": "Hslv1FJDeV",
+              "image": "5scz3MkkGA",
+              "footer_icon": "65goSZw6Ny",
+              "footer_text": "b29hq1fLea",
+              "timestamp_input": "DaUJgILRvI"
+            },
+            "options": {
+              "color": "",
+              "thumbnail": "https://valkyrianest.nl/include/tiktok.png",
+              "author_icon": "https://valkyrianest.nl/include/icon.png",
+              "author_name": "ValkyriaNest",
+              "author_url": "",
+              "title": "Nieuwe TikTok gepost!",
+              "url": "",
+              "description": "Er is een nieuwe TikTok gepost. Vergeet niet om te delen en te reageren om het algoritme te helpen ^^",
+              "image": "",
+              "footer_icon": "",
+              "footer_text": "ValkyriaBot",
+              "timestamp_option": "true"
+            },
+            "outputs": {
+              "action": [
+                "gM0fqvZ0e1"
+              ],
+              "message_embed": [
+                "uXNUw3I2tj"
+              ]
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:8",
+            "color": "",
+            "x": 3059.044659974577,
+            "y": 1138.7485182319115,
+            "z": 8,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "create_button",
+            "inputs": {
+              "action": "gM0fqvZ0e1",
+              "styles": "9yCcA9G27G",
+              "label": "N5OhkTlFU2",
+              "emoji": "Lf5KpFjgdV",
+              "id": "HvHAjJZr98",
+              "enable": "vYrlLd32wJ"
+            },
+            "options": {
+              "styles": "link",
+              "label": "Open TikTok",
+              "emoji": "",
+              "id": "",
+              "enable": "enabled"
+            },
+            "outputs": {
+              "action": [
+                "YMQO0tL3AD"
+              ],
+              "button": [
+                "rUv9zFrD4q"
+              ]
+            },
+            "active": true
+          },
+          {
+            "block_id": "CgAPi0NwEy:9",
+            "color": "",
+            "x": 3105.0435127659593,
+            "y": 1595.7290378288328,
+            "z": 9,
+            "width": 500,
+            "height": 180,
+            "lock": false,
+            "name": "better_send_message",
+            "inputs": {
+              "action": "YMQO0tL3AD",
+              "channel": "7rWGEW74l2",
+              "poll": "4BWrzJwUAs",
+              "file": [],
+              "embed": [
+                "uXNUw3I2tj"
+              ],
+              "row": [
+                "rUv9zFrD4q"
+              ],
+              "text": []
+            },
+            "options": {
+              "type": "send",
+              "silent": "undefined",
+              "text": ""
+            },
+            "outputs": {
+              "action": [],
+              "message": [],
+              "error": []
             },
             "active": true
           }
@@ -54183,7 +54535,7 @@
             "y": 3780,
             "z": 0,
             "width": 480,
-            "height": 179,
+            "height": 223,
             "lock": false,
             "name": "math_operations",
             "inputs": {
@@ -61201,7 +61553,7 @@
             "y": 3780,
             "z": 0,
             "width": 480,
-            "height": 179,
+            "height": 223,
             "lock": false,
             "name": "math_operations",
             "inputs": {
@@ -63748,7 +64100,7 @@
             "y": 470,
             "z": 7,
             "width": 490,
-            "height": 179,
+            "height": 223,
             "lock": false,
             "name": "math_operations",
             "inputs": {
@@ -65014,7 +65366,7 @@
             "y": 470,
             "z": 7,
             "width": 490,
-            "height": 179,
+            "height": 223,
             "lock": false,
             "name": "math_operations",
             "inputs": {
@@ -66331,7 +66683,7 @@
             "y": 520,
             "z": 7,
             "width": 484,
-            "height": 179,
+            "height": 223,
             "lock": false,
             "name": "math_operations",
             "inputs": {
@@ -67741,7 +68093,7 @@
             "y": 470,
             "z": 7,
             "width": 484,
-            "height": 179,
+            "height": 223,
             "lock": false,
             "name": "math_operations",
             "inputs": {
