@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Gets Informations about a Queue",
 
-    category: "Music V2",
+    category: ".Audio V2",
 
     inputs: [
         {
@@ -77,9 +77,6 @@ module.exports = {
         const queue_info = parseInt(this.GetOptionValue("queue_info", cache));
         const guild = this.GetInputValue("guild", cache);
         const temp = this.GetInputValue("queue", cache);
-        /**
-         * @type {import("discord-player").GuildQueue}
-         */
         let queue;
         if (guild) {
             const { useQueue } = require("discord-player");
@@ -98,7 +95,7 @@ module.exports = {
         let result;
         switch (queue_info) {
             case 1:
-                result = queue.tracks.data;
+                result = queue.tracks ? Array.isArray(queue.tracks) ? queue.tracks : [queue.tracks] : [];
                 break;
             case 2:
                 result = queue.node.isPlaying();
@@ -132,7 +129,7 @@ module.exports = {
                 result = queue.currentTrack;
                 break;
             case 9:
-                result = queue.channel;
+                result = queue.connection.channel;
                 break;
             case 10:
                 result = queue.getSize();

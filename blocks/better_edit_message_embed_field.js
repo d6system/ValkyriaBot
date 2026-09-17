@@ -42,20 +42,6 @@ module.exports = {
             "name": "Custom Position",
             "description": "Acceptable Types: Number, Unspecified\n\nDescription: The custom position to add this field to the message embed. Starts at \"1\". (Only use this input if you selected the option \"Custom Position\")",
             "types": ["number", "text", "unspecified"]
-        },
-        {
-            "id": "object",
-            "name": "Object",
-            "description": "Acceptable Types: Object, List.\n\nDescription: The object(s) where to get your values from.\n\nYou can merge several objects. But take in mind if you have repeated keys; they will overwrite.",
-            "types": ["object", "list", "unspecified"],
-            "multiInput": true
-        },
-        {
-            "id": "text",
-            "name": "Text",
-            "description": "Acceptable Types: Text, Undefined, Null, Object, Boolean, Date, Number, List, Unspecified\n\nDescription: The text to merge with the source text. Supports everything (converts to text automatically). (OPTIONAL)",
-            "types": ["text", "undefined", "null", "object", "boolean", "date", "number", "list", "unspecified"],
-            "multiInput": true
         }
     ],
 
@@ -131,15 +117,15 @@ module.exports = {
 
         const field_inline_input = Boolean(this.GetInputValue("field_inline", cache));
 
-        const field_name_transform = field_name_input !== "\u200b" ? field_name_input : field_name_option;
-        const field_value_transform = field_value_input !== "\u200b" ? field_value_input : field_value_option;
+        const new_name = field_name_input !== "\u200b" ? field_name_input : field_name_option;
+        const new_value = field_value_input !== "\u200b" ? field_value_input : field_value_option;
 
         var custom_position = parseInt(this.GetInputValue("custom_position", cache)) || parseInt(this.GetOptionValue("custom_position", cache));
         if(isNaN(custom_position)){
             custom_position = 0;
         }else{
             custom_position = custom_position - 1;
-        }
+        } 
 
         switch(position_type) {
             case "first":
@@ -156,73 +142,6 @@ module.exports = {
                 position = custom_position;
             }
         }
-
-
-        const variables = this.GetInputValue("text", cache);
-        const objects = this.GetInputValue("object", cache);   
-        let object;          
-        if(objects.length == 1){
-            if(Array.isArray(objects[0])){
-                object = Object.assign({}, ...objects[0]);
-            }else{object = objects[0];}
-        }else{
-            object = Object.assign({}, ...objects);
-        } 
-
-            const transform_texts_name =
-            field_name_transform.replace(/\${text(\d+)}/g, function(match, number) {
-                return String(variables[number - 1] || match);
-            }).replace(/\\n/g, '\n') 
-
-            const transform_texts_value =
-            field_value_transform.replace(/\${text(\d+)}/g, function(match, number) {
-                return String(variables[number - 1] || match);
-            }).replace(/\\n/g, '\n') 
-
-            const transform_keys_name = transform_texts_name.replace(/\${([^\s{}]+)}/g, function(match, key) {
-                const keys = key.split('.');            
-                let value = object;
-                for (const k of keys) {
-                  if (value.hasOwnProperty(k)) {
-                    value = value[k]
-                    if (typeof value === 'string') {
-                            value = (value.replace(/\n/g, '\\n')).replace(/"/g, '\\"');
-                    }                
-                  } else {
-                    return "";
-                  }
-                }            
-                return value;
-            });           
-
-            const transform_keys_value = transform_texts_value.replace(/\${([^\s{}]+)}/g, function(match, key) {
-                const keys = key.split('.');            
-                let value = object;
-                for (const k of keys) {
-                  if (value.hasOwnProperty(k)) {
-                    value = value[k]
-                    if (typeof value === 'string') {
-                            value = (value.replace(/\n/g, '\\n')).replace(/"/g, '\\"');
-                    }                
-                  } else {
-                    return "";
-                  }
-                }            
-                return value;
-            });
-
-            function truncateString(str, maxLength) {
-                if (str.length > maxLength) {
-                    return str.slice(0, maxLength); // Extract characters from index 0 to maxLength-1
-                }
-                return str;
-            }
-
-            var field_name_split = transform_keys_name;
-            var field_value_split = transform_keys_value;
-
-            let new_name = truncateString(field_name_split, 256);
-            let new_value = truncateString(field_value_split, 1024);
         
         const fields = message_embed.data.fields[position];
         const old_name = fields["name"];

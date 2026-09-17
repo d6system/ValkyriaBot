@@ -3,7 +3,9 @@ module.exports = {
 
     description: "Upload File To FTP",
 
-    category: "Internet Stuff",
+    category: ".Enemy",
+
+    
 
     inputs: [
 	    {

@@ -43,7 +43,7 @@ module.exports = {
 
         const components = this.GetInputValue("components", cache).filter((a) => a)
 
-        const actionRow = new ActionRowBuilder().addComponents(components.flat())
+        const actionRow = new ActionRowBuilder().addComponents(...components)
 
         this.StoreOutputValue(actionRow, "action_row", cache)
         this.RunNextBlock("action", cache)

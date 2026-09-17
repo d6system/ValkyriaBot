@@ -13,7 +13,7 @@ module.exports = {
             id: "row",
             name: "Button Row",
             description: "Description: The Button Row List Or Object",
-            types: ["list", "object", "unspecified"]
+            types: ["object", "list", "unspecified"]
         },
         {
             id: "styles",
@@ -41,7 +41,7 @@ module.exports = {
         },
         {
             id: "enable",
-            name: "Disabled?",
+            name: "Enabled?",
             description: "Description: Whether this button is enabled or disabled",
             types: ["boolean", "unspecified"],
         },
@@ -59,11 +59,10 @@ module.exports = {
             description: "Type: Text\n\nDescription: Which Button do you want to edit?",
             type: "SELECT",
             options: {
-                1: "First Button",
-                2: "Second Button",
-                3: "Third Button",
-                4: "Fourth Button",
-                5: "Fifth Button"
+                "first": "First Button",
+                "second": "Second Button",
+                "third": "Third Button",
+                "custom": "Custom Number"
             }
         },
         {
@@ -99,9 +98,13 @@ module.exports = {
         },
         {
             id: "enable",
-            name: "Disabled?",
+            name: "Enabled or Disabled?",
             description: "Description: Whether this button is enabled or disabled",
-            type: "CHECKBOX"
+            type: "SELECT",
+            options: {
+                "enabled": "Enabled",
+                "disabled": "Disabled"
+            }
         }
     ],
     outputs: [
@@ -113,32 +116,88 @@ module.exports = {
         },
         {
             id: "buttonrow",
-            name: "Button Row",
-            description: "Description: The Button Row Output.",
-            types: ["list", "unspecified"]
+            name: "Buttons",
+            description: "Description: The List of Buttons",
+            types: ["list", "object", "unspecified"]
         }
     ],
     async code(cache) {
 
-        const { ButtonBuilder, ButtonStyle } = require('discord.js');
+        const { ButtonBuilder, ButtonStyle, ActionRowBuilder } = require('discord.js');
 
-        const number = Number(this.GetInputValue("custom", cache)) - 1 || this.GetOptionValue("button", cache) - 1;
-        const row = this.GetInputValue("row", cache);
+        var row = this.GetInputValue("row", cache);
+        var style = this.GetInputValue("styles", cache);
+        var enable = this.GetInputValue("enable", cache);
+        var emoji = this.GetInputValue("emoji", cache);
+        var label = this.GetInputValue("label", cache);
+        var id = this.GetInputValue("id", cache);
+        var customint = parseInt(this.GetInputValue("custom", cache)) - 1;
+        var number = this.GetOptionValue("button", cache);
 
-        var button = row[number]
-        
-        if (!button) {
-            this.console("WARN", `The 'Edit Button Row' block (#${cache.index}) can not find The selected button to edit!`)
-            this.StoreOutputValue(row, "buttonrow", cache);
-            this.RunNextBlock("action", cache);
-            return
+        if(!Array.isArray(row)) {
+            row = row.components;
         }
-      
-        var style = this.GetInputValue("styles", cache) || this.GetOptionValue("styles", cache);
-        const disabled = this.GetInputValue("enable", cache) || this.GetOptionValue("enable", cache);
-        var emoji = this.GetInputValue("emoji", cache) || this.GetOptionValue("emoji", cache) || button['data'].emoji;
-        var label = this.GetInputValue("label", cache) || this.GetOptionValue("label", cache) || button['data'].label;
-        const id = this.GetInputValue("id", cache) || this.GetOptionValue("id", cache) || button['data'].custom_id;
+
+        if (number == "custom") {
+            obutton = row[customint]
+        } else {
+            switch (number) {
+                case "first":
+                    obutton = row[0]
+                    number = 0
+                    break;
+                case "second":
+                    obutton = row[1]
+                    number = 1
+                    break;
+                case "third":
+                    obutton = row[2]
+                    number = 2
+                    break;
+            }
+        }
+
+        if(!obutton) {
+            throw new Error("The Requested Button was not found in the row!")
+        }
+
+        if (style == undefined) {
+            style = this.GetOptionValue("styles", cache);
+            style ? style : style = undefined;
+        }
+
+        if (enable == undefined) {
+            enable = this.GetOptionValue("enable", cache);
+            enable ? enable : enable = undefined;
+        }
+
+        if (emoji == undefined || emoji == null || emoji == '') {
+            emoji = this.GetOptionValue("emoji", cache);
+            emoji ? emoji : emoji = undefined;
+        }
+
+        if (label == undefined) {
+            label = this.GetOptionValue("label", cache);
+            label ? label : label = undefined;
+        }
+
+        if (id == undefined) {
+            id = this.GetOptionValue("id", cache);
+            label ? label : label = undefined;
+        }
+
+        const end = async (button) => {
+            let buttons = []
+            await row.forEach(function (value, i) {
+                if(i == number || i == customint) {
+                    buttons.push(button)
+                } else {
+                    buttons.push(value)
+                }
+            });
+            this.StoreOutputValue(buttons, "buttonrow", cache);
+            this.RunNextBlock("action", cache);
+        }
 
         if (style == "primary") {
             style = ButtonStyle.Primary
@@ -152,21 +211,63 @@ module.exports = {
             style = ButtonStyle.Link
         }
 
-        button =
-            new ButtonBuilder()
-                .setStyle(style)
-                .setDisabled(disabled)     
-                       
-            if (label) button.setLabel(label)
-            if (emoji) button.setEmoji(emoji)
-            style !== ButtonStyle.Link ? button.setCustomId(id) : button.setURL(id)
+        if (enable == "enabled") {
+            enable = false
+        } else if (enable == "disabled") {
+            enable = true
+        }
 
-            
-        row[number] = button
+        if (style == ButtonStyle.Link && emoji !== '') {
+            link()
+        } else if (style == ButtonStyle.Link && emoji == '') {
+            linkNoEmoji()
+        } else if (emoji == undefined || emoji == null || emoji == '') {
+            noEmoji()
+        } else {
+            Emoji()
+        }
 
-        this.StoreOutputValue(row, "buttonrow", cache);
-        this.RunNextBlock("action", cache);
-        
+
+
+
+        function Emoji() {
+            const button = new ButtonBuilder()
+            if (id) { button.setCustomId(id) } else { button.setCustomId(obutton['data'].custom_id) };
+            if (label) { button.setLabel(label) } else { button.setLabel(obutton['data'].label) };
+            if (emoji) { button.setEmoji(emoji) } else { button.setEmoji(obutton['data'].emoji) };
+            if (style) { button.setStyle(style) } else { button.setStyle(obutton['data'].style) };
+            button.setDisabled(enable);
+            end(button)
+        }
+
+
+        function noEmoji() {
+            const button = new ButtonBuilder()
+            if (id) { button.setCustomId(id) } else { button.setCustomId(obutton['data'].custom_id) };
+            if (label) { button.setLabel(label) } else { button.setLabel(obutton['data'].label) };
+            if (style) { button.setStyle(style) } else { button.setStyle(obutton['data'].style) };
+            button.setDisabled(enable);
+            end(button)
+        }
+
+        function link() {
+            const button = new ButtonBuilder()
+            if (id) { button.setURL(id) } else { button.setURL(obutton['data'].custom_id) };
+            if (label) { button.setLabel(label) } else { button.setLabel(obutton['data'].label) };
+            if (emoji) { button.setEmoji(emoji) } else { button.setEmoji(obutton['data'].emoji) };
+            if (style) { button.setStyle(style) } else { button.setStyle(obutton['data'].style) };
+            button.setDisabled(enable);
+            end(button)
+        }
+
+        function linkNoEmoji() {
+            const button = new ButtonBuilder()
+            if (id) { button.setURL(id) } else { button.setURL(obutton['data'].custom_id) };
+            if (label) { button.setLabel(label) } else { button.setLabel(obutton['data'].label) };
+            if (style) { button.setStyle(style) } else { button.setStyle(obutton['data'].style) };
+            button.setDisabled(enable);
+            end(button)
+        }
     }
 }
 

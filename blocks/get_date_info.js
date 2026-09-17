@@ -128,19 +128,19 @@ module.exports = {
             case 9:
                 result = date.toLocaleString(undefined, {timeZone: time_type || undefined});
                 break;
-            case 10:
+            case 9:
                 result = date["get" + time_type + "Hours"]();
                 break;
-            case 11:
+            case 10:
                 result = date["get" + time_type + "Minutes"]();
                 break;
-            case 12:
+            case 11:
                 result = date["get" + time_type + "Seconds"]();
                 break;
-            case 13:
+            case 12:
                 result = date["get" + time_type + "Milliseconds"]();
                 break;
-            case 14:
+            case 13:
                 result = "GMT" + date.slice(28, 29) + parseInt(date.slice(29, 33)) / 100;
                 break;
         }

@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Deletes a Queue and makes the Bot disconnect!",
 
-    category: "Music V2",
+    category: ".Audio V2",
 
     inputs: [
         {

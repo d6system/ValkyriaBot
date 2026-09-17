@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Changes the Server Queue Volume",
 
-    category: "Music V2",
+    category: ".Audio V2",
 
     inputs: [
         {

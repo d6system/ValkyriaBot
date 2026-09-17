@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Applies the set of permissions to the role or channel. with built in Create Perms",
 
-    category: "Permission Stuff",
+    category: ".MOD",
 
     inputs: [
         {

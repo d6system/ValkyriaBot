@@ -4,7 +4,7 @@ module.exports = {
 
     description: "This Block Creates a Thread in a Forum Channel",
 
-    category: "Channel Stuff",
+    category: ".MOD",
 
     inputs: [
         {

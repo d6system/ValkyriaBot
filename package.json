@@ -1,8 +1,8 @@
 {
-    "name": "valkyriabot",
-    "author": "D6 System",
-    "description": "ValkyriaBot created with Discord Bot Builder.",
-    "version": "0.0.1",
+    "name": "discord-bot-builder-bot",
+    "author": "Discord Bot Builder",
+    "description": "Discord bot created with Discord Bot Builder.",
+    "version": "0.3.3",
     "main": "bot.js",
     "scripts": {
         "start": "node bot.js"

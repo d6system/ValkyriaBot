@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Gets the Currently Playing Track",
 
-    category: "Music V2",
+    category: ".Audio V2",
 
     inputs: [
         {
@@ -42,12 +42,11 @@ module.exports = {
         const guild = this.GetInputValue("guild", cache);
         const { useQueue } = require("discord-player");
         const queue = useQueue(guild.id);
-        let track;
         
         if(queue) {
-            track = queue.currentTrack;
+            var track = queue.currentTrack;
         } else {
-            track = null;
+            var track = undefined;
         }
 
         this.StoreOutputValue(track, "track", cache)

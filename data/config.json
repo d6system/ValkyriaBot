@@ -1,0 +1,15 @@
+{
+  "application" : {
+    "name" : "PAL",
+    "version" : "0.0.8"
+  },
+  "commands" : {
+    "defaultPrefix" : "!",
+    "serverPrefixes" : {
+
+    }
+  },
+  "owners" : [
+
+  ]
+}

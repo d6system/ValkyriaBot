@@ -16,7 +16,8 @@ module.exports = {
             "id": "id",
             "name": "Emitter ID",
             "description": "Acceptable Types: Text, Number, Unspecified\n\nDescription: The ID of this Emitter. This must match with the ID of the desired \"Receiver\" block.",
-            "types": ["text", "number", "unspecified"]
+            "types": ["text", "number", "unspecified"],
+            "required": true
         },
         {
             "id": "search_value",
@@ -25,21 +26,26 @@ module.exports = {
             "types": ["unspecified", "text", "number"]
         },
         {
-            "id": "values",
-            "name": "Value",
+            "id": "value1",
+            "name": "Value 1",
             "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text, List\n\nDescription: The value 1 to send to the receiver(s). (OPTIONAL)",
-            "types": ["text", "unspecified", "undefined", "null", "object", "boolean", "date", "number", "list"],
-            multiInput: true
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text", "list"]
+        },
+        {
+            "id": "value2",
+            "name": "Value 2",
+            "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text, List\n\nDescription: The value 2 to send to the receiver(s). (OPTIONAL)",
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text", "list"]
+        },
+        {
+            "id": "value3",
+            "name": "Value 3",
+            "description": "Acceptable Types: Unspecified, Undefined, Null, Object, Boolean, Date, Number, Text, List\n\nDescription: The value 3 to send to the receiver(s). (OPTIONAL)",
+            "types": ["unspecified", "undefined", "null", "object", "boolean", "date", "number", "text", "list"]
         }
     ],
 
-    options: [        
-        {
-        "id": "id",
-        "name": "Emitter ID",
-        "description": "Description: The ID of this Emitter. This must match with the ID of the desired \"Receiver\" block.",
-        "type": "TEXT",
-        },
+    options: [
         {
             "id": "restriction_type",
             "name": "Emitter Restriction Type",
@@ -62,12 +68,6 @@ module.exports = {
                 "title": "Workspace Title",
                 "description": "Workspace Description"
             }
-        }, 
-        {
-        "id": "search_value",
-        "name": "Workspace Search Value",
-        "description": "Description: The value according to your choice in the \"Workspace Search Type\" option.",
-        "type": "TEXT"
         }
     ],
 
@@ -81,15 +81,15 @@ module.exports = {
     ],
 
     code(cache) {
-        const id = this.GetInputValue("id", cache) || this.GetOptionValue("id", cache);
-        var search_value = this.GetInputValue("search_value", cache) || this.GetOptionValue("search_value", cache);
-        const values = this.GetInputValue("values", cache);
+        const id = this.GetInputValue("id", cache) + "";
+        const search_value = this.GetInputValue("search_value", cache);
+        const value1 = this.GetInputValue("value1", cache);
+        const value2 = this.GetInputValue("value2", cache);
+        const value3 = this.GetInputValue("value3", cache);
         const restriction_type = this.GetOptionValue("restriction_type", cache) + "";
         const search_type = this.GetOptionValue("search_type", cache) + "";
 
-        if (search_type === "number") search_value = Number(search_value)
-
-        this.Emitter(id, {restriction_type, search_type, search_value, values: values }, cache);
+        this.Emitter(id, {restriction_type, search_type, search_value, values: [value1, value2, value3]}, cache);
 
         this.RunNextBlock("action", cache);
     }

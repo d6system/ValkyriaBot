@@ -3,7 +3,7 @@ module.exports = {
     
     description: "Generates key(s) with the chosen format.",
     
-    category: "Extras",
+    category: ".T45",
     
     inputs: [
         {

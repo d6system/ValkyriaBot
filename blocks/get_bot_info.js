@@ -60,8 +60,6 @@ module.exports = {
                 39: "Bot Owners [List <User>]",
                 40: "Bot Owners ID [List <Text>]",
                 41: "Bot Invite URL [Text]",
-                42: "Number of Registered Slash Commands [Number]",
-                43: "List of Registered Slash Commands [List <Object<ApplicationCommand>>]"
             }
         }
     ],
@@ -88,7 +86,6 @@ module.exports = {
         const os = require("os");
 
         const client = this.client;
-        const memory = process.memoryUsage();
 
         let result;
         switch(bot_info) {
@@ -153,6 +150,7 @@ module.exports = {
                 result = os.cpus().length;
                 break;
             case 23: {
+                const memory = process.memoryUsage();
                 result = Math.round(memory.heapUsed / memory.heapTotal * 100);
                 break;
             }
@@ -160,10 +158,12 @@ module.exports = {
                 result = Math.round(memory.heapUsed / 1024 / 1024);
                 break;
             case 25: {
+                const memory = process.memoryUsage();
                 result = 100 - Math.round(memory.heapUsed / memory.heapTotal * 100);
                 break;
             }
             case 26: {
+                const memory = process.memoryUsage();
                 result = Math.round((memory.heapTotal - memory.heapUsed) / 1024 / 1024);
                 break;
             }
@@ -246,12 +246,6 @@ module.exports = {
                     ],
                     scopes: [OAuth2Scopes.Bot],
                 });
-                break;
-            case 42: 
-                result = DBB?.Dependencies?.RegisterSlashCommands?.registeredAmount || 0;
-                break;
-            case 43: 
-                result = DBB?.Dependencies?.RegisterSlashCommands?.registeredCommands || [];
                 break;
         }
 

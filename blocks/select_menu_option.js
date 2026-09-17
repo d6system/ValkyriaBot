@@ -3,143 +3,72 @@ module.exports = {
 
     description: "Creates an option for (text) select menus.",
 
-    category: "Component Stuff",
+    category: "Command Stuff",
 
     auto_execute: true,
 
-    inputs(data) {
-        if (!data?.options?.show_inputs) return;
-
-        return [
-            {
-                id: "action",
-                name: "Action",
-                description: "Executes this block.",
-                types: ["action"]
-            },
-            {
-                id: "label",
-                name: "Label",
-                description: "The label for this select menu option.",
-                types: ["text", "unspecified"]
-            },
-            {
-                id: "value",
-                name: "Value",
-                description: "The value for this select menu option.",
-                types: ["text", "unspecified"]
-            },
-            {
-                id: "description",
-                name: "Description",
-                description: "The description of this select menu option.",
-                types: ["text", "unspecified"]
-            },
-            {
-                id: "emoji",
-                name: "Emoji",
-                description: "The emoji or emote ID to display on this select menu option.",
-                types: ["text", "unspecified"]
-            },
-            {
-                id: "default",
-                name: "Default?",
-                description: "Whether this option is selected by default.",
-                types: ["boolean", "unspecified"]
-            }
-        ];
-    },
-
     options: [
-        {
-            id: "show_inputs",
-            name: "Enable Inputs?",
-            description: "If enabled, this block will use inputs and allow action chaining.",
-            type: "CHECKBOX"
-        },
         {
             id: "label",
             name: "Label",
-            description: "The label for this select menu option. [REQUIRED]",
+            description: "Description: The label for this select menu option. [REQUIRED]",
             type: "TEXT"
         },
         {
             id: "value",
             name: "Value",
-            description: "The value for this select menu option. [REQUIRED]",
+            description: "Description: The value for this select menu option. [REQUIRED]",
             type: "TEXT"
         },
         {
             id: "description",
             name: "Description",
-            description: "The description of this select menu option.",
+            description: "Description: The description of this select menu option.",
             type: "TEXT"
         },
         {
             id: "emoji",
             name: "Emoji",
-            description: "The emoji or emote ID to display on this select menu option.",
+            description:
+                "Description: The emoji or the emote ID to display on this select menu option.",
             type: "TEXT"
         },
         {
             id: "default",
             name: "Default?",
-            description: "Whether this select menu option is selected by default.",
+            description: "Description: Whether this select menu option is selected by default.",
             type: "CHECKBOX"
         }
     ],
 
-    outputs(data) {
-        const outputs = [
-            {
-                id: "select_menu_option",
-                name: "Select Menu Option",
-                description: "Type: Object\n\nDescription: The select menu option.",
-                types: ["object"]
-            }
-        ];
-
-        if (data?.options?.show_inputs) {
-            outputs.unshift({
-                id: "action",
-                name: "Action",
-                description: "Executes this block.",
-                types: ["action"]
-            });
+    outputs: [
+        {
+            id: "select_menu_option",
+            name: "Select Menu Option",
+            description: "Type: Object\n\nDescription: The select menu option.",
+            types: ["object"]
         }
-
-        return outputs;
-    },
+    ],
 
     code(cache) {
-        const { StringSelectMenuOptionBuilder } = require("discord.js");
+        const { StringSelectMenuOptionBuilder } = require("discord.js")
 
-        const executedFrom = cache.executedFrom?.[0];
-        const showinputs = this.GetOptionValue("show_inputs", cache);
-        if (executedFrom != "action" && showinputs) return;
+        const label = this.GetOptionValue("label", cache)
+        const value = this.GetOptionValue("value", cache)
+        const description = this.GetOptionValue("description", cache) || " ឵"
+        const emoji = this.GetOptionValue("emoji", cache)
+        const _default = this.GetOptionValue("default", cache)
 
-        const get = (id) => this.GetInputValue(id, cache) ?? this.GetOptionValue(id, cache);
+        const selectMenuOption = new StringSelectMenuOptionBuilder().setLabel(label).setValue(value)
 
-        const label = get("label");
-        const value = get("value");
-        const description = get("description"); // invisible char fallback
-        const emoji = get("emoji");
-        const isDefault = get("default");
-
-        const option = new StringSelectMenuOptionBuilder()
-            .setLabel(label)
-            .setValue(value);
-
-        if (description && description != "") option.setDescription(description);
-        if (isDefault) option.setDefault(true);
+        if (description) selectMenuOption.setDescription(description)
+        if (_default) selectMenuOption.setDefault(_default)
         if (emoji) {
-            option.setEmoji(isNaN(emoji) ? { name: emoji } : { id: emoji, animated: true });
+            selectMenuOption.setEmoji(
+                isNaN(emoji) ? { name: emoji } : { id: emoji, animated: true }
+            )
         }
 
-        this.StoreOutputValue(option, "select_menu_option", cache, "inputBlock");
-
-        if (executedFrom === "action") {
-            this.RunNextBlock("action", cache);
-        }
+        this.StoreOutputValue(selectMenuOption, "select_menu_option", cache, "inputBlock")
     }
-};
+}

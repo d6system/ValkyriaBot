@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Transforms a number [0 to 10] to an emoji.",
 
-    category: "Extras",
+    category: ".MOD",
 
     inputs: [
         {

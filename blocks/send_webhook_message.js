@@ -1,55 +1,71 @@
-
 module.exports = {
     name: "Send Webhook Message",
 
-    description: "Sends a message with a webhook, supporting multi-input Embeds, Components, and Attachments.",
+    description: "Sends a message with a webhook.",
 
     category: "Webhook Stuff",
 
     inputs: [
         {
-            id: "action",
-            name: "Action",
-            types: ["action"]
+            "id": "action",
+            "name": "Action",
+            "description": "Acceptable Types: Action\n\nDescription: Executes this block.",
+            "types": ["action"]
         },
         {
-            id: "webhook",
-            name: "Webhook",
-            types: ["object", "unspecified"],
-            required: true
+            "id": "webhook",
+            "name": "Webhook",
+            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The webhook to send this message.",
+            "types": ["object", "unspecified"],
+            "required": true
         },
         {
-            id: "webhook_username_override",
-            name: "Webhook Username Override",
-            types: ["text", "unspecified"]
+            "id": "webhook_username_override",
+            "name": "Webhook Username Override",
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The webhook username override for this message. (OPTIONAL)",
+            "types": ["text", "unspecified"]
         },
         {
-            id: "webhook_avatar_url_override",
-            name: "Webhook Avatar URL Override",
-            types: ["text", "unspecified"]
+            "id": "webhook_avatar_url_override",
+            "name": "Webhook Avatar URL Override",
+            "description": "Acceptable Types: Text, Unspecified\n\nDescription: The webhook avatar URL override for this message. (OPTIONAL)",
+            "types": ["text", "unspecified"]
         },
         {
-            id: "message",
-            name: "Text",
-            types: ["text", "unspecified"]
+            "id": "message",
+            "name": "Text",
+            "description": "Type: Text\n\nDescription: Executes the following blocks when this block finishes its task.",
+            "types": ["text", "unspecified"]
         },
         {
             id: "embeds",
             name: "Embed",
-            types: ["object", "list", "unspecified"],
-            multiInput: true
+            description: "Description: To add a single Button to the Message. (NOT A ROW) (MUST EITHER BE BUTTON OR ROW -- NOT BOTH --)",
+            types: ["object", "unspecified"],
         },
         {
-            id: "components",
-            name: "Component",
-            types: ["object", "list", "unspecified"],
-            multiInput: true
+            id: "menu",
+            name: "Menu",
+            description: "Description: To add a single Button to the Message. (NOT A ROW) (MUST EITHER BE BUTTON OR ROW -- NOT BOTH --)",
+            types: ["object", "unspecified"],
         },
         {
-            id: "attachments",
+            id: "button_row",
+            name: "Button Row",
+            description: "Description: To add a Button Row to the Message. (MUST EITHER BE BUTTON OR ROW -- NOT BOTH --)",
+            types: ["object", "unspecified"],
+        },
+        {
+            id: "button",
+            name: "Button",
+            description: "Description: To add a single Button to the Message. (NOT A ROW) (MUST EITHER BE BUTTON OR ROW -- NOT BOTH --)",
+            types: ["object", "unspecified"],
+        },
+        {
+            id: "attachment",
             name: "Attachment",
-            types: ["object", "text", "list", "unspecified"],
-            multiInput: true
+            description: "Acceptable Types: Object, Text, Unspecified\n\nDescription: The attachment to put in the message. Supports Image, file path and URL. (OPTIONAL)",
+            types: ["object", "text", "unspecified"]
         }
     ],
 
@@ -57,99 +73,94 @@ module.exports = {
 
     outputs: [
         {
-            id: "action",
-            name: "Action",
-            types: ["action"]
+            "id": "action",
+            "name": "Action",
+            "description": "Type: Action\n\nDescription: Executes the following blocks when this block finishes its task.",
+            "types": ["action"]
         },
         {
-            id: "message",
-            name: "Message",
-            types: ["object"]
+            "id": "message",
+            "name": "Message",
+            "description": "Type: Object\n\nDescription: The message obtained.",
+            "types": ["object"]
         }
     ],
 
-    async code(cache) {
+    code(cache) {
         const webhook = this.GetInputValue("webhook", cache);
-        const username = this.GetInputValue("webhook_username_override", cache);
-        const avatarURL = this.GetInputValue("webhook_avatar_url_override", cache);
-        const content = this.GetInputValue("message", cache);
-        const embeds = this.GetInputValue("embeds", cache) || [];
-        const components = this.GetInputValue("components", cache) || [];
-        const attachments = this.GetInputValue("attachments", cache) || [];
+        const webhook_username_override = this.GetInputValue("webhook_username_override", cache);
+        const webhook_avatar_url_override = this.GetInputValue("webhook_avatar_url_override", cache);
 
-        const { ActionRowBuilder, AttachmentBuilder } = await this.require("discord.js");
-        const path = await this.require("path");
-        const fs = await this.require("fs");
+        const { ActionRowBuilder } = require('discord.js');
 
-        const normalizeList = (value) => Array.isArray(value) ? value : value ? [value] : [];
+        const msg = this.GetInputValue("message", cache);
+        const em = this.GetInputValue("embeds", cache);
+        const attachment = this.GetInputValue("attachment", cache);
+        const button1 = this.GetInputValue("button", cache);
+        const button_row = this.GetInputValue("button_row", cache);
+        const menu1 = this.GetInputValue("menu", cache);
+        let components;
+        let button;
+        let menu;
 
-        const flatten = (arr) =>
-          arr.flatMap(v => Array.isArray(v) ? flatten(v) : v).filter(x => x !== undefined && x !== null);
+        if (button1 !== undefined) {
+            button =
+                new ActionRowBuilder()
+                    .addComponents(button1)
+        }
 
-        const buildComponents = (comps) => {
-            const result = [];
-            let row = new ActionRowBuilder();
+        if (menu1 !== undefined) {
+            menu =
+                new ActionRowBuilder()
+                    .addComponents(menu1)
+        }
 
-            for (const comp of normalizeList(comps)) {
-                if (!comp) continue;
+        if (button1 == undefined && button_row == undefined && menu1 !== undefined) {
+            components = [menu]
+        } else if (button_row == undefined && menu1 == undefined && button1 !== undefined) {
+            components = [button]
+        } else if (menu1 == undefined && button1 == undefined && button_row !== undefined) {
+            components = [button_row]
+        } else if (menu1 !== undefined && button_row !== undefined && button1 == undefined) {
+            components = [menu, button_row]
+        } else if (menu1 !== undefined && button1 !== undefined && button_row == undefined) {
+            components = [menu, button]
+        } else if (menu1 == undefined && button1 !== undefined && button_row !== undefined) {
+            components = [button_row, button]
+        } else if (menu1 !== undefined && button1 !== undefined && button_row !== undefined) {
+            components = [menu, button_row, button]
+        }
 
-                if (Array.isArray(comp)) {
-                    const r = new ActionRowBuilder().addComponents(...comp);
-                    result.push(r);
-                } else if (comp instanceof ActionRowBuilder) {
-                    result.push(comp);
-                } else {
-                    if (row.components.length >= 5) {
-                        result.push(row);
-                        row = new ActionRowBuilder();
-                    }
-                    row.addComponents(comp);
-                }
+        if (em !== undefined) {
+            data = { username: webhook_username_override, avatarURL: webhook_avatar_url_override, content: msg, embeds: [em], components: components, files: attachment ? [attachment] : null }
+            const cleanData = Object.keys(data).reduce((accumulator, key) => {
+                if (data[key] !== undefined)
+                    accumulator[key] = data[key]
+
+                return accumulator;
+            }, {});
+            webhook.send(cleanData).then(msg => {
+                this.StoreOutputValue(msg, "message", cache);
+                this.RunNextBlock("action", cache)
+            });
+        } else {
+            data = {
+                username: webhook_username_override,
+                avatarURL: webhook_avatar_url_override,
+                content: msg,
+                components: components,
+                files: attachment ? [attachment] : null
             }
+            const cleanData = Object.keys(data).reduce((accumulator, key) => {
+                if (data[key] !== undefined)
+                    accumulator[key] = data[key]
 
-            if (row.components.length > 0) result.push(row);
-
-            return result;
-        };
-
-        const isValidEmbed = (embed) =>
-            embed && typeof embed === "object" && Object.keys(embed).length > 0;
-
-        const safeEmbeds = normalizeList(embeds).filter(isValidEmbed);
-
-        const safeAttachments = flatten(attachments).map(a => {
-            if (typeof a === "string") {
-                try {
-                    return fs.existsSync(a) ? { attachment: a, name: path.basename(a) } : null;
-                } catch {
-                    return null;
-                }
-            }
-            if (a.attachment || a.url) return a;
-            return null;
-        }).filter(Boolean);
-
-        const payload = {
-            content,
-            username,
-            avatarURL,
-            embeds: safeEmbeds,
-            components: buildComponents(components),
-            files: safeAttachments
-        };
-
-        const cleanData = Object.fromEntries(
-            Object.entries(payload).filter(([_, val]) =>
-                val !== undefined && val !== null && (Array.isArray(val) ? val.length > 0 : true)
-            )
-        );
-
-        try {
-            const msg = await webhook.send(cleanData);
-            this.StoreOutputValue(msg, "message", cache);
-            this.RunNextBlock("action", cache);
-        } catch (err) {
-            console.error("Webhook send failed:", err);
+                return accumulator;
+            }, {});
+            webhook.send(cleanData).then(msg => {
+                this.StoreOutputValue(msg, "message", cache);
+                this.RunNextBlock("action", cache)
+            });
         }
     }
-};
+}

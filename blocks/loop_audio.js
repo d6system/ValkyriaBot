@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Change the Loop Mode of the Current Queue!",
 
-    category: "Music V2",
+    category: ".Audio V2",
 
     inputs: [
         {

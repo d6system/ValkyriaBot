@@ -27,13 +27,6 @@ module.exports = {
                 "put": "PUT",
                 "delete": "DELETE"
             }
-        },
-        {
-            "id": "port",
-            "name": "Port",
-            "description": "Acceptable Types: Number, Unspecified\n\nDescription: The Port that the Express Server will be running on.\n\nDefault: 3000",
-            "type": "number",
-            "defaultValue": 3000
         }
     ],
 
@@ -70,96 +63,64 @@ module.exports = {
         }
     ],
 
-    async init(DBB, blockName) {
-        if (!DBB.Core.Dependencies) DBB.Core.Dependencies = {};
-        if (!DBB.Core.Dependencies.Express) DBB.Core.Dependencies.Express = {};
-        
-        const packageManager = require('./!auto_package_manager').getPackageManager();
-
-        try {
-            // Wait for package installation to complete before proceeding
-            await packageManager?.requires({ name: "express", version: "latest" });
-        } catch (e) {
-            console.log("Failed to install dependencies! (Express Event)");
-            console.log(e);
-            return; // Don't proceed if installation failed
-        }
-        
-        const module = require("express");
+    async init(DBB) {
+        if (!DBB.Dependencies.Express) DBB.Dependencies.Express = {};
+        DBB.Dependencies.Express.module = await DBB.Core.require("express");
         const express = require('express');
         const app = express();
         app.use(express.json({
             type: "application/json"
-        }));
-        let started = false;
-        let port = 3000;
-        DBB.Core.Dependencies.Express = {
-            module,
-            app,
-            started,
-            port
-        };
+        }))
+        DBB.Dependencies.Express.app = app;
+        DBB.Dependencies.Express.started = false;
+        DBB.Dependencies.Express.port = 3000;
     },
 
-    code(cache, DBB) {
-        let i = setInterval(() => {
-            if (DBB.Core.Dependencies.Express.app) {
-                clearInterval(i);
-                run(cache, DBB);
-            }
-        })
-
-        const run = (cache, DBB) => {
-            let e = DBB.Core.Dependencies.Express;
-            const port = this.GetOptionValue("port", cache);
-            const app = e.app;
-            if (!e.started) {
-                app.listen(port !== e.port ? port : e.port)
-                e.started = true;
-                this.console("INFO", "Express Server Started! Port: " + (port !== e.port ? port : e.port));
-            }
-            const pathsInput = this.GetOptionValue("path", cache) || "/";
-            const paths = pathsInput.split(',').map(p => p.trim());
-            const method = this.GetOptionValue("method", cache);
-            paths.forEach(path => {
-                switch (method) {
-                    case "get":
-                        app.get(path, (req, res) => {
-                            this.StoreOutputValue(req.headers, "headers", cache);
-                            this.StoreOutputValue(req, "req", cache);
-                            this.StoreOutputValue(res, "res", cache);
-                            this.RunNextBlock("action", cache);
-                        });
-                        break;
-                    case "post":
-                        app.post(path, (req, res) => {
-                            this.StoreOutputValue(req.headers, "headers", cache);
-                            this.StoreOutputValue(req.body, "body", cache);
-                            this.StoreOutputValue(req, "req", cache);
-                            this.StoreOutputValue(res, "res", cache);
-                            this.RunNextBlock("action", cache);
-                        });
-                        break;
-                    case "put":
-                        app.put(path, (req, res) => {
-                            this.StoreOutputValue(req.headers, "headers", cache);
-                            this.StoreOutputValue(req.body, "body", cache);
-                            this.StoreOutputValue(req, "req", cache);
-                            this.StoreOutputValue(res, "res", cache);
-                            this.RunNextBlock("action", cache);
-                        });
-                        break;
-                    case "delete":
-                        app.delete(path, (req, res) => {
-                            this.StoreOutputValue(req.headers, "headers", cache);
-                            this.StoreOutputValue(req.body, "body", cache);
-                            this.StoreOutputValue(req, "req", cache);
-                            this.StoreOutputValue(res, "res", cache);
-                            this.RunNextBlock("action", cache);
-                        });
-                        break;
-                }
-            })
+    async code(cache, DBB) {
+        const app = DBB.Dependencies.Express.app;
+        if(!DBB.Dependencies.Express.started) {
+            app.listen(DBB.Dependencies.Express.port)
+            DBB.Dependencies.Express.started = true;
+            this.console("INFO", "Express Server Started! Port: " + DBB.Dependencies.Express.port)
+        }
+        const path = this.GetOptionValue("path", cache) == "" ? "/" : this.GetOptionValue("path", cache);
+        const method = this.GetOptionValue("method", cache);
+        switch (method) {
+            case "get":
+                app.get(path, (req, res) => {
+                    this.StoreOutputValue(req.headers, "headers", cache);
+                    this.StoreOutputValue(req, "req", cache);
+                    this.StoreOutputValue(res, "res", cache);
+                    this.RunNextBlock("action", cache);
+                });
+                break;
+            case "post":
+                app.post(path, (req, res) => {
+                    this.StoreOutputValue(req.headers, "headers", cache);
+                    this.StoreOutputValue(req.body, "body", cache);
+                    this.StoreOutputValue(req, "req", cache);
+                    this.StoreOutputValue(res, "res", cache);
+                    this.RunNextBlock("action", cache);
+                });
+                break;
+            case "put":
+                app.put(path, (req, res) => {
+                    this.StoreOutputValue(req.headers, "headers", cache);
+                    this.StoreOutputValue(req.body, "body", cache);
+                    this.StoreOutputValue(req, "req", cache);
+                    this.StoreOutputValue(res, "res", cache);
+                    this.RunNextBlock("action", cache);
+                });
+                break;
+            case "delete":
+                app.delete(path, (req, res) => {
+                    this.StoreOutputValue(req.headers, "headers", cache);
+                    this.StoreOutputValue(req.body, "body", cache);
+                    this.StoreOutputValue(req, "req", cache);
+                    this.StoreOutputValue(res, "res", cache);
+                    this.RunNextBlock("action", cache);
+                });
+                break;
         }
     }
 }

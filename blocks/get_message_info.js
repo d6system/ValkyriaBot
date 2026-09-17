@@ -66,11 +66,7 @@ module.exports = {
                 38: "Message Reply Channel ID [Text]",
                 39: "Message Reply Message ID [Text]",
                 40: "Has Massage a Thread? [Boolean]",
-                41: "Message Thread [Object <Thread Channel>]",
-                42: "Is Message Forwarded? [Boolean]",
-                43: "Forwarded Messages [List <Message>]",
-                44: "Forwarded Message [Object <Message>]",
-                45: "Forwarded Message Content [Text]"
+                41: "Message Thread [Object <Thread Channel>]"
             }
         }
     ],
@@ -219,31 +215,6 @@ module.exports = {
                 break;
             case 41:
                 result = message.thread;
-                break;
-            case 42:
-                result = (message.messageSnapshots && message.messageSnapshots.size > 0);
-                break;
-            case 43:
-                if(message.messageSnapshots && message.messageSnapshots.size > 0){
-                    result = Array.from(message.messageSnapshots.values());
-                } else {
-                    result = null;
-                }
-                break;
-            case 44:
-                if(message.messageSnapshots && message.messageSnapshots.size > 0){
-                    result = message.messageSnapshots.first();
-                } else {
-                    result = null;
-                }
-                break;
-            case 45:
-                if(message.messageReference){
-                    let __tempm = message.messageSnapshots.first();
-                    result = __tempm ? __tempm.content : null;
-                } else {
-                    result = null;
-                }
                 break;
         }
 

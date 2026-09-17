@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Leaves the voice channel.",
 
-    category: "Music V2",
+    category: "Audio Stuff",
 
     inputs: [
         {
@@ -13,9 +13,9 @@ module.exports = {
             "types": ["action"]
         },
         {
-            "id": "guild",
-            "name": "Server",
-            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Guild to get the Voice Connection from!",
+            "id": "connection",
+            "name": "Connection",
+            "description": "Acceptable Types: Object, Unspecified\n\nDescription: The Voice Connection",
             "types": ["object", "unspecified"],
             "required": true
         }
@@ -32,17 +32,11 @@ module.exports = {
         }
     ],
 
-    async code(cache, DBB) {
-        try {
-            const success = await require('./!auto_package_manager').getPackageManager().requires({ name: "discord-player", version: "latest" })
-            if(!success) console.log("Failed to install dependencies! (Leave Voice Channel)")
-        } catch (e) {
-            console.log(e)
-        }
-        const { useQueue } = require('discord-player');
-        const guild = this.GetInputValue("guild", cache);
+    async code(cache) {
 
-        useQueue(guild.id)?.delete();
+        const connection = this.GetInputValue("connection", cache);
+
+        await connection.destroy();
 
         this.RunNextBlock("action", cache);
     }

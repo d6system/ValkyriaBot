@@ -1,13 +1,19 @@
 module.exports = {
-    name: "Modal Text Input (Component)",
+    name: "Modal Text Input",
 
     description: "Creates a text input for modals.",
 
-    category: "Component Stuff",
+    category: "Command Stuff",
 
     auto_execute: true,
 
     options: [
+        {
+            id: "label",
+            name: "Label",
+            description: "Description: The label for this text input. [REQUIRED]",
+            type: "TEXT"
+        },
         {
             id: "placeholder",
             name: "Placeholder",
@@ -58,9 +64,9 @@ module.exports = {
 
     outputs: [
         {
-            id: "text_input",
-            name: "Text Input",
-            description: "Type: Object\n\nDescription: The text input.",
+            id: "modal_input",
+            name: "Modal Input",
+            description: "Type: Object\n\nDescription: The modal input.",
             types: ["object"]
         }
     ],
@@ -79,6 +85,7 @@ module.exports = {
         const custom_id = this.GetOptionValue("custom_id", cache) || randomUUID()
 
         const modalInput = new TextInputBuilder()
+            .setLabel(label)
             .setStyle(style)
             .setCustomId(custom_id)
 
@@ -89,6 +96,6 @@ module.exports = {
         if (required) modalInput.setRequired(required)
         if (placeholder) modalInput.setPlaceholder(placeholder)
 
-        this.StoreOutputValue(modalInput, "text_input", cache, "inputBlock")
+        this.StoreOutputValue(modalInput, "modal_input", cache, "inputBlock")
     }
 }

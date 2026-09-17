@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Modded ver. of 'Get item from list'.",
 
-    category: "List Stuff",
+    category: ".MOD",
 
     inputs: [
         {

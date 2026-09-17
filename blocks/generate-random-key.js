@@ -4,7 +4,7 @@ module.exports = {
 
     description: "Generates a random key depending on your settings.",
 
-    category: "Extras",
+    category: "Daily's",
 
     inputs: [
         {

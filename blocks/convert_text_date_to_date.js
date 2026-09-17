@@ -3,7 +3,7 @@ module.exports = {
 
     description: "Converts Text Date into a useable Date, by @XCraftTM",
 
-    category: "Date Stuff",
+    category: ".MOD",
 
     inputs: [
         {

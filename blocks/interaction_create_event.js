@@ -1,5 +1,5 @@
 module.exports = {
-    name: "Vanilla (Trash) Interaction [Event]",
+    name: "Interaction [Event]",
 
     description: "When an interaction is created, this event will trigger.",
 

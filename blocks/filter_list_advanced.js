@@ -41,16 +41,7 @@ module.exports = {
             "type": "SELECT",
             "options": {
                 "includes": "Includes",
-                "equals": "Equals",
-                "not_equal": "Not Equal",
-                "greater_than": "Greater Than",
-                "less_than": "Less Than",
-                "greater_than_or_equal": "Greater Than or Equal To",
-                "less_than_or_equal": "Less Than or Equal To",
-                "start_with": "Start With",
-                "end_with": "End With",
-                "includes": "Includes",
-                "match_regexp": "Match RegExp"
+                "equals": "Equals"
             }
         },
         {
@@ -88,46 +79,17 @@ module.exports = {
         const value = this.GetInputValue("value", cache) || this.GetOptionValue("value", cache);
         const method = this.GetOptionValue("method", cache);
 
-        let result = list;
-        if ((value || value !== "") && (property || property !== "")) {
-                switch(method) {
-                    case "includes":                 
-                        result = list.filter(x => eval(`x?.${property}?.includes(value)`));
-                        break;
-                    case "equals":
-                        result = list.filter(x => eval(`x?.${property} == value`));
-                        break;
-                    case "not_equal":
-                        result = list.filter(x => eval(`x?.${property} != value`));
-                        break;
-                    case "greater_than":
-                        result = list.filter(x => eval(`x?.${property} > value`));
-                        break;
-                    case "less_than":
-                        result = list.filter(x => eval(`x?.${property} < value`));
-                        break;
-                    case "greater_than_or_equal":
-                        result = list.filter(x => eval(`x?.${property} >= value`));
-                        break;
-                    case "less_than_or_equal":
-                        result = list.filter(x => eval(`x?.${property} <= value`));
-                        break;
-                    case "start_with":
-                        result = list.filter(x => eval(`x?.${property}.startsWith(value)`));
-                        break;
-                    case "end_with":
-                        result = list.filter(x => eval(`x?.${property}.endsWith(value)`));
-                        break;
-                    case "includes":
-                        result = list.filter(x => eval(`x?.${property}.includes(value)`));
-                        break;
-                    case "match_regexp":
-                        result = list.filter(x => eval(`x?.${property}.match(value)`));
-                        break;
+        if (value || value !== "") {
+            if (property || property !== "") {
+                if(method == "includes") {
+                    object = list.filter(x => eval(`x?.${property}?.includes(value)`))
+                } else {
+                    object = list.filter(x => eval(`x?.${property} == value`))
                 }
+            }
         }
 
-        this.StoreOutputValue(result, "list", cache);
+        this.StoreOutputValue(object, "list", cache);
         this.RunNextBlock("action", cache);
     }
 }

@@ -83,20 +83,6 @@ module.exports = {
             "name": "Timestamp (Date)",
             "description": "Acceptable Types: Date, Number, Boolean, Unspecified\n\nDescription: The timestamp (Date) for this message embed. If a boolean as \"true\", this uses the current time. (OPTIONAL)",
             "types": ["date", "number", "boolean", "unspecified"]
-        },
-        {
-            "id": "object",
-            "name": "Object",
-            "description": "Acceptable Types: Object, List.\n\nDescription: The object(s) where to get your values from.\n\nYou can merge several objects. But take in mind if you have repeated keys; they will overwrite.",
-            "types": ["object", "list", "unspecified"],
-            "multiInput": true
-        },
-        {
-            "id": "text",
-            "name": "Text",
-            "description": "Acceptable Types: Text, Undefined, Null, Object, Boolean, Date, Number, List, Unspecified\n\nDescription: The text to merge with the source text. Supports everything (converts to text automatically). (OPTIONAL)",
-            "types": ["text", "undefined", "null", "object", "boolean", "date", "number", "list", "unspecified"],
-            "multiInput": true
         }
     ],
 
@@ -171,8 +157,11 @@ module.exports = {
             "id": "timestamp_option",
             "name": "Timestamp (Date)",
             "description": "Acceptable Types: Date, Number, Boolean, Unspecified\n\nDescription: The timestamp (Date) for this message embed. If a boolean as \"true\", this uses the current time. (OPTIONAL)",
-            "type": "CHECKBOX",
-            "defaultValue": false
+            "type": "SELECT",
+            "options": {                
+                "false": "False",                
+                "true": "True",
+            }
         }		
 	],
 
@@ -192,31 +181,55 @@ module.exports = {
     ],
 
     code: function(cache) {
-        const variables = this.GetInputValue("text", cache);
-        const objects = this.GetInputValue("object", cache);   
-        let object;          
-        if(objects.length == 1){
-            if(Array.isArray(objects[0])){
-                object = Object.assign({}, ...objects[0]);
-            }else{object = objects[0];}
-        }else{
-            object = Object.assign({}, ...objects);
-        }        
-
         const color = this.GetInputValue("color", cache) || this.GetOptionValue("color", cache, false, undefined);
-        const thumbnail_url = this.GetInputValue("thumbnail", cache) || this.GetOptionValue("thumbnail", cache, false, undefined);
-        const author_icon = this.GetInputValue("author_icon", cache) || this.GetOptionValue("author_icon", cache, false, undefined);
+        const thumbnailtest = this.GetInputValue("thumbnail", cache) || this.GetOptionValue("thumbnail", cache, false, undefined);
+        const author_icontest = this.GetInputValue("author_icon", cache) || this.GetOptionValue("author_icon", cache, false, undefined);
         const author_name = this.GetInputValue("author_name", cache) || this.GetOptionValue("author_name", cache, false, undefined);
         const author_url = this.GetInputValue("author_url", cache) || this.GetOptionValue("author_url", cache, false, undefined);
         const title = this.GetInputValue("title", cache) || this.GetOptionValue("title", cache, false, undefined);
-        const title_url = this.GetInputValue("url", cache) || this.GetOptionValue("url", cache, false, undefined);
+        const url = this.GetInputValue("url", cache) || this.GetOptionValue("url", cache, false, undefined);
         const description = this.GetInputValue("description", cache) || this.GetOptionValue("description", cache, false, undefined);
-        const image_url = this.GetInputValue("image", cache) || this.GetOptionValue("image", cache, false, undefined);
-        const footer_icon = this.GetInputValue("footer_icon", cache) || this.GetOptionValue("footer_icon", cache, false, undefined);
+        const imagetest = this.GetInputValue("image", cache) || this.GetOptionValue("image", cache, false, undefined);
+        const footer_icontest = this.GetInputValue("footer_icon", cache) || this.GetOptionValue("footer_icon", cache, false, undefined);
         const footer_text = this.GetInputValue("footer_text", cache) || this.GetOptionValue("footer_text", cache, false, undefined);
 
-        const timestamp = this.GetInputValue("timestamp_input", cache, undefined) || this.GetOptionValue("timestamp_option", cache);
+        const timestamp_input = this.GetInputValue("timestamp_input", cache, undefined);
+        let timestamp_option = this.GetOptionValue("timestamp_option", cache); 
+        if(timestamp_option == "true") { timestamp_option = true; }
+    	else { timestamp_option = false; }
+
+        const timestamp = timestamp_input !== undefined ? timestamp_input : timestamp_option;       
         
+        if (imagetest.match(/(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i)) {
+            image = imagetest;
+        }else{
+            image = undefined;
+        }
+
+        if (thumbnailtest.match(/(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i)) {
+            thumbnail = thumbnailtest;
+        }else{
+            thumbnail = undefined;
+        }
+
+        if (author_icontest.match(/(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i)) {
+            author_icon = author_icontest;
+        }else{
+            author_icon = undefined;
+        }
+
+        if (footer_icontest.match(/(https?:\/\/.*\.(?:png|jpg|jpeg|gif|webp))/i)) {
+            footer_icon = footer_icontest;
+        }else{
+            footer_icon = undefined;
+        }
+        
+        const {EmbedBuilder} = require("discord.js");
+
+        const embed = new EmbedBuilder()
+
+        embed.setColor(color || "#2f3136")
+
         let author = {};
         if(author_name) author.name = author_name;
         if(author_icon) author.iconURL = author_icon;
@@ -226,56 +239,16 @@ module.exports = {
         if(footer_icon) footer.iconURL = footer_icon;
         if(footer_text) footer.text = footer_text;
 
-        let image = {}
-        if(image_url) image.url = image_url;
+        if(thumbnail) embed.setThumbnail(thumbnail || "\u200b");
+        if(author_icon || author_name || author_url) embed.setAuthor(author);
+        if(title) embed.setTitle(title || "\u200b");
+        if(url) embed.setURL(url || "\u200b");
+        if(description) embed.setDescription(description || "\u200b");
+        if(image) embed.setImage(image || "\u200b");
+        if(footer_icon || footer_text) embed.setFooter(footer);
+        if(timestamp) embed.setTimestamp(timestamp === true ? undefined : timestamp);
 
-        let thumbnail = {}
-        if(thumbnail_url) thumbnail.url = thumbnail_url;
-
-        let embedConstructor = {};
-        if(author_icon || author_name || author_url) embedConstructor.author = author;
-        if(title) embedConstructor.title = (title || "\u200b");
-        if(title_url) embedConstructor.url = (title_url || "\u200b");
-        if(description) embedConstructor.description = (description || "\u200b");
-        
-        if(image_url) embedConstructor.image = (image || "\u200b");
-        if(thumbnail_url) embedConstructor.thumbnail = (thumbnail || "\u200b");
-
-        if(footer_icon || footer_text) embedConstructor.footer = (footer);
-
-        const string = JSON.stringify(embedConstructor);
-
-            const transform_texts =
-            string.replace(/\${text(\d+)}/g, function(match, number) {
-                return String(variables[number - 1] || match);
-            }).replace(/\n/g, '\\n')
-
-            const transform_keys = transform_texts.replace(/\${([^\s{}]+)}/g, function(match, key) {
-                const keys = key.split('.');            
-                let value = object;
-                for (const k of keys) {
-                  if (value.hasOwnProperty(k)) {
-                    value = value[k]
-                    if (typeof value === 'string') {
-                            value = (value.replace(/\n/g, '\\n')).replace(/"/g, '\\"');
-                    }                
-                  } else {
-                    return "";
-                  }
-                }            
-                return value;
-            });
-
-        const newEmbed = JSON.parse(transform_keys);
-
-        const {EmbedBuilder} = require("discord.js");
-        const message_embed = new EmbedBuilder()        
-        message_embed.data = newEmbed;
-        message_embed.setColor(color || "#2f3136")
-        if(timestamp) message_embed.setTimestamp(timestamp === true ? undefined : timestamp);
-
-        this.StoreOutputValue(message_embed, "message_embed", cache);        
+        this.StoreOutputValue(embed, "message_embed", cache);
         this.RunNextBlock("action", cache);
-        
     }
 }
